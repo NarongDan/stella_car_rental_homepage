@@ -8,6 +8,11 @@ import RegistrationPage from "../pages/RegistrationPage";
 import AboutPage from "../pages/AboutPage";
 import ContactPage from "../pages/ContactPage";
 
+import CarPage from "../pages/CarPage";
+
+import SearchCarPage from "../pages/SearchCarPage";
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,6 +24,10 @@ const router = createBrowserRouter([
       { path: "/register", element: <RegistrationPage /> },
       { path: "/about", element: <AboutPage /> },
       { path: "/contact", element: <ContactPage /> },
+      { path: "/cars", element: <CarPage /> },
+      { path: "/search-car", element: <SearchCarPage /> },
+
+
     ],
   },
 ]);

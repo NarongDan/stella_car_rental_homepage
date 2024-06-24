@@ -4,7 +4,7 @@ export default function Navbar() {
   return (
     <nav className="flex justify-center ">
       <div className="container  ">
-        <div className="flex justify-between items-center w-auto h-16 p-2 shadow-sm">
+        <div className="flex justify-between items-center w-auto h-20 p-2 shadow-zinc-700 border-b-2">
           <div className="navbar-logo">
             <h1 className="text-xl font-bold font-serif">Stella Car Rental</h1>
           </div>
