@@ -1,3 +1,3 @@
-export default function HomePageBody() {
-  return <div>Body</div>;
+export default function HmeoPageBody() {
+  return;
 }
