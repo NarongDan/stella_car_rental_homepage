@@ -1,3 +1,4 @@
+
 import { IoIosStar } from "react-icons/io";
 import { FaCar } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
@@ -157,4 +158,5 @@ export default function HomePageBody() {
       </div>
     </>
   );
+
 }
