@@ -7,6 +7,9 @@ import { toast } from "react-toastify";
 import Input from "./Input";
 import { useAuth } from "../../../context/AuthContext";
 import validateLogin from "../../../validators/validate.login";
+import { useEffect } from "react";
+import { gapi } from "gapi-script";
+import SearchCarInput from "../../cars/component/SearchCarInput";
 
 const initialInput = {
   email: "",
@@ -73,6 +76,17 @@ export default function LoginForm() {
   const handleGoogleLoginFailure = (error) => {
     console.error("Google login failed:", error);
   };
+
+  useEffect(() => {
+    const initClient = () => {
+      gapi.client.init({
+        clientId: CLIENT_ID,
+        scope: "",
+      });
+    };
+
+    gapi.load("client:auth2", initClient);
+  }, []);
 
   return (
     <form onSubmit={handleSubmitForm}>
