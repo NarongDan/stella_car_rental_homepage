@@ -5,6 +5,8 @@ import { Navigate } from "react-router-dom";
 import HomePageBody from "../pages/HomePageBody";
 import LoginPage from "../pages/LoginPage";
 import RegistrationPage from "../pages/RegistrationPage";
+import AboutPage from "../pages/AboutPage";
+import ContactPage from "../pages/ContactPage";
 
 import CarPage from "../pages/CarPage";
 
@@ -20,8 +22,11 @@ const router = createBrowserRouter([
       { path: "", element: <HomePageBody /> },
       { path: "/login", element: <LoginPage /> },
       { path: "/register", element: <RegistrationPage /> },
+      { path: "/about", element: <AboutPage /> },
+      { path: "/contact", element: <ContactPage /> },
       { path: "/cars", element: <CarPage /> },
       { path: "/search-car", element: <SearchCarPage /> },
+
 
     ],
   },
