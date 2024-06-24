@@ -3,8 +3,8 @@ import { IoIosPin } from "react-icons/io";
 
 export default function Footer() {
   return (
-    <footer className=" flex justify-center  ">
-      <div className="container shadow-md p-5 ">
+    <footer className=" flex justify-center   ">
+      <div className="container shadow-md p-5 text-white bg-gray-600 border-t-2 ">
         <div className="grid grid-cols-5 ">
           <div className="">
             <h1>Stella Car Rental</h1>

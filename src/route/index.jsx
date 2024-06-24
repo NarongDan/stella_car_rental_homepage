@@ -12,7 +12,6 @@ import CarPage from "../pages/CarPage";
 
 import SearchCarPage from "../pages/SearchCarPage";
 
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,8 +25,6 @@ const router = createBrowserRouter([
       { path: "/contact", element: <ContactPage /> },
       { path: "/cars", element: <CarPage /> },
       { path: "/search-car", element: <SearchCarPage /> },
-
-
     ],
   },
 ]);
