@@ -11,6 +11,7 @@ import ContactPage from "../pages/ContactPage";
 import CarPage from "../pages/CarPage";
 
 import SearchCarPage from "../pages/SearchCarPage";
+import BookingConfirmationPage from "../pages/ฺBookingConfirmationPage";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
       { path: "/contact", element: <ContactPage /> },
       { path: "/cars", element: <CarPage /> },
       { path: "/search-car", element: <SearchCarPage /> },
+      { path: "/booking", element: <BookingConfirmationPage /> },
     ],
   },
 ]);

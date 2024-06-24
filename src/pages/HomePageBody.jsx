@@ -1,4 +1,3 @@
-
 import { IoIosStar } from "react-icons/io";
 import { FaCar } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
@@ -7,6 +6,7 @@ import { RiCaravanFill } from "react-icons/ri";
 import { GrDropbox } from "react-icons/gr";
 import { Link } from "react-router-dom";
 import CarHero from "../image/CarHero.png";
+import SearchCarInput from "../features/cars/component/SearchCarInput";
 
 export default function HomePageBody() {
   return (
@@ -24,6 +24,8 @@ export default function HomePageBody() {
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi ut aliquip ex ea commodo consequat.
               </p>
+
+              <SearchCarInput />
 
               <button className=" p-2 bg-[#1154FF] text-white md: w-[8rem] hover:bg-blue-500 rounded-md">
                 <Link> Book Now</Link>
@@ -158,5 +160,4 @@ export default function HomePageBody() {
       </div>
     </>
   );
-
 }
