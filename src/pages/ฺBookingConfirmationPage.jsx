@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useCar } from "../context/CarContext";
+import CarInfo from "../features/cars/component/CarInfo";
 
 export default function BookingConfirmationPage() {
   const { branches } = useCar();
   const location = useLocation();
 
-  const { carId, pickupLocation, startDate, endDate } = location.state; //pickupLocation เป็น branchId เลยต้องตั้ง pickupLocationn ให้มีตัวnn เพิ่ม
+  const { car, pickupLocation, startDate, endDate } = location.state; //pickupLocation เป็น branchId เลยต้องตั้ง pickupLocationn ให้มีตัวnn เพิ่ม
 
   const [pickupLocationn, setPickupLocation] = useState("");
   const [dropOffLocation, setDropOffLocation] = useState("");
@@ -24,12 +25,10 @@ export default function BookingConfirmationPage() {
     }
   }, [pickupLocation, branches]);
 
-  // ฟังก์ชันจัดการเมื่อเปลี่ยนแปลง drop-off location
   const handleDropOffLocationChange = (event) => {
     setDropOffLocation(event.target.value);
   };
 
-  // ฟังก์ชันจัดการเมื่อเปลี่ยนแปลง pick-up time
   const handlePickupTimeChange = (event) => {
     setPickupTime(event.target.value);
   };
@@ -61,8 +60,7 @@ export default function BookingConfirmationPage() {
     <div className="container mx-auto p-4">
       <h2 className="text-2xl font-bold mb-4">Booking Confirmation</h2>
       <div className="mb-4">
-        <label className="block text-gray-700 font-bold mb-2">Car ID:</label>
-        <p>{carId}</p>
+        <CarInfo car={car} />
       </div>
       <div className="mb-4">
         <label className="block text-gray-700 font-bold mb-2">
