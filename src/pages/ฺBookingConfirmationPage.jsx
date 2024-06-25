@@ -2,19 +2,23 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useCar } from "../context/CarContext";
 import CarInfo from "../features/cars/component/CarInfo";
+import { useBooking } from "../context/BookingContext";
+
+import { useNavigate } from "react-router-dom";
 
 export default function BookingConfirmationPage() {
   const { branches } = useCar();
   const location = useLocation();
+  const { bookCar } = useBooking();
+  const navigate = useNavigate();
 
-  const { car, pickupLocation, startDate, endDate } = location.state; //pickupLocation เป็น branchId เลยต้องตั้ง pickupLocationn ให้มีตัวnn เพิ่ม
+  const { car, pickupLocation, startDate, endDate } = location.state;
 
   const [pickupLocationn, setPickupLocation] = useState("");
   const [dropOffLocation, setDropOffLocation] = useState("");
   const [pickupTime, setPickupTime] = useState("09:00");
 
   useEffect(() => {
-    // ดึงข้อมูลสถานที่รับรถจาก branches ของ context ถ้ามี pickupLocationId และ branches อยู่
     if (pickupLocation && branches) {
       const initialLocation = branches.find(
         (branch) => branch.branchId === parseInt(pickupLocation)
@@ -25,6 +29,12 @@ export default function BookingConfirmationPage() {
     }
   }, [pickupLocation, branches]);
 
+  useEffect(() => {
+    if (branches && branches.length > 0) {
+      setDropOffLocation(branches[0].branchId);
+    }
+  }, [branches]);
+
   const handleDropOffLocationChange = (event) => {
     setDropOffLocation(event.target.value);
   };
@@ -33,14 +43,25 @@ export default function BookingConfirmationPage() {
     setPickupTime(event.target.value);
   };
 
-  // ฟังก์ชันสำหรับการ submit การจอง
-  const handleSubmit = () => {
-    console.log("Booking submitted!");
-    // ตรวจสอบข้อมูลที่ต้องการ และทำการจองรถ
-    // จัดการการยืนยันการจองต่อไปตามที่ต้องการ
+  const handleSubmit = async () => {
+    try {
+      const data = {
+        carId: car.carId,
+        startDate: startDate,
+        endDate: endDate,
+        pickupLocationId: parseInt(pickupLocation),
+        dropoffLocationId: parseInt(dropOffLocation),
+        pickDropTime: pickupTime,
+      };
+
+      const res = await bookCar(data);
+
+      window.location.href = res.data.url;
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  // ฟังก์ชันสำหรับสร้างตัวเลือกเวลา
   const generateTimeOptions = () => {
     const times = [];
     for (let hour = 9; hour <= 20; hour++) {
