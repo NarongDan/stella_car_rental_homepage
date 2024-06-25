@@ -1,4 +1,5 @@
 import AuthContextProvider from "./context/AuthContext";
+import BookingContextProvider from "./context/BookingContext";
 import CarContextProvider from "./context/CarContext";
 import Router from "./route";
 
@@ -8,8 +9,10 @@ function App() {
     <>
       <CarContextProvider>
         <AuthContextProvider>
-          <Router />
-          <ToastContainer position="bottom-right" autoClose={3000} />
+          <BookingContextProvider>
+            <Router />
+            <ToastContainer position="bottom-right" autoClose={3000} />
+          </BookingContextProvider>
         </AuthContextProvider>
       </CarContextProvider>
     </>
