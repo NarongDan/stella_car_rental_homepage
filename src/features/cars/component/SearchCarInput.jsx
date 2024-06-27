@@ -11,6 +11,8 @@ export default function SearchCarInput() {
   const navigate = useNavigate();
   const today = new Date().toISOString().split("T")[0]; // วันที่ปัจจุบัน
 
+  console.log(branches);
+
   const handlePickupLocationChange = (e) => {
     const selectedPickupLocation = e.target.value;
     if (selectedPickupLocation === "") {
@@ -54,8 +56,8 @@ export default function SearchCarInput() {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <div className="grid grid-cols-1 gap-4">
+    <div className="container mx-auto p-4 border-2 rounded-xl bg-white opacity-100  shadow-lg shadow-neutral-500">
+      <div className="grid grid-cols-1 gap-4 p-2 ">
         <div>
           <label>Pickup Location:</label>
           <select
