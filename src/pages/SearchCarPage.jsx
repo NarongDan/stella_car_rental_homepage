@@ -66,9 +66,9 @@ export default function SearchCarPage() {
     setFilteredCars(null); // เคลียร์การกรอง
   };
 
-  const handleBookClick = (carId) => {
+  const handleBookClick = (car) => {
     navigate("/booking", {
-      state: { carId, pickupLocation, startDate, endDate }, // ส่ง state ไปให้กับ BookingConfirmationPage
+      state: { car, pickupLocation, startDate, endDate }, // ส่ง state ไปให้กับ BookingConfirmationPage
     });
   };
   if (loading) {
@@ -155,6 +155,20 @@ export default function SearchCarPage() {
                     Book
                   </button>
                 </div>
+
+
+                <div>Model: {car.CarModel.model}</div>
+                <div>Brand: {car.CarModel.brand}</div>
+                <div>Color: {car.CarModel.color}</div>
+                <div>License Plate: {car.licensePlate}</div>
+                <div>Status: {car.status}</div>
+                <button
+                  onClick={() => handleBookClick(car)}
+                  className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mt-2"
+                >
+                  Book
+                </button>
+
               </li>
             ))}
           </ul>
