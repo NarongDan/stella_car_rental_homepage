@@ -30,10 +30,18 @@ export default function SearchCarPage() {
           endDate: endDate,
         });
 
-        // Filter and store only one car per CarType
+        // Filter and store only one car per CarType and Car Model
         const carsFiltered = response.data.reduce((acc, car) => {
           const carType = car.CarModel.CarType.carTypeName;
-          if (!acc.some((c) => c.CarModel.CarType.carTypeName === carType)) {
+          const carModelId = car.CarModel.carModelId;
+
+          if (
+            !acc.some(
+              (c) =>
+                c.CarModel.CarType.carTypeName === carType &&
+                c.CarModel.carModelId === carModelId
+            )
+          ) {
             acc.push(car);
           }
           return acc;
@@ -50,6 +58,8 @@ export default function SearchCarPage() {
 
     fetchCarsAvailable();
   }, [fetchAvailableCars, pickupLocation, startDate, endDate]);
+
+  // เอา Car Type มาทำปุ่ม และเมื่อกด เอารถมาแสดง
 
   const filterCarsByType = (carType) => {
     const filtered = cars.filter(
@@ -155,8 +165,6 @@ export default function SearchCarPage() {
                     Book
                   </button>
                 </div>
-
-
                 <div>Model: {car.CarModel.model}</div>
                 <div>Brand: {car.CarModel.brand}</div>
                 <div>Color: {car.CarModel.color}</div>
@@ -168,7 +176,6 @@ export default function SearchCarPage() {
                 >
                   Book
                 </button>
-
               </li>
             ))}
           </ul>
