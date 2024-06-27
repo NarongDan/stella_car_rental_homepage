@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useCar } from "../context/CarContext";
+import { MdElectricCar } from "react-icons/md";
+import { TbCar } from "react-icons/tb";
+import { PiCarProfileFill } from "react-icons/pi";
+import { RiPoliceCarFill } from "react-icons/ri";
+import { BsCarFront } from "react-icons/bs";
 
 export default function SearchCarPage() {
   const location = useLocation();
@@ -71,44 +76,52 @@ export default function SearchCarPage() {
   }
 
   return (
-    <div className="container mx-auto p-4">
+    <div
+      className="container mx-auto p-4 "
+      content="width=device-width, initial-scale=1.0"
+    >
       <h2 className="text-2xl font-bold mb-4">Available Cars</h2>
       {/* ปุ่มสำหรับเลือกแสดงข้อมูลรถตามประเภท */}
       <div className="flex space-x-4 mb-4">
         <button
           onClick={clearFilteredCars}
-          className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded"
+          className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded "
         >
           All Car Types
         </button>
         <button
           onClick={() => filterCarsByType("economy")}
-          className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded"
+          className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded flex gap-1 justify-center items-center"
         >
+          <TbCar />
           Economy
         </button>
         <button
           onClick={() => filterCarsByType("compact")}
-          className="bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 rounded"
+          className="bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 rounded flex gap-1 justify-center items-center"
         >
+          <PiCarProfileFill />
           Compact
         </button>
         <button
           onClick={() => filterCarsByType("standard")}
-          className="bg-indigo-500 hover:bg-indigo-600 text-white py-2 px-4 rounded"
+          className="bg-indigo-500 hover:bg-indigo-600 text-white py-2 px-4 rounded flex gap-1 justify-center items-center"
         >
+          <BsCarFront />
           Standard
         </button>
         <button
           onClick={() => filterCarsByType("premium")}
-          className="bg-purple-500 hover:bg-purple-600 text-white py-2 px-4 rounded"
+          className="bg-purple-500 hover:bg-purple-600 text-white py-2 px-4 rounded flex gap-1 justify-center items-center"
         >
+          <RiPoliceCarFill />
           Premium
         </button>
         <button
           onClick={() => filterCarsByType("electric")}
-          className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded"
+          className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded flex items-center text-center gap-1"
         >
+          <MdElectricCar />
           Electric
         </button>
       </div>
@@ -123,11 +136,27 @@ export default function SearchCarPage() {
             {cars.map((car) => (
               <li
                 key={car.carId}
-                className="border border-gray-300 p-4 rounded mb-4"
+                className="border border-gray-300 p-4 rounded mb-4 grid grid-cols-2 "
               >
-                <div className="font-bold">
-                  Car Type: {car.CarModel.CarType.carTypeName}
+                <img src="src/image/CarHero.png" alt="" className=" " />{" "}
+                <div>
+                  <div className="font-bold ">
+                    Car Type: {car.CarModel.CarType.carTypeName}
+                  </div>
+                  <div>Model: {car.CarModel.model}</div>
+                  <div>Brand: {car.CarModel.brand}</div>
+                  <div>Color: {car.CarModel.color}</div>
+                  <div>License Plate: {car.licensePlate}</div>
+                  <div>Status: {car.status}</div>
+                  <button
+                    onClick={() => handleBookClick(car.carId)}
+                    className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mt-2"
+                  >
+                    Book
+                  </button>
                 </div>
+
+
                 <div>Model: {car.CarModel.model}</div>
                 <div>Brand: {car.CarModel.brand}</div>
                 <div>Color: {car.CarModel.color}</div>
@@ -139,6 +168,7 @@ export default function SearchCarPage() {
                 >
                   Book
                 </button>
+
               </li>
             ))}
           </ul>

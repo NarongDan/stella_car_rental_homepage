@@ -4,18 +4,18 @@ import { IoLocationSharp } from "react-icons/io5";
 import { MdPayment } from "react-icons/md";
 import { RiCaravanFill } from "react-icons/ri";
 import { GrDropbox } from "react-icons/gr";
-import { Link } from "react-router-dom";
-import CarHero from "../image/CarHero.png";
+import CarHero from "../image/Car.png";
 import SearchCarInput from "../features/cars/component/SearchCarInput";
 
 export default function HomePageBody() {
   return (
     <>
-      <hero className="flex justify-center mt-5  ">
-        <div className="container">
-          <div className=" grid grid-cols-2 p-7  bg-gradient-to-b from-white to-orange-400">
+      <hero className="flex justify-center  relative ">
+        <div className=" absolute  bg-[url('./image/Polygon2.png')] bg-no-repeat h-full w-2/3 -top-15 right-0 md:-r lg:-right-[373px] -z-50 "></div>
+        <div className="container    ">
+          <div className="  lg:grid grid-cols-2 p-7 mt-10 ">
             <div className="flex flex-col gap-10 p-7 ">
-              <h1 className="font-extrabold text-5xl">
+              <h1 className=" font-extrabold text-3xl sm:font-extrabold sm:text-5xl">
                 Looking for cars to rent in Thailand? Look no further!
               </h1>
               <p>
@@ -26,10 +26,6 @@ export default function HomePageBody() {
               </p>
 
               <SearchCarInput />
-
-              <button className=" p-2 bg-[#1154FF] text-white md: w-[8rem] hover:bg-blue-500 rounded-md">
-                <Link> Book Now</Link>
-              </button>
             </div>
             <div className="">
               <img src={CarHero} alt="" />
@@ -37,18 +33,19 @@ export default function HomePageBody() {
           </div>
         </div>
       </hero>
-      <div className="flex justify-center">
-        <div className="container   bg-gradient-to-t from-white to-orange-400">
+      <div className=" flex justify-center">
+        <div className="container ">
           <div className=" flex flex-col items-center  ">
-            <div className="font-extrabold text-5xl">
+            <div className=" p-5 text-3xl font-extrabold md:font-extrabold  md:text-5xl">
               {" "}
               Testimonials from our clients
             </div>
           </div>
-          <div className="grid grid-cols-3 mt-10 gap-5 p-7">
-            <div className=" border-2 rounded-md p-2">
+
+          <div className="md:grid grid-cols-4 mt-2 gap-5 p-7 ">
+            <div className=" border-2 rounded-md p-2 mb-5 bg-white opacity-100  shadow-lg shadow-neutral-500">
               <h3>Ben T.</h3>
-              <div className="flex  rounded-md">
+              <div className="flex  rounded-md ">
                 <IoIosStar className=" text-yellow-400" />
                 <IoIosStar className=" text-yellow-400" />
                 <IoIosStar className=" text-yellow-400" />
@@ -63,10 +60,10 @@ export default function HomePageBody() {
                 definitely be back in the future.
               </p>
             </div>
-            <div className=" border-2 rounded-md p-2">
-              <h3>Surapa K.</h3>
+            <div className=" border-2 rounded-md p-2 mb-5 bg-white opacity-100  shadow-lg shadow-neutral-500">
+              <h3>Suraya B.</h3>
               <div className="flex">
-                <IoIosStar className=" text-yellow-400" />
+                <IoIosStar className=" text-yellow-400 " />
                 <IoIosStar className=" text-yellow-400" />
                 <IoIosStar className=" text-yellow-400" />
                 <IoIosStar className=" text-yellow-400" />
@@ -79,10 +76,26 @@ export default function HomePageBody() {
                 professional staff as well.
               </p>
             </div>
-            <div className=" border-2 rounded-md p-2">
+            <div className=" border-2 rounded-md p-2 mb-5 bg-white opacity-100  shadow-lg shadow-neutral-500">
+              <h3>Surapa K.</h3>
+              <div className="flex">
+                <IoIosStar className=" text-yellow-400 " />
+                <IoIosStar className=" text-yellow-400" />
+                <IoIosStar className=" text-yellow-400" />
+                <IoIosStar className=" text-yellow-400" />
+                <IoIosStar className=" text-yellow-400" />
+              </div>
+              <p>
+                At first I thought it would be a long and lengthy process, never
+                been so happy to be wrong. I had a wonderful road trip
+                throughout Thailand without having to drive from my house. Very
+                professional staff as well.
+              </p>
+            </div>
+            <div className=" border-2 rounded-md p-2 mb-5 bg-white opacity-100  shadow-lg shadow-neutral-500">
               <h3>Jarukul P.</h3>
               <div className="flex">
-                <IoIosStar className=" text-yellow-400" />
+                <IoIosStar className=" text-yellow-400 b" />
                 <IoIosStar className=" text-yellow-400" />
                 <IoIosStar className=" text-yellow-400" />
                 <IoIosStar className=" text-yellow-400" />
@@ -97,6 +110,7 @@ export default function HomePageBody() {
           </div>
         </div>
       </div>
+
       <div className="flex justify-center p-5">
         <div className="container ">
           <div className="flex  justify-center">
@@ -104,9 +118,9 @@ export default function HomePageBody() {
               How our Service Works?
             </div>
           </div>
-          <div className=" grid grid-cols-5 gap-2 mt-20 mb-20 ">
+          <div className="grid grid-cols-2 md:grid md:grid-cols-3 lg:grid-cols-5 gap-2 mt-20 mb-20 ">
             <div className=" flex flex-col justify-center items-center ">
-              <div className="bg-orange-500 w-20 h-20 justify-center items-center flex rounded-full">
+              <div className="bg-primary-color w-20 h-20 justify-center items-center flex rounded-full">
                 <FaCar className="text-6xl" />
               </div>
               <h3>Choose your car</h3>
@@ -116,7 +130,7 @@ export default function HomePageBody() {
               </p>
             </div>
             <div className=" flex flex-col justify-center items-center mt-5">
-              <div className="bg-orange-500 w-20 h-20 justify-center items-center flex rounded-full">
+              <div className="bg-primary-color w-20 h-20 justify-center items-center flex rounded-full">
                 <IoLocationSharp className="text-6xl" />
               </div>
               <h3>Choose location </h3>
@@ -126,7 +140,7 @@ export default function HomePageBody() {
               </p>
             </div>
             <div className=" flex flex-col justify-center items-center">
-              <div className="bg-orange-500 w-20 h-20 justify-center items-center flex rounded-full">
+              <div className="bg-primary-color w-20 h-20 justify-center items-center flex rounded-full">
                 <MdPayment className="text-6xl" />
               </div>
               <h3>Payment</h3>
@@ -136,7 +150,7 @@ export default function HomePageBody() {
               </p>
             </div>
             <div className=" flex flex-col justify-center items-center">
-              <div className="bg-orange-500 w-20 h-20 justify-center items-center flex rounded-full">
+              <div className="bg-primary-color w-20 h-20 justify-center items-center flex rounded-full">
                 <RiCaravanFill className="text-6xl" />
               </div>
               <h3>Pick-up your car</h3>
@@ -146,7 +160,7 @@ export default function HomePageBody() {
               </p>
             </div>
             <div className=" flex flex-col justify-center items-center">
-              <div className="bg-orange-500 w-20 h-20 justify-center items-center flex rounded-full">
+              <div className="bg-primary-color w-20 h-20 justify-center items-center flex rounded-full">
                 <GrDropbox className="text-6xl" />
               </div>
               <h3>Drop-off your car</h3>
