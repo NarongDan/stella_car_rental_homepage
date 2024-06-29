@@ -107,7 +107,7 @@ export default function LoginForm() {
           onChange={handleChange}
           error={inputError.password}
         />
-        <button className="w-full bg-yellow-300 text-black px-3 py-1.5 font-bold rounded-md hover:bg-yellow-500 transition-colors duration-300">
+        <button className="w-full bg-secondary-color text-white px-3 py-1.5 font-bold rounded-md hover:bg-blue-700 transition-colors duration-300">
           Log in
         </button>
         <div className="flex flex-col w-full border-opacity-50">
@@ -123,7 +123,7 @@ export default function LoginForm() {
           isSignedIn={false}
         />
         <Link to="/register">
-          <button className="w-full bg-yellow-300 text-black px-3 py-1.5 font-bold rounded-md hover:bg-yellow-500 transition-colors duration-300">
+          <button className="w-full bg-secondary-color text-white px-3 py-1.5 font-bold rounded-md hover:bg-blue-700 transition-colors duration-300">
             Sign Up
           </button>
         </Link>
