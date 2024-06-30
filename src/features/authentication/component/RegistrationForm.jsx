@@ -41,8 +41,8 @@ export default function RegistrationForm() {
       const { profile } = location.state;
       setInput((prev) => ({
         ...prev,
-        firstName: profile.givenName,
-        lastName: profile.familyName,
+        firstName: profile.firstName,
+        lastName: profile.lastName,
         email: profile.email,
       }));
     }
