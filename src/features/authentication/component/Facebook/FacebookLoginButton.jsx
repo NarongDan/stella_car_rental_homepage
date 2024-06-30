@@ -1,6 +1,7 @@
 import React from "react";
 import useFacebookSDK from "./useFacebookSDK.js";
 import { useNavigate } from "react-router-dom";
+import { FaFacebook } from "react-icons/fa";
 
 const FacebookLoginButton = () => {
   const navigate = useNavigate();
@@ -52,14 +53,12 @@ const FacebookLoginButton = () => {
   };
 
   return (
-    <div className="flex justify-center mt-4">
-      <button
-        onClick={handleFacebookLogin}
-        className="bg-blue-600 text-white font-bold py-2 px-4 rounded"
-      >
-        Sign Up with Facebook
-      </button>
-    </div>
+    <button
+      onClick={handleFacebookLogin}
+      className="flex items-center justify-center w-12 h-12 bg-white text-blue-600 rounded-full  shadow hover:shadow-xl"
+    >
+      <FaFacebook size={35} />
+    </button>
   );
 };
 

@@ -89,8 +89,11 @@ export default function LoginForm() {
         </div>
       </form>
       <div className="grid gap-4 mt-4">
-        <GoogleLoginForm />
-        <FacebookLoginButton />
+        <div className="flex justify-center items-center space-x-8">
+          <GoogleLoginForm />
+          <FacebookLoginButton />
+        </div>
+
         <Link to="/register">
           <button className="w-full bg-secondary-color text-white px-3 py-1.5 font-bold rounded-md hover:bg-blue-700 transition-colors duration-300">
             Sign Up

@@ -1,10 +1,12 @@
+import React, { useEffect } from "react";
 import { gapi } from "gapi-script";
-import { useEffect } from "react";
 import GoogleLogin from "react-google-login";
 import { useNavigate } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
 
 export default function GoogleLoginForm() {
   const navigate = useNavigate();
+
   const CLIENT_ID =
     "489301703602-5qnb372i6bbm4bdbhjvs9p3km5j6tu37.apps.googleusercontent.com";
 
@@ -18,7 +20,7 @@ export default function GoogleLoginForm() {
     gapi.load("client:auth2", initClient);
   }, []);
 
-  const handleGoogleLoginSuccess = async (response) => {
+  const handleGoogleLoginSuccess = (response) => {
     const profile = {
       firstName: response.profileObj.givenName,
       lastName: response.profileObj.familyName,
@@ -26,7 +28,6 @@ export default function GoogleLoginForm() {
     };
     try {
       navigate("/register", { state: { profile } });
-      location.reload(); // ใช้ logout
     } catch (error) {
       console.error("Error navigating to register page:", error);
     }
@@ -39,6 +40,14 @@ export default function GoogleLoginForm() {
   return (
     <GoogleLogin
       clientId={CLIENT_ID}
+      render={(renderProps) => (
+        <button
+          onClick={renderProps.onClick}
+          className="flex items-center justify-center w-12 h-12 bg-white border border-gray-300 rounded-full shadow hover:shadow-lg"
+        >
+          <FcGoogle size={30} />
+        </button>
+      )}
       buttonText="Sign up with Google"
       onSuccess={handleGoogleLoginSuccess}
       onFailure={handleGoogleLoginFailure}
