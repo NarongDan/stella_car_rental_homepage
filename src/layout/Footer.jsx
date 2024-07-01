@@ -8,17 +8,17 @@ import { IoIosPin } from "react-icons/io";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-gray-100 via-secondary-color to-gray-100">
+    <footer className="bg-black text-white">
       <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 items-center ">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
             <img src={Logo} className="mr-5 w-40" alt="logo" />
             <h1 className="text-xl font-bold font-serif">Stella Car Rental</h1>
-            <p className="max-w-xs mt-4 text-sm text-gray-600">
+            <p className="max-w-xs mt-4 text-sm text-gray-300">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
               accusantium.
             </p>
-            <div className="flex mt-8 space-x-6 text-gray-600">
+            <div className="flex mt-8 space-x-6 text-gray-300">
               <a
                 className="hover:opacity-75"
                 href
@@ -120,7 +120,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
             <div>
               <p className="font-medium">Rental Cars</p>
-              <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+              <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-300">
                 <a className="hover:opacity-75" href>
                   {" "}
                   Brands{" "}
@@ -133,11 +133,11 @@ export default function Footer() {
             </div>
             <div>
               <p className="font-medium">Services</p>
-              <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500"></nav>
+              <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-300"></nav>
             </div>
             <div>
               <p className="font-medium">Support</p>
-              <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+              <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-300">
                 <a className="hover:opacity-75" href>
                   {" "}
                   Contact{" "}
@@ -158,7 +158,7 @@ export default function Footer() {
             </div>
             <div>
               <p className="font-medium">Contacts us</p>
-              <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+              <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-300">
                 <a className="hover:opacity-75" href>
                   {" "}
                   <MdOutlineEmail />
@@ -183,7 +183,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <p className="mt-8 text-xs text-gray-800">© 2024 Stella Car Rental</p>
+        <p className="mt-8 text-xs text-gray-200">© 2024 Stella Car Rental</p>
       </div>
     </footer>
   );

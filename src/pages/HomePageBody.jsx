@@ -11,9 +11,13 @@ export default function HomePageBody() {
   return (
     <>
       <hero className="flex justify-center  relative ">
-        <div className=" absolute  bg-[url('./image/Polygon2.png')] bg-no-repeat h-full w-2/3 -top-15 right-0 md:-r lg:-right-[373px] -z-50 "></div>
-        <div className="container    ">
+        {/* Orange Background */}
+        <div className=" absolute  bg-[url('./image/Polygon2.png')] bg-no-repeat h-full w-2/3 -top-15 right-0 md:-r lg:-right-[373px] z-10 "></div>
+
+        {/* Hero Section Container */}
+        <div className="container z-10 ">
           <div className="  lg:grid grid-cols-2 p-7 mt-10 ">
+            {/* Information */}
             <div className="flex flex-col gap-10 p-7 ">
               <h1 className=" font-extrabold text-3xl sm:font-extrabold sm:text-5xl">
                 Looking for cars to rent in Thailand? Look no further!
@@ -25,22 +29,19 @@ export default function HomePageBody() {
                 nisi ut aliquip ex ea commodo consequat.
               </p>
             </div>
+            {/* Car Picture */}
             <div className="">
-              <img
-                src={CarHero}
-                alt=""
-                className="box animate fadeInRight four"
-              />
+              <img src={CarHero} alt="Car" />
             </div>
           </div>
           <SearchCarInput />
         </div>
       </hero>
+      {/* Testimonaisl */}
       <div className=" flex justify-center">
         <div className="container ">
           <div className=" flex flex-col items-center  ">
             <div className=" p-5 text-3xl font-extrabold md:font-extrabold  md:text-5xl">
-              {" "}
               Testimonials from our clients
             </div>
           </div>
@@ -114,60 +115,61 @@ export default function HomePageBody() {
         </div>
       </div>
 
+      {/* {How our Service Works?} */}
       <div className="flex justify-center p-5">
-        <div className="container ">
-          <div className="flex  justify-center">
-            <div className=" text-3xl font-extrabold">
+        <div className="container">
+          <div className="flex justify-center">
+            <div className="text-3xl font-extrabold">
               How our Service Works?
             </div>
           </div>
-          <div className="grid grid-cols-2 md:grid md:grid-cols-3 lg:grid-cols-5 gap-2 mt-20 mb-20 ">
-            <div className=" flex flex-col justify-center items-center ">
-              <div className="bg-primary-color w-20 h-20 justify-center items-center flex rounded-full">
-                <FaCar className="text-6xl" />
+          <div className="grid grid-cols-2 mt-10 mb-20 md:grid-cols-3 lg:grid-cols-5 gap-2 ">
+            <div className="flex flex-col items-center text-center mb-10 ">
+              <div className="bg-primary-color w-20 h-20 flex justify-center items-center rounded-full m m">
+                <FaCar className="text-6xl " />
               </div>
-              <h3>Choose your car</h3>
-              <p>
+              <h3 className="mt-4 mb-2 text-lg font-bold">Choose your car</h3>
+              <p className="text-sm">
                 Choose your preferred car from multiple selections of brands,
                 models, and specifications
               </p>
             </div>
-            <div className=" flex flex-col justify-center items-center mt-5">
-              <div className="bg-primary-color w-20 h-20 justify-center items-center flex rounded-full">
-                <IoLocationSharp className="text-6xl" />
+            <div className="flex flex-col items-center text-center mb-10">
+              <div className="bg-primary-color w-20 h-20 flex justify-center items-center rounded-full">
+                <IoLocationSharp className="text-6xl " />
               </div>
-              <h3>Choose location </h3>
-              <p>
+              <h3 className="mt-4 mb-2 text-lg font-bold">Choose location</h3>
+              <p className="text-sm">
                 Choose the duration of your rent along with location to pick up
                 your car and drop off your car on your final day of renting
               </p>
             </div>
-            <div className=" flex flex-col justify-center items-center">
-              <div className="bg-primary-color w-20 h-20 justify-center items-center flex rounded-full">
-                <MdPayment className="text-6xl" />
+            <div className="flex flex-col items-center text-center mb-10">
+              <div className="bg-primary-color w-20 h-20 flex justify-center items-center rounded-full">
+                <MdPayment className="text-6xl " />
               </div>
-              <h3>Payment</h3>
-              <p>
+              <h3 className="mt-4 mb-2 text-lg font-bold">Payment</h3>
+              <p className="text-sm">
                 Commit your payment via Credit Card or Bank Transfer to confirm
                 your reservation
               </p>
             </div>
-            <div className=" flex flex-col justify-center items-center">
-              <div className="bg-primary-color w-20 h-20 justify-center items-center flex rounded-full">
-                <RiCaravanFill className="text-6xl" />
+            <div className="flex flex-col items-center text-center mb-10">
+              <div className="bg-primary-color w-20 h-20 flex justify-center items-center rounded-full">
+                <RiCaravanFill className="text-6xl " />
               </div>
-              <h3>Pick-up your car</h3>
-              <p>
+              <h3 className="mt-4 mb-2 text-lg font-bold">Pick-up your car</h3>
+              <p className="text-sm">
                 Once arrived at the designated airport, pick up your reserved
                 ride with our staff
               </p>
             </div>
-            <div className=" flex flex-col justify-center items-center">
-              <div className="bg-primary-color w-20 h-20 justify-center items-center flex rounded-full">
-                <GrDropbox className="text-6xl" />
+            <div className="flex flex-col items-center text-center mb-10">
+              <div className="bg-primary-color w-20 h-20 flex justify-center items-center rounded-full">
+                <GrDropbox className="text-6xl " />
               </div>
-              <h3>Drop-off your car</h3>
-              <p>
+              <h3 className="mt-4 mb-2 text-lg font-bold">Drop-off your car</h3>
+              <p className="text-sm">
                 On the final day of your rent, simply drop-off your ride at the
                 chosen airport
               </p>

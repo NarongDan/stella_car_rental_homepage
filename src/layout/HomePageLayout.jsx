@@ -4,10 +4,12 @@ import Footer from "./Footer";
 
 export default function HomePageLayout() {
   return (
-    <>
+    <div className="bg-white">
       <Navbar />
-      <Outlet />
+      <div>
+        <Outlet />
+      </div>
       <Footer />
-    </>
+    </div>
   );
 }
