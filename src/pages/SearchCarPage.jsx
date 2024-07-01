@@ -92,44 +92,44 @@ export default function SearchCarPage() {
     >
       <h2 className="text-2xl font-bold mb-4">Available Cars</h2>
       {/* ปุ่มสำหรับเลือกแสดงข้อมูลรถตามประเภท */}
-      <div className="flex space-x-4 mb-4">
+      <div className="grid grid-cols-6 space-x-2 mb-4 ">
         <button
           onClick={clearFilteredCars}
-          className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded "
+          className=" text-[0.5rem]  md:text-[1.5rem] bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md "
         >
           All Car Types
         </button>
         <button
           onClick={() => filterCarsByType("economy")}
-          className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded flex gap-1 justify-center items-center"
+          className="text-[0.5rem]  md:text-[1.5rem] bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md flex gap-1 justify-center items-center"
         >
           <TbCar />
           Economy
         </button>
         <button
           onClick={() => filterCarsByType("compact")}
-          className="bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 rounded flex gap-1 justify-center items-center"
+          className="text-[0.5rem]  md:text-[1.5rem] bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 rounded-md flex gap-1 justify-center items-center"
         >
           <PiCarProfileFill />
           Compact
         </button>
         <button
           onClick={() => filterCarsByType("standard")}
-          className="bg-indigo-500 hover:bg-indigo-600 text-white py-2 px-4 rounded flex gap-1 justify-center items-center"
+          className="text-[0.5rem]  md:text-[1.5rem] bg-indigo-500 hover:bg-indigo-600 text-white py-2 px-4 rounded-md flex gap-1 justify-center items-center"
         >
           <BsCarFront />
           Standard
         </button>
         <button
           onClick={() => filterCarsByType("premium")}
-          className="bg-purple-500 hover:bg-purple-600 text-white py-2 px-4 rounded flex gap-1 justify-center items-center"
+          className="text-[0.5rem]  md:text-[1.5rem] bg-purple-500 hover:bg-purple-600 text-white py-2 px-4 rounded-md flex gap-1 justify-center items-center"
         >
           <RiPoliceCarFill />
           Premium
         </button>
         <button
           onClick={() => filterCarsByType("electric")}
-          className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded flex items-center text-center gap-1"
+          className="text-[0.5rem]  md:text-[1.5rem] bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-md flex gap-1 justify-center items-center"
         >
           <MdElectricCar />
           Electric
@@ -146,36 +146,36 @@ export default function SearchCarPage() {
             {cars.map((car) => (
               <li
                 key={car.carId}
-                className="border border-gray-300 p-4 rounded mb-4 grid grid-cols-2 "
+                className="border border-gray-300 p-6 mb-4 flex flex-col md:flex-row justify-between items-center shadow-xl shadow-gary-500 rounded-3xl "
               >
-                <img src="src/image/CarHero.png" alt="" className=" " />{" "}
-                <div>
-                  <div className="font-bold ">
+                <img
+                  src="src/image/CarHero.png"
+                  alt=""
+                  className="  md:h-72  "
+                />{" "}
+                <div className="flex flex-col gap-4 mt-4 border-l-4 border-black pl-4">
+                  <div className="font-bold text-2xl ">
                     Car Type: {car.CarModel.CarType.carTypeName}
                   </div>
                   <div>Model: {car.CarModel.model}</div>
                   <div>Brand: {car.CarModel.brand}</div>
                   <div>Color: {car.CarModel.color}</div>
-                  <div>License Plate: {car.licensePlate}</div>
                   <div>Status: {car.status}</div>
+                </div>
+                <div className="flex flex-col gap-4 mt-4 items-center md:items-end ">
+                  <div className="text-sm md:text-xl animate-pulse text-orange-500">
+                    Book Now!
+                  </div>
+                  <div className="font-medium text-xl md:text-3xl  tracking-wide">
+                    {car.CarModel.CarType.pricePerDay}.00/วัน{" "}
+                  </div>
                   <button
-                    onClick={() => handleBookClick(car.carId)}
-                    className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mt-2"
+                    onClick={() => handleBookClick(car)}
+                    className="  w-28 md:w-52 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mt-2"
                   >
                     Book
                   </button>
                 </div>
-                <div>Model: {car.CarModel.model}</div>
-                <div>Brand: {car.CarModel.brand}</div>
-                <div>Color: {car.CarModel.color}</div>
-                <div>License Plate: {car.licensePlate}</div>
-                <div>Status: {car.status}</div>
-                <button
-                  onClick={() => handleBookClick(car)}
-                  className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mt-2"
-                >
-                  Book
-                </button>
               </li>
             ))}
           </ul>
@@ -197,7 +197,7 @@ export default function SearchCarPage() {
               <div>Model: {car.CarModel.model}</div>
               <div>Brand: {car.CarModel.brand}</div>
               <div>Color: {car.CarModel.color}</div>
-              <div>License Plate: {car.licensePlate}</div>
+
               <div>Status: {car.status}</div>
               <button
                 onClick={() => handleBookClick(car.carId)}

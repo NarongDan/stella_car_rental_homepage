@@ -6,12 +6,12 @@ import Logo from "../image/Logo.png";
 export default function Navbar() {
   return (
     <nav className="flex justify-center z-50    ">
-      <div className="container min-w-full px-5 ">
-        <div className="flex justify-between items-center w-auto h-20 p-2 shadow-zinc-700 border-b-2">
+      <div className="container min-w-full  ">
+        <div className="flex justify-between items-center w-auto h-20 p-2  border-b-2 shadow-md">
           <div className="navbar-logo ">
             <Link className="flex  items-center " to={"/"}>
               <img src={Logo} className="  w-32 " alt="logo" />
-              <h1 className="text-xl font-bold font-serif hidden md:block md:text-sm">
+              <h1 className="text-xl font-bold font-serif hidden md:block md:text-sm ">
                 Stella Car Rental
               </h1>
             </Link>

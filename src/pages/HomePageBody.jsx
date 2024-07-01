@@ -28,7 +28,11 @@ export default function HomePageBody() {
               <SearchCarInput />
             </div>
             <div className="">
-              <img src={CarHero} alt="" />
+              <img
+                src={CarHero}
+                alt=""
+                className="box animate fadeInRight four"
+              />
             </div>
           </div>
         </div>
