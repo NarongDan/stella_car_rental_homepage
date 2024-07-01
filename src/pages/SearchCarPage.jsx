@@ -6,6 +6,7 @@ import { TbCar } from "react-icons/tb";
 import { PiCarProfileFill } from "react-icons/pi";
 import { RiPoliceCarFill } from "react-icons/ri";
 import { BsCarFront } from "react-icons/bs";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 export default function SearchCarPage() {
   const location = useLocation();
@@ -82,7 +83,7 @@ export default function SearchCarPage() {
     });
   };
   if (loading) {
-    return <div>Loading...</div>;
+    return <LoadingSpinner />;
   }
 
   return (

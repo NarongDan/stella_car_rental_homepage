@@ -14,6 +14,9 @@ import SearchCarPage from "../pages/SearchCarPage";
 import BookingConfirmationPage from "../pages/ฺBookingConfirmationPage";
 import CustomerPage from "../pages/CustomerPage";
 import DetailCarPage from "../pages/DetailCarPage";
+import CustomerDetail from "../features/customer/component/CustomerDetail";
+import CustomerBookings from "../features/customer/component/CustomerBookings";
+import ProtectCustomerRoute from "../features/customer/component/ProtectCustomerRoute";
 
 const router = createBrowserRouter([
   {
@@ -29,8 +32,19 @@ const router = createBrowserRouter([
       { path: "/cars", element: <CarPage /> },
       { path: "/search-car", element: <SearchCarPage /> },
       { path: "/booking", element: <BookingConfirmationPage /> },
-      { path: "/customer", element: <CustomerPage /> },
       { path: "/detail", element: <DetailCarPage /> },
+      {
+        path: "/customer",
+        element: (
+          <ProtectCustomerRoute>
+            <CustomerPage />
+          </ProtectCustomerRoute>
+        ),
+        children: [
+          { path: "", element: <CustomerDetail /> },
+          { path: "bookings", element: <CustomerBookings /> },
+        ],
+      },
     ],
   },
 ]);
