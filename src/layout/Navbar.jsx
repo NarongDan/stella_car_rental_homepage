@@ -11,7 +11,7 @@ export default function Navbar() {
           <div className="navbar-logo ">
             <Link className="flex  items-center " to={"/"}>
               <img src={Logo} className="  w-32 " alt="logo" />
-              <h1 className="text-xl font-bold font-serif hidden md:block md:text-sm">
+              <h1 className="text-xl font-bold font-serif hidden md:block md:text-sm ">
                 Stella Car Rental
               </h1>
             </Link>
@@ -50,7 +50,7 @@ export default function Navbar() {
 
           <div className=" hidden md:flex gap-4  ">
             <Link to={"/login"}>
-              <button className="p-2 bg-secondary-color text-white md: w-[8rem] hover:bg-blue-700 rounded-md">
+              <button className="p-2 bg-gray-800 text-white md: w-[8rem] hover:bg-thirdly-color rounded-md">
                 Sign in
               </button>
             </Link>
