@@ -50,7 +50,7 @@ export default function Navbar() {
 
           <div className=" hidden md:flex gap-4  ">
             <Link to={"/login"}>
-              <button className="p-2 bg-secondary-color text-white md: w-[8rem] hover:bg-blue-700 rounded-md">
+              <button className="p-2 bg-gray-800 text-white md: w-[8rem] hover:bg-thirdly-color rounded-md">
                 Sign in
               </button>
             </Link>
