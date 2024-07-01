@@ -13,6 +13,7 @@ import CarPage from "../pages/CarPage";
 import SearchCarPage from "../pages/SearchCarPage";
 import BookingConfirmationPage from "../pages/ฺBookingConfirmationPage";
 import CustomerPage from "../pages/CustomerPage";
+import DetailCarPage from "../pages/DetailCarPage";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
       { path: "/search-car", element: <SearchCarPage /> },
       { path: "/booking", element: <BookingConfirmationPage /> },
       { path: "/customer", element: <CustomerPage /> },
+      { path: "/detail", element: <DetailCarPage /> },
     ],
   },
 ]);
