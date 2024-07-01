@@ -24,8 +24,6 @@ export default function HomePageBody() {
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi ut aliquip ex ea commodo consequat.
               </p>
-
-              <SearchCarInput />
             </div>
             <div className="">
               <img
@@ -35,6 +33,7 @@ export default function HomePageBody() {
               />
             </div>
           </div>
+          <SearchCarInput />
         </div>
       </hero>
       <div className=" flex justify-center">

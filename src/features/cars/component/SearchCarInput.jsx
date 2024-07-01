@@ -59,9 +59,9 @@ export default function SearchCarInput() {
   };
 
   return (
-    <div className="container mx-auto p-4 border-2 rounded-xl bg-white opacity-100  shadow-lg shadow-neutral-500">
-      <div className="grid grid-cols-1 gap-4 p-2 ">
-        <div>
+    <div className="container mx-auto p-4 border-2 rounded-xl bg-white opacity-100  shadow-lg shadow-neutral-500 w-5/6">
+      <div className=" md:flex gap-4 p-2  justify-around  w-full ">
+        <div className="w-full">
           <label>Pickup Location:</label>
           <select
             className="border p-2 w-full"
@@ -77,11 +77,11 @@ export default function SearchCarInput() {
           </select>
         </div>
 
-        <div>
+        <div className="w-full">
           <label>Start Date:</label>
           <input
             type="date"
-            className="border p-2 w-full"
+            className="border p-2 w-full "
             value={startDate}
             onChange={handleStartDateChange}
             max={getMaxDate()} // Set max attribute to restrict dates
@@ -90,7 +90,7 @@ export default function SearchCarInput() {
           />
         </div>
 
-        <div>
+        <div className="w-full">
           <label>End Date:</label>
           <input
             type="date"
@@ -103,7 +103,7 @@ export default function SearchCarInput() {
         </div>
 
         <button
-          className="bg-blue-500 text-white p-2 mt-4"
+          className="bg-blue-500 text-white p-2 mt-4 w-full md:w-96 rounded-lg"
           onClick={handleSearch}
           disabled={!pickupLocationSelected || !startDate || !endDate} // ปุ่ม Search ใช้งานเมื่อเลือก pickupLocation, startDate และ endDate แล้วเท่านั้น
         >
