@@ -28,14 +28,13 @@ export default function HomePageBody() {
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi ut aliquip ex ea commodo consequat.
               </p>
-
-              <SearchCarInput />
             </div>
             {/* Car Picture */}
             <div className="">
               <img src={CarHero} alt="Car" />
             </div>
           </div>
+          <SearchCarInput />
         </div>
       </hero>
       {/* Testimonaisl */}
