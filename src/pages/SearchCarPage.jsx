@@ -174,7 +174,7 @@ export default function SearchCarPage() {
                   </div>
                   <button
                     onClick={() => handleBookClick(car)}
-                    className="  w-28 md:w-52 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mt-2"
+                    className="  w-28 md:w-52 bg-secondary-color hover:bg-thirdly-color text-white py-2 px-4 rounded mt-2"
                   >
                     Book
                   </button>
@@ -194,11 +194,14 @@ export default function SearchCarPage() {
               key={car.carId}
               className="border border-gray-300 p-6 mb-4 flex flex-col md:flex-row justify-between items-center shadow-xl shadow-gary-500 rounded-3xl "
             >
-              <img
-                src={car.CarModel.CarImages[0].imageUrl}
-                alt=""
-                className="  md:h-72  "
-              />{" "}
+              <div className="w-96 md:w-2/6">
+                <img
+                  src={car.CarModel.CarImages[0].imageUrl}
+                  alt=""
+                  className="  md:h-72  "
+                />
+              </div>
+
               <div className="flex flex-col gap-4 mt-4 md:border-l-4 border-black pl-4">
                 <div className="font-bold text-2xl ">
                   Car Type: {car.CarModel.CarType.carTypeName}
@@ -217,7 +220,7 @@ export default function SearchCarPage() {
                 </div>
                 <button
                   onClick={() => handleBookClick(car)}
-                  className="  w-28 md:w-52 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mt-2"
+                  className="  w-28 md:w-52 bg-secondary-color hover:bg-thirdly-color text-white py-2 px-4 rounded mt-2"
                 >
                   Book
                 </button>

@@ -103,7 +103,7 @@ export default function SearchCarInput() {
         </div>
 
         <button
-          className="bg-blue-500 text-white p-2 mt-4 w-full md:w-96 rounded-lg"
+          className="bg-secondary-color hover:bg-thirdly-color text-white p-2 mt-4 w-full md:w-96 rounded-lg cursor-pointer"
           onClick={handleSearch}
           disabled={!pickupLocationSelected || !startDate || !endDate} // ปุ่ม Search ใช้งานเมื่อเลือก pickupLocation, startDate และ endDate แล้วเท่านั้น
         >
