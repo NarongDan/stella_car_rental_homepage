@@ -17,4 +17,5 @@ const bookingApi = {};
 
 bookingApi.placeBooking = (data) =>
   axios.post("/payment/create-checkout-session", data);
+
 export default bookingApi;
