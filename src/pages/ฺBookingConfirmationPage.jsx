@@ -5,12 +5,17 @@ import CarInfo from "../features/cars/component/CarInfo";
 import { useBooking } from "../context/BookingContext";
 
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 export default function BookingConfirmationPage() {
   const { branches } = useCar();
   const location = useLocation();
-  const { bookCar } = useBooking();
+  const { bookCar, calculateTotalAmount } = useBooking();
   const navigate = useNavigate();
+  const { authUser } = useAuth();
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const { car, pickupLocation, startDate, endDate } = location.state;
 
@@ -44,21 +49,29 @@ export default function BookingConfirmationPage() {
   };
 
   const handleSubmit = async () => {
-    try {
-      const data = {
-        carId: car.carId,
-        startDate: startDate,
-        endDate: endDate,
-        pickupLocationId: parseInt(pickupLocation),
-        dropoffLocationId: parseInt(dropOffLocation),
-        pickDropTime: pickupTime,
-      };
+    if (!authUser) {
+      setError(true);
+    } else {
+      try {
+        const data = {
+          carId: car.carId,
+          startDate: startDate,
+          endDate: endDate,
+          pickupLocationId: parseInt(pickupLocation),
+          dropoffLocationId: parseInt(dropOffLocation),
+          pickDropTime: pickupTime,
+        };
 
-      const res = await bookCar(data);
+        setLoading(true);
+        const res = await bookCar(data);
 
-      window.location.href = res.data.url;
-    } catch (error) {
-      console.log(error);
+        window.location.href = res.data.url;
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
     }
   };
 
@@ -77,6 +90,15 @@ export default function BookingConfirmationPage() {
     return times;
   };
 
+  const totalAmount = calculateTotalAmount(
+    startDate,
+    endDate,
+    car.CarModel.CarType.pricePerDay
+  );
+
+  if (loading) {
+    return <LoadingSpinner />;
+  }
   return (
     <div className="container mx-auto p-4">
       <h2 className="text-2xl font-bold mb-4">Booking Confirmation</h2>
@@ -146,11 +168,20 @@ export default function BookingConfirmationPage() {
         </select>
       </div>
 
+      <p>Total: {totalAmount} </p>
+      <p className={error ? "blocke text-red-600" : "hidden"}>
+        Please register before making payment
+      </p>
+
       <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        className="bg-secondary-color hover:bg-thirdly-color text-white font-bold py-2 px-4 rounded"
         onClick={handleSubmit}
       >
         Book
+      </button>
+
+      <button className="bg-secondary-color hover:bg-thirdly-color text-white font-bold py-2 px-4 rounded">
+        Redeem
       </button>
     </div>
   );
