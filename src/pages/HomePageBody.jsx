@@ -10,7 +10,7 @@ import SearchCarInput from "../features/cars/component/SearchCarInput";
 export default function HomePageBody() {
   return (
     <>
-      <hero className="flex justify-center  relative ">
+      <div className="flex justify-center relative overflow-hidden ">
         {/* Orange Background */}
         <div className=" absolute  bg-[url('./image/Polygon2.png')] bg-no-repeat h-full w-2/3 -top-15 right-0 md:-r lg:-right-[373px] z-10 "></div>
 
@@ -36,7 +36,7 @@ export default function HomePageBody() {
           </div>
           <SearchCarInput />
         </div>
-      </hero>
+      </div>
       {/* Testimonaisl */}
       <div className=" flex justify-center">
         <div className="container ">

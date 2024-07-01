@@ -2,8 +2,14 @@ import { Link } from "react-router-dom";
 import RightNav from "./RightNav";
 import ButtonNav from "./ButtonForNavber";
 import Logo from "../image/Logo.png";
+import { useAuth } from "../context/AuthContext";
+import { FaRegUser } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+  const { authUser } = useAuth();
+  const navigate = useNavigate();
+
   return (
     <nav className="flex justify-center z-20 ">
       <div className="container min-w-full px-5 ">
@@ -26,7 +32,7 @@ export default function Navbar() {
               <span className="absolute left-0 right-0 h-0.5 bg-secondary-color bottom-0 transform scale-x-0 origin-left transition duration-300 group-hover:scale-x-100"></span>
             </Link>
             <Link
-              to={"/search-car"}
+              to={"/cars"}
               className="text-gray-700 hover:text-secondary-color transition duration-300 relative"
             >
               <span>Cars</span>
@@ -47,26 +53,25 @@ export default function Navbar() {
               <span className="absolute left-0 right-0 h-0.5 bg-secondary-color bottom-0 transform scale-x-0 origin-left transition duration-300 group-hover:scale-x-100"></span>
             </Link>
           </div>
-
-          <div className=" hidden md:flex gap-4  ">
-            <Link to={"/login"}>
-              <button className="p-2 bg-gray-800 text-white md: w-[8rem] hover:bg-thirdly-color rounded-md">
-                Sign in
-              </button>
-            </Link>
-            {/* <Link to={"/register"}>
-              <button className="p-2 bg-secondary-color text-white md: w-[8rem] hover:bg-blue-500 rounded-md">
-                Sign up
-              </button>
-            </Link> */}
-          </div>
-
-          <div className="hidden">
-            <RightNav />
-            <ButtonNav />
-          </div>
-
-          <div className="md:hidden">
+          {authUser ? (
+            <div className="flex items-center gap-4">
+              <p className="font-semibold text-lg">Hi, {authUser.firstName}</p>
+              <div className="flex justify-center items-center bg-gray-100 w-10 h-10 rounded-full hover:bg-gray-200 duration-300">
+                <button onClick={() => navigate("/customer")}>
+                  <FaRegUser />
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div className="  md:flex gap-4  ">
+              <Link to={"/login"}>
+                <button className="p-2 bg-gray-800 text-white md: w-[8rem] hover:bg-thirdly-color rounded-md">
+                  Sign in
+                </button>
+              </Link>
+            </div>
+          )}
+          {/* <div className="md:hidden">
             <button className="navbar-burger flex items-center p-3">
               <svg
                 className="block h-4 w-4 fill-current"
@@ -77,7 +82,7 @@ export default function Navbar() {
                 <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
               </svg>
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </nav>
