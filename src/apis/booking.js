@@ -14,6 +14,7 @@ const bookingApi = {};
       dropoffLocationId: +req.body.dropoffLocationId,
     };
 */
+bookingApi.fetchHistoryBooking = () => axios.get(`/customer/bookings/`);
 
 bookingApi.placeBooking = (data) =>
   axios.post("/payment/create-checkout-session", data);
