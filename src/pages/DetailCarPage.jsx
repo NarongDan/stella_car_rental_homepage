@@ -1,19 +1,17 @@
-import img from "../image/Car.png";
-
-export default function DetailCarPage() {
+export default function DetailCarPage({ image, Seats, Transmission, Fuel }) {
   return (
     <div>
       <div>
         <div className="w-1/2 mx-auto border-2 rounded-xl mt-5">
-          <img src={img} alt="" />
+          <img src={image} alt="" />
         </div>
       </div>
       <div className="flex justify-around">
         <div className="grid">
-          <div>Seats</div>
-          <div>Mileage</div>
-          <div>Transmission</div>
-          <div>Fuel</div>
+          <div>Seats : {Seats}</div>
+
+          <div>Transmission : {Transmission}</div>
+          <div>Fuel : {Fuel}</div>
         </div>
         <div className=" grid grid-col-3">
           <div>Airconditions</div>
