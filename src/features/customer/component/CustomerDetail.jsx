@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import { AxiosError } from "axios";
 import Input from "../../authentication/component/Input";
 import Textarea from "../../authentication/component/Textarea";
+import LoadingSpinner from "../../../components/LoadingSpinner";
 
 const initialInputError = {
   firstName: "",
@@ -17,11 +18,14 @@ const initialInputError = {
 };
 
 export default function CustomerDetail() {
-  const { authUser, fetchUser } = useAuth();
+  const { authUser, fetchUser, isAuthUserLoading } = useAuth();
+
+  console.log(authUser);
 
   const [input, setInput] = useState({});
   const [inputError, setInputError] = useState(initialInputError);
   const [isEditing, setIsEditing] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChangeInput = (e) => {
     if (e.target.value !== "" && e.target.value.trim())
@@ -38,6 +42,8 @@ export default function CustomerDetail() {
       }
       setInputError({ ...initialInputError });
 
+      setLoading(true);
+
       await authApi.updateUserInfo(input);
       setInput({});
       fetchUser();
@@ -52,8 +58,18 @@ export default function CustomerDetail() {
           }));
         }
       }
+      console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
+
+  if (isAuthUserLoading) {
+    return <LoadingSpinner />;
+  }
+  if (loading) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <div className="w-3/4 p-4">
@@ -195,6 +211,12 @@ export default function CustomerDetail() {
               </div>
             </>
           )}
+        </div>
+
+        <div className="block text-black font-semibold">
+          <p>
+            Reward Points: <span>{`${authUser.totalPoints}`}</span>
+          </p>
         </div>
 
         {!isEditing && (
