@@ -32,7 +32,6 @@ export default function CustomerDetail() {
       e.preventDefault();
       const error = validateUpdate(input);
 
-      console.log(error);
       if (error) {
         return setInputError(error);
       }
@@ -61,7 +60,7 @@ export default function CustomerDetail() {
       <form className="space-y-4" onSubmit={handleSubmitUpdate}>
         <div className="xl:flex xl:space-x-4 space-y-4 xl:space-y-0">
           <div className="xl:w-1/2 w-full">
-            <label className="block text-gray-700">First Name</label>
+            <label className="block text-black font-semibold">First Name</label>
             {isEditing ? (
               <Input
                 type="text"
@@ -77,7 +76,7 @@ export default function CustomerDetail() {
             )}
           </div>
           <div className="xl:w-1/2 w-full">
-            <label className="block text-gray-700">Last Name</label>
+            <label className="block text-black font-semibold">Last Name</label>
             {isEditing ? (
               <Input
                 type="text"
@@ -95,7 +94,7 @@ export default function CustomerDetail() {
         </div>
         <div className="xl:flex xl:space-x-4 space-y-4 xl:space-y-0">
           <div className="md:w-1/2 w-full">
-            <label className="block text-gray-700">Email</label>
+            <label className="block text-black font-semibold">Email</label>
             {isEditing ? (
               <Input
                 type="email"
@@ -108,7 +107,7 @@ export default function CustomerDetail() {
             )}
           </div>
           <div className="md:w-1/2 w-full">
-            <label className="block text-gray-700">Phone</label>
+            <label className="block text-black font-semibold">Phone</label>
             {isEditing ? (
               <Input
                 type="text"
@@ -127,7 +126,7 @@ export default function CustomerDetail() {
         <div></div>
         <div className="xl:flex xl:space-x-4 space-y-4 xl:space-y-0">
           <div className="lg:w-1/2 w-full">
-            <label className="block text-gray-700">Address</label>
+            <label className="block text-black font-semibold">Address</label>
             {isEditing ? (
               <Textarea
                 name="address"
@@ -143,7 +142,9 @@ export default function CustomerDetail() {
             )}
           </div>
           <div className="md:w-1/2 w-full">
-            <label className="block text-gray-700">Driver License</label>
+            <label className="block text-black font-semibold">
+              Driver License
+            </label>
             {isEditing ? (
               <Input
                 type="text"
@@ -164,7 +165,9 @@ export default function CustomerDetail() {
           {isEditing && (
             <>
               <div className="xl:w-1/2 w-full">
-                <label className="block text-gray-700">Password</label>
+                <label className="block text-black font-semibold">
+                  Password
+                </label>
                 <Input
                   type="password"
                   name="password"
@@ -179,7 +182,9 @@ export default function CustomerDetail() {
           {isEditing && (
             <>
               <div className="md:w-1/2 w-full">
-                <label className="block text-gray-700">Confirm Password</label>
+                <label className="block text-black font-semibold">
+                  Confirm Password
+                </label>
                 <Input
                   type="password"
                   name="confirmPassword"
@@ -196,7 +201,7 @@ export default function CustomerDetail() {
         {!isEditing && (
           <button
             type="button"
-            className="mt-4 px-6 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition ease-in-out duration-300"
+            className="mt-4 px-6 py-2 bg-secondary-color text-white rounded-lg hover:bg-thirdly-color transition ease-in-out duration-300"
             onClick={() => setIsEditing(true)}
           >
             Edit Information
@@ -206,14 +211,14 @@ export default function CustomerDetail() {
           <div className="space-x-5">
             <button
               type="button"
-              className="mt-4 px-6 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition ease-in-out duration-300"
+              className="mt-4 px-6 py-2 bg-secondary-color text-white rounded-lg hover:bg-thirdly-color transition ease-in-out duration-300"
               onClick={handleSubmitUpdate}
             >
               Save
             </button>
             <button
               type="button"
-              className="mt-4 px-6 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition ease-in-out duration-300"
+              className="mt-4 px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-400 transition ease-in-out duration-300"
               onClick={() => setIsEditing(false)}
             >
               Cancel

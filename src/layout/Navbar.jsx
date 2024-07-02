@@ -12,8 +12,8 @@ export default function Navbar() {
 
   return (
     <nav className="flex justify-center z-20 ">
-      <div className="container min-w-full px-5 ">
-        <div className="flex justify-between items-center w-auto h-20 p-2 shadow-zinc-700 border-b-2">
+      <div className="w-full px-5 ">
+        <div className="flex justify-between items-center w-auto h-20 p-4 shadow-zinc-700 border-b">
           <div className="navbar-logo ">
             <Link className="flex  items-center " to={"/"}>
               <img src={Logo} className="  w-32 " alt="logo" />
