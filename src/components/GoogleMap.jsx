@@ -35,7 +35,7 @@ function MapComponent() {
   }, [map, marker]);
 
   return (
-    <LoadScript googleMapsApiKey="AIzaSyCzrq9y49MWrX6m2rTuiB3MvADPlC3a9RY">
+    <LoadScript googleMapsApiKey={import.meta.env.VITE_API_GOOGLEMAPAPIKEY}>
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}

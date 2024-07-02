@@ -1,4 +1,3 @@
-import React from "react";
 import useFacebookSDK from "./useFacebookSDK.js";
 import { useNavigate } from "react-router-dom";
 import { FaFacebook } from "react-icons/fa";
@@ -6,7 +5,7 @@ import { FaFacebook } from "react-icons/fa";
 const FacebookLoginButton = () => {
   const navigate = useNavigate();
 
-  useFacebookSDK("999391594638891"); // ใส่ appId ของคุณ
+  useFacebookSDK(import.meta.env.VITE_API_FACEBOOK_APP_ID); // ใส่ appId
 
   const handleFacebookLogin = () => {
     window.FB.getLoginStatus((response) => {
