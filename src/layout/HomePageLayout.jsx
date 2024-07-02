@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 export default function HomePageLayout() {
   return (
-    <div className="bg-white">
+    <div className="bg-white min-w-full ">
       <Navbar />
       <div>
         <Outlet />
