@@ -12,7 +12,6 @@ const initialInputError = {
   lastName: "",
   address: "",
   phone: "",
-  driverLicense: "",
   password: "",
   confirmPassword: "",
 };
@@ -24,8 +23,10 @@ export default function CustomerDetail() {
   const [inputError, setInputError] = useState(initialInputError);
   const [isEditing, setIsEditing] = useState(false);
 
-  const handleChangeInput = (e) =>
-    setInput({ ...input, [e.target.name]: e.target.value });
+  const handleChangeInput = (e) => {
+    if (e.target.value !== "" && e.target.value.trim())
+      setInput({ ...input, [e.target.name]: e.target.value });
+  };
 
   const handleSubmitUpdate = async (e) => {
     try {
@@ -149,10 +150,8 @@ export default function CustomerDetail() {
               <Input
                 type="text"
                 name="driverLicense"
-                className="w-full mt-1 px-4 py-2 border rounded-lg"
-                value={input.driverLicense}
-                onChange={handleChangeInput}
-                placeholder={authUser?.driverLicense}
+                className="w-full mt-1 px-4 py-2 border rounded-lg readonly"
+                value={authUser?.driverLicense}
                 error={inputError.driverLicense}
               />
             ) : (
