@@ -27,6 +27,8 @@ export default function AuthContextProvider({ children }) {
         // เช็คว่ามี token ไหม
         const res = await authApi.getAuthUser();
 
+        console.log(res.data);
+
         setAuthUser(res.data); // fetchdata ของ user ในกรณีที่มีการ login ไว้แล้ว  หากtoken มีปัญหา หรือหมดอายุ ต้องทำอะไรบางอย่าง  ที่เขียนไว้ใน interceptors ของ axios ตรง response.use
       }
     } catch (error) {

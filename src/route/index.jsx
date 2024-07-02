@@ -12,11 +12,12 @@ import CarPage from "../pages/CarPage";
 
 import SearchCarPage from "../pages/SearchCarPage";
 import BookingConfirmationPage from "../pages/ฺBookingConfirmationPage";
-import CustomerPage from "../pages/CustomerPage";
-import DetailCarPage from "../pages/DetailCarPage";
 import CustomerDetail from "../features/customer/component/CustomerDetail";
+
+import DetailCarPage from "../pages/DetailCarPage";
+import CustomerPage from "../pages/CustomerPage";
+import ProtectProfileRoute from "../features/customer/component/ProtectCustomerRoute";
 import CustomerBookings from "../features/customer/component/CustomerBookings";
-import ProtectCustomerRoute from "../features/customer/component/ProtectCustomerRoute";
 
 const router = createBrowserRouter([
   {
@@ -36,9 +37,9 @@ const router = createBrowserRouter([
       {
         path: "/customer",
         element: (
-          <ProtectCustomerRoute>
+          <ProtectProfileRoute>
             <CustomerPage />
-          </ProtectCustomerRoute>
+          </ProtectProfileRoute>
         ),
         children: [
           { path: "", element: <CustomerDetail /> },
