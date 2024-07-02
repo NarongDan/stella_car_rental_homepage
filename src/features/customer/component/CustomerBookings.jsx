@@ -1,3 +1,4 @@
+
 import { useBooking } from "../../../context/BookingContext";
 import { useState, useEffect } from "react";
 
@@ -65,4 +66,4 @@ export default function CustomerBookings() {
       </div>
     </div>
   );
-}
+

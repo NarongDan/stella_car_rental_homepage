@@ -1,6 +1,6 @@
 export default function CarInfo({ car }) {
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white m-4 p-6">
+    <div className="rounded overflow-hidden shadow-lg bg-white m-4 p-6">
       <div className="mb-4">
         <h2 className="text-xl font-bold mb-2">Car Details</h2>
         <p>
