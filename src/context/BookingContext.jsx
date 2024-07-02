@@ -17,9 +17,14 @@ export default function BookingContextProvider({ children }) {
     const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24)); // Convert time difference to days
     return daysDiff * pricePerDay;
   };
+  const getBookingHistory = (id) => {
+    return bookingApi.fetchHistoryBooking(id);
+  };
 
   return (
-    <BookingContext.Provider value={{ bookCar, calculateTotalAmount }}>
+    <BookingContext.Provider
+      value={{ bookCar, calculateTotalAmount, getBookingHistory }}
+    >
       {children}
     </BookingContext.Provider>
   );
