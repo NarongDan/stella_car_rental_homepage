@@ -46,7 +46,7 @@ export default function HomePageBody() {
             </div>
           </div>
 
-          <div className="md:grid grid-cols-4 mt-2 gap-5 p-7 ">
+          <div className="lg:grid grid-cols-4 mt-2 gap-5 p-7 ">
             <div className=" border-2 rounded-md p-2 mb-5 bg-white opacity-100  shadow-lg shadow-neutral-500">
               <h3>Ben T.</h3>
               <div className="flex  rounded-md ">

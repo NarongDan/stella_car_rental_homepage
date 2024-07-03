@@ -56,7 +56,7 @@ export default function Navbar() {
           {authUser ? (
             <div className="flex items-center gap-4">
               <p className="font-semibold text-lg">Hi, {authUser.firstName}</p>
-              <div className="flex justify-center items-center bg-gray-100 w-10 h-10 rounded-full hover:bg-gray-200 duration-300">
+              <div className="flex justify-center items-center bg-gray-100 w-10 h-10 rounded-full hover:bg-gray-200 duration-300 cursor-pointer">
                 <button onClick={() => navigate("/customer")}>
                   <FaRegUser />
                 </button>

@@ -18,6 +18,8 @@ import DetailCarPage from "../pages/DetailCarPage";
 import CustomerPage from "../pages/CustomerPage";
 import ProtectProfileRoute from "../features/customer/component/ProtectCustomerRoute";
 import CustomerBookings from "../features/customer/component/CustomerBookings";
+import PaymentSuccess from "../pages/PaymentSuccess";
+import PaymentCancelled from "../pages/PaymentCancelled";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +36,8 @@ const router = createBrowserRouter([
       { path: "/search-car", element: <SearchCarPage /> },
       { path: "/booking", element: <BookingConfirmationPage /> },
       { path: "/detail", element: <DetailCarPage /> },
+      { path: "/paymentSuccessful", element: <PaymentSuccess /> },
+      { path: "/paymentCancelled", element: <PaymentCancelled /> },
       {
         path: "/customer",
         element: (
