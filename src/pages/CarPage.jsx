@@ -1,5 +1,5 @@
 import CarCard from "../components/CarCard";
-import img from "../image/CarHero.png";
+import img from "../asset/image/CarHero.png";
 
 const cars = [
   { name: "Yaris AITV", image: img },

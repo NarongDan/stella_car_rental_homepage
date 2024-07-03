@@ -1,4 +1,4 @@
-import img from "../image/Car.png";
+import img from "../asset/image/Car.png";
 
 export default function DetailCarPage() {
   return (

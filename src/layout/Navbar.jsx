@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import RightNav from "./RightNav";
 import ButtonNav from "./ButtonForNavber";
-import Logo from "../image/Logo.png";
+import Logo from "../asset/image/Logo.png";
 import { useAuth } from "../context/AuthContext";
 import { FaRegUser } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
@@ -56,14 +56,15 @@ export default function Navbar() {
           {authUser ? (
             <div className="flex items-center gap-4">
               <p className="font-semibold text-lg">Hi, {authUser.firstName}</p>
-              <div className="flex justify-center items-center bg-gray-100 w-10 h-10 rounded-full hover:bg-gray-200 duration-300 cursor-pointer">
-                <button onClick={() => navigate("/customer")}>
+
+              <Link to={"/customer"}>
+                <div className="flex justify-center items-center bg-gray-100 w-10 h-10 rounded-full hover:bg-gray-200 duration-300 cursor-pointer">
                   <FaRegUser />
-                </button>
-              </div>
+                </div>
+              </Link>
             </div>
           ) : (
-            <div className="  md:flex gap-4  ">
+            <div className=" md:flex gap-4  ">
               <Link to={"/login"}>
                 <button className="p-2 bg-gray-800 text-white md: w-[8rem] hover:bg-thirdly-color rounded-md">
                   Sign in

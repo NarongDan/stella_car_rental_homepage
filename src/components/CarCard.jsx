@@ -1,4 +1,4 @@
-import img from "../image/CarHero.png";
+import img from "../asset/image/CarHero.png";
 export default function CarCard() {
   return (
     <div className="car-card border-2 p-2 border-gray-500 ">
