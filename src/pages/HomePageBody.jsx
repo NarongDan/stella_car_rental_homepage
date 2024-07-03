@@ -8,10 +8,23 @@ import CarHero from "../asset/image/Car.png";
 import PolygonBackground from "../asset/image/Polygon.png";
 import SearchCarInput from "../features/cars/component/SearchCarInput";
 
+import Img from "../asset/image/pexels-dariuskrs-2470657.jpg";
+
 export default function HomePageBody() {
   return (
     <>
-      <div className="flex justify-center relative overflow-hidden ">
+      <div className="flex flex-col justify-center relative overflow-hidden ">
+        <div className="relative">
+          <img
+            src={Img}
+            alt="Contact Us"
+            className="w-full h-64 object-cover"
+          />
+          <div className="absolute inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
+            <h1 className="text-4xl font-bold text-white">Stella Car Rental</h1>
+          </div>
+        </div>
+
         {/* Orange Background */}
         <div
           className="

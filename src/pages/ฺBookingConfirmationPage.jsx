@@ -99,15 +99,17 @@ export default function BookingConfirmationPage() {
   }
   return (
     <div className="container mx-auto p-4">
-      <h2 className="text-2xl font-bold mb-4">Booking Confirmation</h2>
+      <h2 className="w-full text-center text-2xl font-bold mb-4 md:text-left ">
+        Booking Confirmation
+      </h2>
       {/* Confirmation Box  */}
-      <div className="container flex flex-col md:flex-row ">
+      <div className="container my-10 flex flex-col md:flex-row  ">
         {/* Car Information */}
-        <div className="md:w-2/3  mb-4">
+        <div className="md:w-2/3 mb-4 ">
           <CarInfo car={car} />
         </div>
         {/* Booking Option Box  */}
-        <div className="md:w-1/3 border border-gray-200 p-10  ">
+        <div className="md:w-1/3 bg-white border border-gray-200 p-10 shadow-lg rounded-lg  ">
           {/* Pickup Location  */}
           <div className="mb-4">
             <label className="block text-gray-700 font-bold mb-2">
