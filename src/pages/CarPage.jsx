@@ -32,7 +32,7 @@ export default function CarPage() {
   }, []);
 
   return (
-    <main className="flex justify-center ">
+    <main className=" flex justify-center  ">
       <div className="container  ">
         <div className="flex justify-end pr-12 pt-2 ">
           <input
@@ -41,7 +41,7 @@ export default function CarPage() {
             className="p-1 pl-2 border-1 "
           />
         </div>
-        <div className="car-list grid grid-cols-3 gap-2 p-10  ">
+        <div className="car-list grid md:grid-cols-3 gap-2 p-10  ">
           {cars?.map((car, index) => (
             <CarCard
               key={index}

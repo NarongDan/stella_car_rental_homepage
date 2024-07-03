@@ -20,9 +20,10 @@ export default function CarCard({
     <>
       <div className="car-card border-2 p-2 border-gray-200 shadow-md  ">
         <div className="grid gap-4 justify-items-center">
-          {" "}
           <h1 className="text-3xl font-semibold ">{`${Brand} : ${Model}`}</h1>
-          <img src={image} className="w-auto  md:w-5/6" />
+          <div className="w-[300px] h-[150px] grid justify-center">
+            <img src={image} className="w-auto  md:w-5/6" />
+          </div>
         </div>
 
         <div className="car-actions border-1 rounded-lg mt-4 mb-4 flex justify-center">
