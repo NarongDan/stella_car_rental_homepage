@@ -1,5 +1,4 @@
-import React from "react";
-import carabout from "../img/carabout.jpg";
+import carabout from "../asset/image/pexels-dariuskrs-2470657.jpg";
 
 const AboutUs = () => {
   return (
@@ -30,11 +29,11 @@ const AboutUs = () => {
             contact us.
           </p>
         </div>
-        <div className="md:w-1/2 p-4 md:flex md:items-center">
+        <div className="w-full h-96 md:w-1/2 p-4 md:flex md:items-center md:min-h-[700px] ">
           <img
             src={carabout}
             alt="Car"
-            className="w-full h-auto rounded-lg shadow-md"
+            className="w-full h-full object-cover rounded-lg shadow-md md:rounded-none md:rounded-tr-lg md:rounded-br-lg"
           />
         </div>
       </div>

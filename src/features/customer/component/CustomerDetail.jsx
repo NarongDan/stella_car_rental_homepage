@@ -6,26 +6,31 @@ import { toast } from "react-toastify";
 import { AxiosError } from "axios";
 import Input from "../../authentication/component/Input";
 import Textarea from "../../authentication/component/Textarea";
+import LoadingSpinner from "../../../components/LoadingSpinner";
 
 const initialInputError = {
   firstName: "",
   lastName: "",
   address: "",
   phone: "",
-  driverLicense: "",
   password: "",
   confirmPassword: "",
 };
 
 export default function CustomerDetail() {
-  const { authUser, fetchUser } = useAuth();
+  const { authUser, fetchUser, isAuthUserLoading } = useAuth();
+
+  console.log(authUser);
 
   const [input, setInput] = useState({});
   const [inputError, setInputError] = useState(initialInputError);
   const [isEditing, setIsEditing] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleChangeInput = (e) =>
-    setInput({ ...input, [e.target.name]: e.target.value });
+  const handleChangeInput = (e) => {
+    if (e.target.value !== "" && e.target.value.trim())
+      setInput({ ...input, [e.target.name]: e.target.value });
+  };
 
   const handleSubmitUpdate = async (e) => {
     try {
@@ -36,6 +41,8 @@ export default function CustomerDetail() {
         return setInputError(error);
       }
       setInputError({ ...initialInputError });
+
+      setLoading(true);
 
       await authApi.updateUserInfo(input);
       setInput({});
@@ -51,8 +58,18 @@ export default function CustomerDetail() {
           }));
         }
       }
+      console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
+
+  if (isAuthUserLoading) {
+    return <LoadingSpinner />;
+  }
+  if (loading) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <div className="w-3/4 p-4">
@@ -149,10 +166,8 @@ export default function CustomerDetail() {
               <Input
                 type="text"
                 name="driverLicense"
-                className="w-full mt-1 px-4 py-2 border rounded-lg"
-                value={input.driverLicense}
-                onChange={handleChangeInput}
-                placeholder={authUser?.driverLicense}
+                className="w-full mt-1 px-4 py-2 border rounded-lg readonly"
+                value={authUser?.driverLicense}
                 error={inputError.driverLicense}
               />
             ) : (
@@ -196,6 +211,12 @@ export default function CustomerDetail() {
               </div>
             </>
           )}
+        </div>
+
+        <div className="block text-black font-semibold">
+          <p>
+            Reward Points: <span>{`${authUser.totalPoints}`}</span>
+          </p>
         </div>
 
         {!isEditing && (

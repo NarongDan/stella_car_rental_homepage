@@ -59,7 +59,7 @@ export default function SearchCarInput() {
   };
 
   return (
-    <div className="container mx-auto p-4 border-2 rounded-xl bg-white opacity-100  shadow-lg shadow-neutral-500 w-5/6">
+    <div className="container mx-auto mb-10 p-4 border-2 rounded-xl bg-white opacity-100  shadow-lg shadow-neutral-500 w-5/6">
       <div className=" md:flex gap-4 p-2  justify-around  w-full ">
         <div className="w-full">
           <label>Pickup Location:</label>

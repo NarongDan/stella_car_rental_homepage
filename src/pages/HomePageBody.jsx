@@ -4,16 +4,43 @@ import { IoLocationSharp } from "react-icons/io5";
 import { MdPayment } from "react-icons/md";
 import { RiCaravanFill } from "react-icons/ri";
 import { GrDropbox } from "react-icons/gr";
-import CarHero from "../image/Car.png";
+import CarHero from "../asset/image/Car.png";
+import PolygonBackground from "../asset/image/Polygon.png";
 import SearchCarInput from "../features/cars/component/SearchCarInput";
+
+import Img from "../asset/image/pexels-dariuskrs-2470657.jpg";
 
 export default function HomePageBody() {
   return (
     <>
-      <div className="flex justify-center relative overflow-hidden ">
-        {/* Orange Background */}
-        <div className=" absolute  bg-[url('./image/Polygon2.png')] bg-no-repeat h-full w-2/3 -top-15 right-0 md:-r lg:-right-[373px] z-10 "></div>
+      <div className="flex flex-col justify-center relative overflow-hidden ">
+        <div className="relative">
+          <img
+            src={Img}
+            alt="Contact Us"
+            className="w-full h-64 object-cover"
+          />
+          <div className="absolute inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
+            <h1 className="text-4xl font-bold text-white">Stella Car Rental</h1>
+          </div>
+        </div>
 
+        {/* Orange Background */}
+        <div
+          className="
+        absolute 
+        bg-no-repeat 
+        bg-cover
+        h-full 
+        w-2/3 
+        -top-15 
+        right-0 
+        md:right-0 
+        lg:-right-[373px] 
+        z-10
+      "
+          style={{ backgroundImage: `url(${PolygonBackground})` }}
+        ></div>
         {/* Hero Section Container */}
         <div className="container z-10 ">
           <div className="  lg:grid grid-cols-2 p-7 mt-10 ">
@@ -22,11 +49,12 @@ export default function HomePageBody() {
               <h1 className=" font-extrabold text-3xl sm:font-extrabold sm:text-5xl">
                 Looking for cars to rent in Thailand? Look no further!
               </h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+              <p className="text-semibold">
+                Explore Thailand with ease and comfort by renting a car from us,
+                whether you're planning to visit the bustling streets of
+                Bangkok, the serene beaches of Phuket, or the cultural heritage
+                sites in Chiang Mai. Enjoy competitive rates, excellent customer
+                service, and well-maintained vehicles for an unforgettable trip.
               </p>
             </div>
             {/* Car Picture */}
@@ -46,7 +74,7 @@ export default function HomePageBody() {
             </div>
           </div>
 
-          <div className="md:grid grid-cols-4 mt-2 gap-5 p-7 ">
+          <div className="lg:grid grid-cols-4 mt-2 gap-5 p-7 ">
             <div className=" border-2 rounded-md p-2 mb-5 bg-white opacity-100  shadow-lg shadow-neutral-500">
               <h3>Ben T.</h3>
               <div className="flex  rounded-md ">

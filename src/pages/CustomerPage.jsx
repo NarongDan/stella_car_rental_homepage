@@ -21,7 +21,7 @@ export default function CustomerPage() {
         <Link to="/customer/bookings">
           <div
             className={`px-10 py-5 bg-gray-50 border  border-b-0 border-gray-200 rounded-t-xl font-semibold hover:bg-orange-300 ${
-              location.pathname === "/customer/bookings" ? "bg-orange-400 " : ""
+              location.pathname === "/customer/bookings" ? "bg-orange-200 " : ""
             }`}
           >
             Booking History

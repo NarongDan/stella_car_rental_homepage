@@ -1,10 +1,11 @@
-
+import LoadingSpinner from "../../../components/LoadingSpinner";
 import { useBooking } from "../../../context/BookingContext";
 import { useState, useEffect } from "react";
 
 export default function CustomerBookings() {
   const { getBookingHistory } = useBooking();
   const [booking, setBooking] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const getMyBooking = async () => {
     try {
@@ -12,6 +13,8 @@ export default function CustomerBookings() {
       setBooking(res.data);
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -19,8 +22,9 @@ export default function CustomerBookings() {
     getMyBooking();
   }, []);
 
-  console.log(booking);
-
+  if (loading) {
+    return <LoadingSpinner />;
+  }
   return (
     <div>
       <div className="container mx-auto px-4 py-8">
@@ -66,4 +70,4 @@ export default function CustomerBookings() {
       </div>
     </div>
   );
-
+}

@@ -3,7 +3,7 @@ import {
   MdOutlineLocalPhone,
   MdInterpreterMode,
 } from "react-icons/md";
-import Logo from "../image/Logo.png";
+import Logo from "../asset/image/Logo.png";
 import { IoIosPin } from "react-icons/io";
 
 export default function Footer() {
