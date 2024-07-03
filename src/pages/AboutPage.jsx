@@ -1,4 +1,3 @@
-import React from "react";
 import carabout from "../asset/image/pexels-dariuskrs-2470657.jpg";
 
 const AboutUs = () => {

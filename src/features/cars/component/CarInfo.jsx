@@ -1,8 +1,4 @@
-import React from "react";
-
 export default function CarInfo({ car }) {
-  console.log(car);
-
   return (
     <div className="rounded-lg overflow-hidden shadow-xl bg-white ml-4 mr-4 mb-4 p-6 border border-gray-100">
       <div className="container mb-4 ">

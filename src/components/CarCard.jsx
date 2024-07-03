@@ -18,17 +18,14 @@ export default function CarCard({
 
   return (
     <>
-      <div className="car-card border-2 p-2 border-gray-200 shadow-md  ">
-        <div className="grid gap-4 justify-items-center">
-          <h1 className="text-3xl font-semibold ">{`${Brand} : ${Model}`}</h1>
-          <div className="w-[300px] h-[150px] grid justify-center">
-            <img src={image} className="w-auto  md:w-5/6" />
+      <div className="border-2 p-2 border-gray-200 shadow-md flex flex-col rounded">
+        <div className="grid gap-4 justify-items-center mb-5">
+          <h1 className="text-3xl font-semibold pt-2">{`${Brand} : ${Model}`}</h1>
+          <div className="w-[300px] h-[200px] grid justify-center">
+            <img src={image} className="w-[95%] h-[90%] object-fit" />
           </div>
-        </div>
-
-        <div className="car-actions border-1 rounded-lg mt-4 mb-4 flex justify-center">
           <button
-            className="details-button p-2 bg-secondary-color text-white md: w-[8rem] hover:bg-thirdly-color rounded-md"
+            className="details-button p-2 bg-secondary-color text-white md:w-[8rem] hover:bg-thirdly-color rounded-md"
             onClick={() => setOpen(true)}
           >
             Details
