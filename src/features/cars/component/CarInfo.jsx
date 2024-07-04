@@ -23,12 +23,12 @@ export default function CarInfo({ car }) {
           {/* Details and Features  */}
           <div className="flex flex-col gap-2 lg:flex-row ">
             {/* Details  */}
-            <div className="w-full">
-              <CarDetails car={car.CarModel} />
+            <div className="w-full ">
+              <CarDetails car={car.CarModel} h={"h-[200px]"} />
             </div>
             <div className="w-full">
               {/* Features  */}
-              <CarFeatures />
+              <CarFeatures h={"h-[200px]"} />
             </div>
           </div>
         </div>

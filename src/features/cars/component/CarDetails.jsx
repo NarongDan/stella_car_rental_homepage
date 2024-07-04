@@ -1,6 +1,6 @@
-export default function CarDetails({ car }) {
+export default function CarDetails({ car, h }) {
   return (
-    <div className=" gird  gap-2 p-4 shadow-md bg-white rounded-2xl">
+    <div className={` gap-2 p-4 shadow-md bg-white rounded-2xl ${h}`}>
       <p>
         <span className="font-semibold">Brand: </span>
         {car.brand}
@@ -27,7 +27,7 @@ export default function CarDetails({ car }) {
       </p>
 
       <p>
-        <span className="font-semibold">Price Per Day: </span>
+        <span className="font-semibold">Price/Day: </span>
         {car.CarType.pricePerDay} THB
       </p>
     </div>

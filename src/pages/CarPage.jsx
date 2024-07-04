@@ -22,9 +22,9 @@ export default function CarPage() {
   }, []);
 
   return (
-    <main className=" flex justify-center  ">
+    <main className="flex justify-center  ">
       <div className="container">
-        <div className="car-list grid md:grid-cols-2 xl:grid-cols-3 gap-5 p-10  ">
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5 p-10  ">
           {cars?.map((car, index) => (
             <CarCard key={index} car={car} />
           ))}
