@@ -8,7 +8,7 @@ import { CiLogout } from "react-icons/ci";
 import { useAuth } from "../context/AuthContext";
 
 function DropDown() {
-  const { logout } = useAuth();
+  const { logout, authUser } = useAuth();
   return (
     <div className="flex flex-col dropDown z-30 ">
       <ul className="flex flex-col gap-4">
@@ -36,17 +36,27 @@ function DropDown() {
             Contact
           </li>
         </Link>
-        <Link to={"/customer"}>
+        <Link to={"/customer"} className={`${authUser ? "" : "hidden"} `}>
           <li className="dropDownButton">
             <CiSettings />
             Setting
           </li>
         </Link>
-        <hr />
-        <Link to={"/"} onClick={logout}>
+        <hr className={`${authUser ? "" : "lg:hidden"} `} />
+        <Link
+          to={"/"}
+          onClick={logout}
+          className={`${authUser ? "" : "hidden"} `}
+        >
           <li className="dropDownButton">
             <CiLogout />
             Log out
+          </li>
+        </Link>
+        <Link to={"/login"} className={`${authUser ? "hidden" : ""} `}>
+          <li className="dropDownButton">
+            <CiLogout />
+            Sign In
           </li>
         </Link>
       </ul>

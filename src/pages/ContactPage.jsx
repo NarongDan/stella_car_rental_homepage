@@ -9,7 +9,9 @@ export default function ContactPage() {
       <div className="relative">
         <img src={Img} alt="Contact Us" className="w-full h-64 object-cover" />
         <div className="absolute inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
-          <h1 className="text-4xl font-bold text-white">Stella Car Rental</h1>
+          <h1 className="text-5xl font-extrabold text-white">
+            Stella Car Rental
+          </h1>
         </div>
       </div>
 

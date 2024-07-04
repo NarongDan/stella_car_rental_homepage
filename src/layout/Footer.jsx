@@ -121,11 +121,15 @@ export default function Footer() {
             <div>
               <p className="font-medium">Branches</p>
               <div className="flex flex-col mt-4 space-y-2 text-sm text-gray-300">
-                <p>Suvarnabhumi Airport</p>
-                <p>Phuket International Airport </p>
-                <p>Chiang Mai International Airport </p>
-                <p>Mae Sot Airport </p>
-                <p>Udon Thani International Airport </p>
+                <p className="hover:opacity-75">Suvarnabhumi Airport</p>
+                <p className="hover:opacity-75">Phuket International Airport</p>
+                <p className="hover:opacity-75">
+                  Chiang Mai International Airport
+                </p>
+                <p className="hover:opacity-75">Mae Sot Airport </p>
+                <p className="hover:opacity-75">
+                  Udon Thani International Airport
+                </p>
               </div>
             </div>
 
@@ -174,7 +178,7 @@ export default function Footer() {
         </div>
 
         {/* Copy Right  */}
-        <p className="mt-8 text-xs text-gray-200">© 2024 Stella Car Rental</p>
+        <p className="mt-8 text-md text-gray-200">© 2024 Stella Car Rental</p>
       </div>
     </footer>
   );

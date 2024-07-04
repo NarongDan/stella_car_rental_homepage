@@ -89,11 +89,15 @@ export default function Navbar({ openDropDown, setOpenDropDown, Dropdown }) {
               </div>
             ) : (
               <div className=" md:flex gap-4  ">
-                <Link to={"/login"}>
-                  <button className="p-2 bg-gray-800 text-white md: w-[8rem] hover:bg-thirdly-color rounded-md">
-                    Sign in
-                  </button>
-                </Link>
+                <button
+                  className="p-2 bg-gray-800 text-white md: w-[8rem] hover:bg-thirdly-color rounded-md"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setOpenDropDown((prev) => !prev);
+                  }}
+                >
+                  Menu
+                </button>
               </div>
             )}
 
