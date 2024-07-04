@@ -5,12 +5,14 @@ import {
 } from "react-icons/md";
 import Logo from "../asset/image/Logo.png";
 import { IoIosPin } from "react-icons/io";
+import { PiXLogoLight, PiTiktokLogoLight } from "react-icons/pi";
 
 export default function Footer() {
   return (
     <footer className="bg-black text-white">
       <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          {/* Logo Section  */}
           <div>
             <img src={Logo} className="mr-5 w-40" alt="logo" />
             <h1 className="text-xl font-bold font-serif">Stella Car Rental</h1>
@@ -27,7 +29,7 @@ export default function Footer() {
               >
                 <span className="sr-only"> Facebook </span>
                 <svg
-                  className="w-6 h-6"
+                  className="w-6 h-6 hover:text-blue-500"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -47,7 +49,7 @@ export default function Footer() {
               >
                 <span className="sr-only"> Instagram </span>
                 <svg
-                  className="w-6 h-6"
+                  className="w-6 h-6 hover:text-pink-500"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -66,14 +68,7 @@ export default function Footer() {
                 rel="noreferrer"
               >
                 <span className="sr-only"> Twitter </span>
-                <svg
-                  className="w-6 h-6"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-                </svg>
+                <PiXLogoLight className="w-6 h-6 hover:text-gray-500" />
               </a>
               <a
                 className="hover:opacity-75"
@@ -83,7 +78,7 @@ export default function Footer() {
               >
                 <span className="sr-only"> GitHub </span>
                 <svg
-                  className="w-6 h-6"
+                  className="w-6 h-6 hover:text-yellow-400"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -102,88 +97,88 @@ export default function Footer() {
                 rel="noreferrer"
               >
                 <span className="sr-only"> Dribbble </span>
-                <svg
-                  className="w-6 h-6"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                <PiTiktokLogoLight className="w-6 h-6 hover:text-fuchsia-400" />
               </a>
             </div>
           </div>
+
+          {/* Body Section  */}
           <div className="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
+            {/* Rental Cars  */}
             <div>
               <p className="font-medium">Rental Cars</p>
               <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-300">
                 <a className="hover:opacity-75" href>
-                  {" "}
-                  Brands{" "}
+                  Brands
                 </a>
                 <a className="hover:opacity-75" href>
-                  {" "}
-                  Cars{" "}
+                  Cars
                 </a>
               </nav>
             </div>
+
+            {/* Service  */}
             <div>
-              <p className="font-medium">Services</p>
-              <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-300"></nav>
+              <p className="font-medium">Branches</p>
+              <div className="flex flex-col mt-4 space-y-2 text-sm text-gray-300">
+                <p className="hover:opacity-75">Suvarnabhumi Airport</p>
+                <p className="hover:opacity-75">Phuket International Airport</p>
+                <p className="hover:opacity-75">
+                  Chiang Mai International Airport
+                </p>
+                <p className="hover:opacity-75">Mae Sot Airport </p>
+                <p className="hover:opacity-75">
+                  Udon Thani International Airport
+                </p>
+              </div>
             </div>
+
+            {/* Support  */}
             <div>
               <p className="font-medium">Support</p>
-              <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-300">
+              <div className="flex flex-col mt-4 space-y-2 text-sm text-gray-300">
                 <a className="hover:opacity-75" href>
-                  {" "}
-                  Contact{" "}
+                  Contact
                 </a>
                 <a className="hover:opacity-75" href>
-                  {" "}
-                  FAQs{" "}
+                  FAQs
                 </a>
                 <a className="hover:opacity-75" href>
-                  {" "}
-                  Live Chat{" "}
+                  Live Chat
                 </a>
                 <a className="hover:opacity-75" href>
-                  {" "}
-                  Help center{" "}
+                  Help center
                 </a>
-              </nav>
+              </div>
             </div>
+
+            {/* Contact Us */}
             <div>
               <p className="font-medium">Contacts us</p>
-              <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-300">
+              <div className="flex flex-col mt-4 space-y-2 text-sm text-gray-300">
                 <a className="hover:opacity-75" href>
-                  {" "}
                   <MdOutlineEmail />
-                  contact@company.com{" "}
+                  contact@company.com
                 </a>
                 <a className="hover:opacity-75" href>
-                  {" "}
                   <MdInterpreterMode />
-                  Terms &amp; Conditions{" "}
+                  Terms &amp; Conditions
                 </a>
                 <a className="hover:opacity-75" href>
-                  {" "}
                   <MdOutlineLocalPhone />
-                  (414) 687 - 5892{" "}
+                  (414) 687 - 5892
                 </a>
                 <a className="hover:opacity-75" href>
-                  {" "}
                   <IoIosPin />
-                  794 Mcallister St San Francisco, 94102{" "}
+                  794 Mcallister St San Francisco, 94102
                 </a>
-              </nav>
+              </div>
             </div>
           </div>
         </div>
-        <p className="mt-8 text-xs text-gray-200">© 2024 Stella Car Rental</p>
+
+        {/* Copy Right  */}
+        <p className="mt-8 text-md text-gray-200">© 2024 Stella Car Rental</p>
       </div>
     </footer>
   );

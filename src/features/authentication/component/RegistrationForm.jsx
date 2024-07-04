@@ -77,7 +77,7 @@ export default function RegistrationForm() {
 
   return (
     <form onSubmit={handleSubmitForm}>
-      <p className="mb-10 text-center font-semibold text-2xl text-black">
+      <p className="mb-10  text-center font-semibold text-2xl text-black">
         REGISTRATION
       </p>
       <div className="grid grid-cols-2 gap-4 text-center">

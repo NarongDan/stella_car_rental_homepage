@@ -6,6 +6,10 @@
   background-color: #f2f0f5;
 }
 
+.dropDownButton {
+  @apply flex justify-start items-center gap-2 p-2 rounded-md  hover:bg-secondary-color hover:text-white;
+}
+
 @keyframes fadeInRight {
   from {
     opacity: 0;
@@ -23,4 +27,27 @@
 .fadeInRight {
   -webkit-animation-name: fadeInRight;
   animation-name: fadeInRight;
+}
+
+.dropDown {
+  position: absolute;
+  top: 4.5rem;
+  right: 1rem;
+  width: 180px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #fff;
+  border: 1px solid gray;
+}
+.dropDown::before {
+  content: "";
+  position: absolute;
+  top: -0.7rem;
+  right: 1.1rem;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  background-color: #fff;
+  border-top: 1px solid gray;
+  border-left: 1px solid gray;
 }

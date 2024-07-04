@@ -15,12 +15,15 @@ export default function BookingConfirmationPage() {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  //ข้อมูลจากที่ลูกค้าเลือกมาก่อนหน้านี้
   const { car, pickupLocation, startDate, endDate } = location.state;
 
+  //ข้อมูลที่ลูกค้าเลือกเพิ่มในหน้านี้
   const [pickupLocationn, setPickupLocation] = useState("");
   const [dropOffLocation, setDropOffLocation] = useState("");
   const [pickupTime, setPickupTime] = useState("09:00");
 
+  //เอาbranchId มาแสดงเป็น branch name
   useEffect(() => {
     if (pickupLocation && branches) {
       const initialLocation = branches.find(
@@ -31,7 +34,7 @@ export default function BookingConfirmationPage() {
       }
     }
   }, [pickupLocation, branches]);
-
+  //เอาbranchId มาแสดงเป็น branch name
   useEffect(() => {
     if (branches && branches.length > 0) {
       setDropOffLocation(branches[0].branchId);
@@ -73,6 +76,7 @@ export default function BookingConfirmationPage() {
     }
   };
 
+  //generate เวลา จาก 9.00 ถึง 20.00
   const generateTimeOptions = () => {
     const times = [];
     for (let hour = 9; hour <= 20; hour++) {
@@ -88,6 +92,7 @@ export default function BookingConfirmationPage() {
     return times;
   };
 
+  //คำนวณราคาทั้งหมด
   const totalAmount = calculateTotalAmount(
     startDate,
     endDate,
@@ -103,13 +108,13 @@ export default function BookingConfirmationPage() {
         Booking Confirmation
       </h2>
       {/* Confirmation Box  */}
-      <div className="container my-10 flex flex-col md:flex-row  ">
+      <div className="container flex flex-col md:flex-row  gap-4">
         {/* Car Information */}
-        <div className="md:w-2/3 mb-4 ">
+        <div className="md:w-2/3">
           <CarInfo car={car} />
         </div>
         {/* Booking Option Box  */}
-        <div className="md:w-1/3 bg-white border border-gray-200 p-10 shadow-lg rounded-lg  ">
+        <div className="md:w-1/3 bg-white border border-gray-200 p-6 shadow-lg rounded-lg  ">
           {/* Pickup Location  */}
           <div className="mb-4">
             <label className="block text-gray-700 font-bold mb-2">

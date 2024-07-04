@@ -4,14 +4,19 @@ import GoogleMap from "../components/GoogleMap";
 
 export default function ContactPage() {
   return (
-    <div className="max-w-7xl mx-auto mt-10 bg-white rounded-lg shadow-lg overflow-hidden">
+    <div className=" mx-auto  bg-gray-100 rounded-lg shadow-lg overflow-hidden">
+      {/* Banner  */}
       <div className="relative">
         <img src={Img} alt="Contact Us" className="w-full h-64 object-cover" />
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <h1 className="text-4xl font-bold text-white">Stella Car Rental</h1>
+        <div className="absolute inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
+          <h1 className="text-5xl font-extrabold text-white">
+            Stella Car Rental
+          </h1>
         </div>
       </div>
-      <div className="p-10 bg-gray-100">
+
+      {/* Contact Information  */}
+      <div className="p-10 bg-gray-100 max-w-7xl mx-auto">
         <div className="flex flex-col space-y-10 md:flex-row md:space-x-6 md:space-y-0">
           <div className="bg-white shadow-md rounded-lg p-6 space-y-4 flex-1">
             <h2 className="text-2xl font-bold text-gray-800">
@@ -31,10 +36,13 @@ export default function ContactPage() {
               <p>info@stellacarrental.com</p>
             </div>
           </div>
+          {/* Contact Form  */}
           <ContactForm />
         </div>
       </div>
-      <div className="h-full w-full rounded-lg overflow-hidden shadow-md mb-10">
+
+      {/* Google Map  */}
+      <div className="h-full max-w-7xl mx-auto rounded-lg overflow-hidden shadow-md mb-10">
         <GoogleMap />
       </div>
     </div>

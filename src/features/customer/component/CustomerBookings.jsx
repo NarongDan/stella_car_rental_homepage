@@ -32,15 +32,15 @@ export default function CustomerBookings() {
           <table className="min-w-full border-collapse ">
             <thead>
               <tr className="bg-orange-500 text-white">
-                <th className="p-2 text-left">BookingId</th>
-                <th className="p-2 text-left">carband</th>
-                <th className="p-2 text-left">carmodel</th>
-                <th className="p-2 text-left">carcolor</th>
-                <th className="p-2 text-left">startDate</th>
-                <th className="p-2 text-left">endDate</th>
-                <th className="p-2 text-left">pickupLocationId</th>
-                <th className="p-2 text-left">dropoffLocationId</th>
-                <th className="p-2 text-left">status</th>
+                <th className="p-2 text-left">Booking ID</th>
+                <th className="p-2 text-left">Brand</th>
+                <th className="p-2 text-left">Model</th>
+                <th className="p-2 text-left">Color</th>
+                <th className="p-2 text-left">Start Date</th>
+                <th className="p-2 text-left">End Date</th>
+                <th className="p-2 text-left">Pick Up</th>
+                <th className="p-2 text-left">Drop Off</th>
+                <th className="p-2 text-left">Status</th>
               </tr>
             </thead>
             <tbody>

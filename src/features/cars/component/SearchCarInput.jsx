@@ -10,9 +10,11 @@ export default function SearchCarInput() {
   const { branches } = useCar();
   const navigate = useNavigate();
   const today = new Date().toISOString().split("T")[0]; // วันที่ปัจจุบัน
+
+  //จำนวนวันที่สามารถเลือกได้
   const getMaxDate = () => {
     const maxDate = new Date();
-    maxDate.setDate(maxDate.getDate() + 2);
+    maxDate.setDate(maxDate.getDate() + 3);
     return maxDate.toISOString().split("T")[0];
   };
 
@@ -64,7 +66,7 @@ export default function SearchCarInput() {
         <div className="w-full">
           <label>Pickup Location:</label>
           <select
-            className="border p-2 w-full"
+            className="border p-2.5 w-full rounded-md"
             value={pickupLocation}
             onChange={handlePickupLocationChange}
           >
@@ -81,7 +83,7 @@ export default function SearchCarInput() {
           <label>Start Date:</label>
           <input
             type="date"
-            className="border p-2 w-full "
+            className="border p-2 w-full rounded-md "
             value={startDate}
             onChange={handleStartDateChange}
             max={getMaxDate()} // Set max attribute to restrict dates
@@ -94,7 +96,7 @@ export default function SearchCarInput() {
           <label>End Date:</label>
           <input
             type="date"
-            className="border p-2 w-full"
+            className="border p-2 w-full rounded-md"
             value={endDate}
             onChange={handleEndDateChange}
             min={startDate} // Set min attribute to restrict dates

@@ -19,9 +19,6 @@ const initialInputError = {
 
 export default function CustomerDetail() {
   const { authUser, fetchUser, isAuthUserLoading } = useAuth();
-
-  console.log(authUser);
-
   const [input, setInput] = useState({});
   const [inputError, setInputError] = useState(initialInputError);
   const [isEditing, setIsEditing] = useState(false);
@@ -31,6 +28,8 @@ export default function CustomerDetail() {
     if (e.target.value !== "" && e.target.value.trim())
       setInput({ ...input, [e.target.name]: e.target.value });
   };
+
+  // อัพเดทข้อมูลหากร้องขอ
 
   const handleSubmitUpdate = async (e) => {
     try {
@@ -76,6 +75,7 @@ export default function CustomerDetail() {
       <h2 className="text-3xl text-black font-bold mb-6">My Details</h2>
       <form className="space-y-4" onSubmit={handleSubmitUpdate}>
         <div className="xl:flex xl:space-x-4 space-y-4 xl:space-y-0">
+          {/* First Name  */}
           <div className="xl:w-1/2 w-full">
             <label className="block text-black font-semibold">First Name</label>
             {isEditing ? (
@@ -92,6 +92,7 @@ export default function CustomerDetail() {
               <p>{authUser?.firstName}</p>
             )}
           </div>
+          {/* Last Name  */}
           <div className="xl:w-1/2 w-full">
             <label className="block text-black font-semibold">Last Name</label>
             {isEditing ? (
@@ -110,6 +111,7 @@ export default function CustomerDetail() {
           </div>
         </div>
         <div className="xl:flex xl:space-x-4 space-y-4 xl:space-y-0">
+          {/* Email  */}
           <div className="md:w-1/2 w-full">
             <label className="block text-black font-semibold">Email</label>
             {isEditing ? (
@@ -123,6 +125,7 @@ export default function CustomerDetail() {
               <p>{authUser?.email}</p>
             )}
           </div>
+          {/* Phone  */}
           <div className="md:w-1/2 w-full">
             <label className="block text-black font-semibold">Phone</label>
             {isEditing ? (
@@ -140,8 +143,9 @@ export default function CustomerDetail() {
             )}
           </div>
         </div>
-        <div></div>
+
         <div className="xl:flex xl:space-x-4 space-y-4 xl:space-y-0">
+          {/* Address  */}
           <div className="lg:w-1/2 w-full">
             <label className="block text-black font-semibold">Address</label>
             {isEditing ? (
@@ -158,6 +162,8 @@ export default function CustomerDetail() {
               <p>{authUser?.address}</p>
             )}
           </div>
+
+          {/* Driver License  */}
           <div className="md:w-1/2 w-full">
             <label className="block text-black font-semibold">
               Driver License
@@ -177,6 +183,7 @@ export default function CustomerDetail() {
         </div>
 
         <div className="xl:flex xl:space-x-4 space-y-4 xl:space-y-0">
+          {/* Password  */}
           {isEditing && (
             <>
               <div className="xl:w-1/2 w-full">
@@ -194,6 +201,7 @@ export default function CustomerDetail() {
               </div>
             </>
           )}
+          {/* Confirm Password  */}
           {isEditing && (
             <>
               <div className="md:w-1/2 w-full">
@@ -213,12 +221,13 @@ export default function CustomerDetail() {
           )}
         </div>
 
+        {/* Reward Points  */}
         <div className="block text-black font-semibold">
           <p>
             Reward Points: <span>{`${authUser.totalPoints}`}</span>
           </p>
         </div>
-
+        {/* Edit Button  */}
         {!isEditing && (
           <button
             type="button"
@@ -228,6 +237,8 @@ export default function CustomerDetail() {
             Edit Information
           </button>
         )}
+
+        {/* Save Button  */}
         {isEditing && (
           <div className="space-x-5">
             <button

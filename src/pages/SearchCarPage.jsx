@@ -88,13 +88,10 @@ export default function SearchCarPage() {
   }
 
   return (
-    <div
-      className="container mx-auto p-4 "
-      content="width=device-width, initial-scale=1.0"
-    >
+    <div className="container mx-auto p-4 ">
       <h2 className="text-2xl font-bold mb-4">Available Cars</h2>
       {/* ปุ่มสำหรับเลือกแสดงข้อมูลรถตามประเภท */}
-      <div className="grid grid-cols-6 space-x-2 mb-4 ">
+      <div className="grid grid-cols-3 gap-3 mb-4 lg:grid-cols-6">
         <button
           onClick={clearFilteredCars}
           className=" text-[1rem]  md:text-[1.5rem] border-2  hover:bg-blue-500 text-gray-600 hover:text-white py-2 px-4 rounded-md"

@@ -1,89 +1,112 @@
 import { Link } from "react-router-dom";
-import RightNav from "./RightNav";
-import ButtonNav from "./ButtonForNavber";
+
 import Logo from "../asset/image/Logo.png";
 import { useAuth } from "../context/AuthContext";
 import { FaRegUser } from "react-icons/fa6";
-import { useNavigate } from "react-router-dom";
+import DropDown from "./DropDown";
+// import { useState } from "react";
+// import { useRef } from "react";
 
-export default function Navbar() {
+export default function Navbar({ openDropDown, setOpenDropDown, Dropdown }) {
   const { authUser } = useAuth();
-  const navigate = useNavigate();
+
+  // const Dropdown = useRef(null);
+  // const [openDropDown, setOpenDropDown] = useState(false);
+
+  // const closeDropDown = (e) => {
+  //   if (openDropDown && !DropDown) {
+  //     setOpenDropDown(false);
+  //   }
+  // };
+  // document.addEventListener("mousedown", closeDropDown);
 
   return (
     <nav className="flex justify-center z-20 ">
-      <div className="w-full px-5 ">
-        <div className="flex justify-between items-center w-auto h-20 p-4 shadow-zinc-700 border-b">
+      <div className="w-full px-3 ">
+        <div className="flex justify-between items-center w-auto h-20  shadow-zinc-700 border-b">
+          {/* Logo */}
           <div className="navbar-logo ">
             <Link className="flex  items-center " to={"/"}>
               <img src={Logo} className="  w-32 " alt="logo" />
-              <h1 className="text-xl font-bold font-serif hidden md:block md:text-sm ">
+              <h1 className="font-bold font-serif hidden sm:block sm:text-2xl">
                 Stella Car Rental
               </h1>
             </Link>
           </div>
           {/* Mid-Nav */}
-          <div className="hidden md:flex gap-4">
+          <div className="hidden lg:flex gap-6 font-semibold text-lg lg:text-2xl">
             <Link
               to={"/"}
-              className="text-gray-700 hover:text-secondary-color transition duration-300 relative"
+              className="text-gray-700 hover:text-secondary-color transition duration-300 relative group"
             >
-              <span>Home</span>
-              <span className="absolute left-0 right-0 h-0.5 bg-secondary-color bottom-0 transform scale-x-0 origin-left transition duration-300 group-hover:scale-x-100"></span>
+              <div className="relative">
+                <span>Home</span>
+                <span className="absolute left-0 right-0 h-0.5 bg-orange-400 bottom-0 transform scale-x-0 origin-left transition duration-500 group-hover:scale-x-100"></span>
+              </div>
             </Link>
+
             <Link
               to={"/cars"}
-              className="text-gray-700 hover:text-secondary-color transition duration-300 relative"
+              className="text-gray-700 hover:text-secondary-color transition duration-300 relative group"
             >
               <span>Cars</span>
-              <span className="absolute left-0 right-0 h-0.5 bg-secondary-color bottom-0 transform scale-x-0 origin-left transition duration-300 group-hover:scale-x-100"></span>
+              <span className="absolute left-0 right-0 h-0.5 bg-orange-400 bottom-0 transform scale-x-0 origin-left transition duration-500 group-hover:scale-x-100"></span>
             </Link>
+
             <Link
               to={"/about"}
-              className="text-gray-700 hover:text-secondary-color transition duration-300 relative"
+              className="text-gray-700 hover:text-secondary-color transition duration-300 relative group"
             >
               <span>About</span>
-              <span className="absolute left-0 right-0 h-0.5 bg-secondary-color bottom-0 transform scale-x-0 origin-left transition duration-300 group-hover:scale-x-100"></span>
+              <span className="absolute left-0 right-0 h-0.5 bg-orange-400 bottom-0 transform scale-x-0 origin-left transition duration-500 group-hover:scale-x-100"></span>
             </Link>
+
             <Link
               to={"/contact"}
-              className="text-gray-700 hover:text-secondary-color transition duration-300 relative"
+              className="text-gray-700 hover:text-secondary-color transition duration-300 relative group"
             >
               <span>Contact</span>
-              <span className="absolute left-0 right-0 h-0.5 bg-secondary-color bottom-0 transform scale-x-0 origin-left transition duration-300 group-hover:scale-x-100"></span>
+              <span className="absolute left-0 right-0 h-0.5 bg-orange-400 bottom-0 transform scale-x-0 origin-left transition duration-500 group-hover:scale-x-100"></span>
             </Link>
           </div>
-          {authUser ? (
-            <div className="flex items-center gap-4">
-              <p className="font-semibold text-lg">Hi, {authUser.firstName}</p>
+          {/* Right Nav  */}
+          <div className="flex justify-center items-center gap-2">
+            {authUser ? (
+              <div className="flex items-center gap-4">
+                <p className="font-semibold text-lg">
+                  Hi, {authUser.firstName}
+                </p>
 
-              <Link to={"/customer"}>
-                <div className="flex justify-center items-center bg-gray-100 w-10 h-10 rounded-full hover:bg-gray-200 duration-300 cursor-pointer">
+                <div
+                  className="flex justify-center items-center bg-gray-100 w-10 h-10 rounded-full hover:bg-gray-200 duration-300 cursor-pointer"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setOpenDropDown((prev) => !prev);
+                  }}
+                >
                   <FaRegUser />
                 </div>
-              </Link>
-            </div>
-          ) : (
-            <div className=" md:flex gap-4  ">
-              <Link to={"/login"}>
-                <button className="p-2 bg-gray-800 text-white md: w-[8rem] hover:bg-thirdly-color rounded-md">
-                  Sign in
+              </div>
+            ) : (
+              <div className=" md:flex gap-4  ">
+                <button
+                  className="p-2 bg-gray-800 text-white md: w-[8rem] hover:bg-thirdly-color rounded-md"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setOpenDropDown((prev) => !prev);
+                  }}
+                >
+                  Menu
                 </button>
-              </Link>
-            </div>
-          )}
-          {/* <div className="md:hidden">
-            <button className="navbar-burger flex items-center p-3">
-              <svg
-                className="block h-4 w-4 fill-current"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>Mobile menu</title>
-                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-              </svg>
-            </button>
-          </div> */}
+              </div>
+            )}
+
+            {openDropDown && (
+              <div ref={Dropdown} className="">
+                <DropDown />
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </nav>
