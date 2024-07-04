@@ -3,7 +3,7 @@ import carabout from "../asset/image/pexels-dariuskrs-2470657.jpg";
 const AboutUs = () => {
   return (
     <div className="min-h-screen bg-white flex items-center justify-center p-5">
-      <div className="bg-white rounded-lg shadow-xl max-w-4xl mx-auto p-8 flex flex-col md:flex-row">
+      <div className="bg-white rounded-lg shadow-xl lg:max-w-7xl  mx-auto p-8 flex flex-col md:flex-row ">
         <div className="md:w-1/2 p-4">
           <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
             About Us

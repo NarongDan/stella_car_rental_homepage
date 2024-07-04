@@ -42,27 +42,31 @@ export default function HomePageBody() {
           style={{ backgroundImage: `url(${PolygonBackground})` }}
         ></div>
         {/* Hero Section Container */}
-        <div className="container z-10 ">
-          <div className="  lg:grid grid-cols-2 p-7 mt-10 ">
-            {/* Information */}
-            <div className="flex flex-col gap-10 p-7 ">
-              <h1 className=" font-extrabold text-3xl sm:font-extrabold sm:text-5xl">
-                Looking for cars to rent in Thailand? Look no further!
-              </h1>
-              <p className="text-semibold">
-                Explore Thailand with ease and comfort by renting a car from us,
-                whether you're planning to visit the bustling streets of
-                Bangkok, the serene beaches of Phuket, or the cultural heritage
-                sites in Chiang Mai. Enjoy competitive rates, excellent customer
-                service, and well-maintained vehicles for an unforgettable trip.
-              </p>
+        <div className="flex justify-center">
+          {" "}
+          <div className="container z-10 ">
+            <div className="  lg:grid grid-cols-2 p-7 mt-10 ">
+              {/* Information */}
+              <div className="flex flex-col gap-10 p-7 ">
+                <h1 className=" font-extrabold text-3xl sm:font-extrabold sm:text-5xl">
+                  Looking for cars to rent in Thailand? Look no further!
+                </h1>
+                <p className="text-semibold">
+                  Explore Thailand with ease and comfort by renting a car from
+                  us, whether you're planning to visit the bustling streets of
+                  Bangkok, the serene beaches of Phuket, or the cultural
+                  heritage sites in Chiang Mai. Enjoy competitive rates,
+                  excellent customer service, and well-maintained vehicles for
+                  an unforgettable trip.
+                </p>
+              </div>
+              {/* Car Picture */}
+              <div className="animate-fadeinright">
+                <img src={CarHero} alt="Car" />
+              </div>
             </div>
-            {/* Car Picture */}
-            <div className="">
-              <img src={CarHero} alt="Car" />
-            </div>
+            <SearchCarInput />
           </div>
-          <SearchCarInput />
         </div>
       </div>
       {/* Testimonaisl */}
