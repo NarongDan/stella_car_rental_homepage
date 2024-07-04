@@ -57,7 +57,7 @@ export default function LoginForm() {
   // Facebook Login
 
   return (
-    <div className="max-w-md mx-auto mt-8">
+    <div className=" w-5/6  mx-auto mt-8">
       <form onSubmit={handleSubmitForm} className="grid gap-4">
         <p className="text-center font-semibold text-2xl text-black">LOGIN</p>
         <Input

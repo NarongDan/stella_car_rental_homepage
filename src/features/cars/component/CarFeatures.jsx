@@ -2,9 +2,9 @@ import { FcCheckmark } from "react-icons/fc";
 
 export default function CarFeatures() {
   return (
-    <div className=" flex flex-col p-4 shadow-md bg-white rounded-2xl  ">
+    <div className=" flex flex-col p-4 shadow-md bg-white rounded-2xl gap-2  ">
       <div>Features :</div>
-      <div className="flex gap-2">
+      <div className="flex flex-col sm:flex-row gap-2">
         <div>
           <div className="flex gap-2">
             <FcCheckmark />
