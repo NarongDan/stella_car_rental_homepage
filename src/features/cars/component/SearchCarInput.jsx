@@ -61,7 +61,7 @@ export default function SearchCarInput() {
   };
 
   return (
-    <div className="container mx-auto mb-10 p-4 border-2 rounded-xl bg-white opacity-100  shadow-lg shadow-neutral-500 w-5/6">
+    <div className="container mx-auto mb-10 p-4 border-2 rounded-xl bg-white opacity-100  shadow-lg shadow-neutral-500 w-5/6 dark:text-black dark:bg-gray-50">
       <div className=" md:flex gap-4 p-2  justify-around  w-full ">
         <div className="w-full">
           <label>Pickup Location:</label>
@@ -105,7 +105,7 @@ export default function SearchCarInput() {
         </div>
 
         <button
-          className="bg-secondary-color hover:bg-thirdly-color text-white p-2 mt-4 w-full md:w-96 rounded-lg cursor-pointer"
+          className="bg-secondary-color hover:bg-thirdly-color text-white p-2 mt-4 w-full md:w-96 rounded-lg cursor-pointer font-semibold"
           onClick={handleSearch}
           disabled={!pickupLocationSelected || !startDate || !endDate} // ปุ่ม Search ใช้งานเมื่อเลือก pickupLocation, startDate และ endDate แล้วเท่านั้น
         >

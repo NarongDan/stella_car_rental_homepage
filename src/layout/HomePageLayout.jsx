@@ -15,7 +15,7 @@ export default function HomePageLayout() {
   document.addEventListener("mousedown", closeDropDown);
   return (
     <div
-      className="bg-white min-w-full  "
+      className="bg-white min-w-full dark:bg-black "
       onClick={() => setOpenDropDown(false)}
     >
       <Navbar
@@ -23,7 +23,7 @@ export default function HomePageLayout() {
         setOpenDropDown={setOpenDropDown}
         Dropdown={Dropdown}
       />
-      <div>
+      <div className="dark:bg-black dark:text-white">
         <Outlet />
       </div>
       <Footer />
