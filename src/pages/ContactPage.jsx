@@ -4,7 +4,7 @@ import GoogleMap from "../components/GoogleMap";
 
 export default function ContactPage() {
   return (
-    <div className="max-w-7xl mx-auto  bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+    <div className=" mx-auto  bg-gray-100 rounded-lg shadow-lg overflow-hidden">
       {/* Banner  */}
       <div className="relative">
         <img src={Img} alt="Contact Us" className="w-full h-64 object-cover" />
@@ -16,7 +16,7 @@ export default function ContactPage() {
       </div>
 
       {/* Contact Information  */}
-      <div className="p-10 bg-gray-100">
+      <div className="p-10 bg-gray-100 max-w-7xl mx-auto">
         <div className="flex flex-col space-y-10 md:flex-row md:space-x-6 md:space-y-0">
           <div className="bg-white shadow-md rounded-lg p-6 space-y-4 flex-1">
             <h2 className="text-2xl font-bold text-gray-800">
@@ -42,7 +42,7 @@ export default function ContactPage() {
       </div>
 
       {/* Google Map  */}
-      <div className="h-full w-full rounded-lg overflow-hidden shadow-md mb-10">
+      <div className="h-full max-w-7xl mx-auto rounded-lg overflow-hidden shadow-md mb-10">
         <GoogleMap />
       </div>
     </div>
