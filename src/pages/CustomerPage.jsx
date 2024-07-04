@@ -3,7 +3,6 @@ import { Outlet, Link, useLocation } from "react-router-dom";
 export default function CustomerPage() {
   const location = useLocation();
 
-  console.log(location.pathname);
   return (
     <div className="relative w-full mt-20 px-10">
       {/* Profile Bar  */}
