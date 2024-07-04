@@ -3,8 +3,8 @@ import CarFeatures from "./CarFeatures";
 
 export default function CarInfo({ car }) {
   return (
-    <div className="rounded-lg overflow-hidden shadow-xl bg-white ml-4 mr-4 mb-4 p-6 border border-gray-100">
-      <div className="container mb-4 ">
+    <div className="rounded-lg overflow-hidden shadow-xl bg-white p-6 border border-gray-100">
+      <div className="container ">
         <h2 className="w-full mx-auto text-center text-2xl font-bold mb-4">
           Car Details
         </h2>
