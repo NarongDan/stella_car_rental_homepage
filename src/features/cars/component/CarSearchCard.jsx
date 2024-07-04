@@ -1,7 +1,7 @@
 export default function CarSearchCard({ car, handleBookClick }) {
   return (
     <li className="border border-gray-300 p-6 mb-4 flex flex-col md:flex-row justify-between items-center shadow-xl shadow-gary-500 rounded-3xl ">
-      <div className=" w-96 md:w-2/6 dark:bg-white dark:rounded-lg">
+      <div className=" md:w-2/6 dark:bg-white dark:rounded-lg">
         <img src={car.CarModel.CarImages[0].imageUrl} alt="" className="" />
       </div>
 
