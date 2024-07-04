@@ -29,7 +29,7 @@ export default function CustomerPage() {
         </Link>
       </div>
 
-      {/* Profile content  */}
+      {/*  content body  */}
       <div
         className={`w-full border border-gray-200 pb-20 mb-20 px-6 
           

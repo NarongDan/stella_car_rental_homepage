@@ -13,6 +13,7 @@ import Img from "../asset/image/pexels-dariuskrs-2470657.jpg";
 export default function HomePageBody() {
   return (
     <>
+      {/* Banner  */}
       <div className="flex flex-col justify-center relative overflow-hidden ">
         <div className="relative">
           <img
@@ -65,7 +66,7 @@ export default function HomePageBody() {
           <SearchCarInput />
         </div>
       </div>
-      {/* Testimonaisl */}
+      {/* Testimonial */}
       <div className=" flex justify-center">
         <div className="container ">
           <div className=" flex flex-col items-center  ">

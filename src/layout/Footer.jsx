@@ -11,6 +11,7 @@ export default function Footer() {
     <footer className="bg-black text-white">
       <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          {/* Logo Section  */}
           <div>
             <img src={Logo} className="mr-5 w-40" alt="logo" />
             <h1 className="text-xl font-bold font-serif">Stella Car Rental</h1>
@@ -117,72 +118,73 @@ export default function Footer() {
               </a>
             </div>
           </div>
+
+          {/* Body Section  */}
           <div className="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
+            {/* Rental Cars  */}
             <div>
               <p className="font-medium">Rental Cars</p>
               <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-300">
                 <a className="hover:opacity-75" href>
-                  {" "}
-                  Brands{" "}
+                  Brands
                 </a>
                 <a className="hover:opacity-75" href>
-                  {" "}
-                  Cars{" "}
+                  Cars
                 </a>
               </nav>
             </div>
+
+            {/* Service  */}
             <div>
               <p className="font-medium">Services</p>
               <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-300"></nav>
             </div>
+
+            {/* Support  */}
             <div>
               <p className="font-medium">Support</p>
               <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-300">
                 <a className="hover:opacity-75" href>
-                  {" "}
-                  Contact{" "}
+                  Contact
                 </a>
                 <a className="hover:opacity-75" href>
-                  {" "}
-                  FAQs{" "}
+                  FAQs
                 </a>
                 <a className="hover:opacity-75" href>
-                  {" "}
-                  Live Chat{" "}
+                  Live Chat
                 </a>
                 <a className="hover:opacity-75" href>
-                  {" "}
-                  Help center{" "}
+                  Help center
                 </a>
               </nav>
             </div>
+
+            {/* Contact Us */}
             <div>
               <p className="font-medium">Contacts us</p>
               <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-300">
                 <a className="hover:opacity-75" href>
-                  {" "}
                   <MdOutlineEmail />
-                  contact@company.com{" "}
+                  contact@company.com
                 </a>
                 <a className="hover:opacity-75" href>
-                  {" "}
                   <MdInterpreterMode />
-                  Terms &amp; Conditions{" "}
+                  Terms &amp; Conditions
                 </a>
                 <a className="hover:opacity-75" href>
-                  {" "}
                   <MdOutlineLocalPhone />
-                  (414) 687 - 5892{" "}
+                  (414) 687 - 5892
                 </a>
                 <a className="hover:opacity-75" href>
-                  {" "}
                   <IoIosPin />
-                  794 Mcallister St San Francisco, 94102{" "}
+                  794 Mcallister St San Francisco, 94102
                 </a>
               </nav>
             </div>
           </div>
         </div>
+
+        {/* Copy Right  */}
         <p className="mt-8 text-xs text-gray-200">© 2024 Stella Car Rental</p>
       </div>
     </footer>

@@ -6,7 +6,6 @@ const BookingContext = createContext();
 
 export default function BookingContextProvider({ children }) {
   const bookCar = (data) => {
-    console.log(data);
     return bookingApi.placeBooking(data);
   };
 

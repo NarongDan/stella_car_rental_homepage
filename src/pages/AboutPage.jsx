@@ -4,6 +4,7 @@ const AboutUs = () => {
   return (
     <div className="min-h-screen bg-white flex items-center justify-center p-5">
       <div className="bg-white rounded-lg shadow-xl max-w-4xl mx-auto p-8 flex flex-col md:flex-row">
+        {/* About Us  */}
         <div className="md:w-1/2 p-4">
           <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
             About Us
@@ -29,6 +30,8 @@ const AboutUs = () => {
             contact us.
           </p>
         </div>
+
+        {/* Car Photo  */}
         <div className="w-full h-96 md:w-1/2 p-4 md:flex md:items-center md:min-h-[700px] ">
           <img
             src={carabout}

@@ -14,6 +14,7 @@ export default function Navbar() {
     <nav className="flex justify-center z-20 ">
       <div className="w-full px-5 ">
         <div className="flex justify-between items-center w-auto h-20 p-4 shadow-zinc-700 border-b">
+          {/* Logo */}
           <div className="navbar-logo ">
             <Link className="flex  items-center " to={"/"}>
               <img src={Logo} className="  w-32 " alt="logo" />
@@ -53,6 +54,8 @@ export default function Navbar() {
               <span className="absolute left-0 right-0 h-0.5 bg-secondary-color bottom-0 transform scale-x-0 origin-left transition duration-300 group-hover:scale-x-100"></span>
             </Link>
           </div>
+
+          {/* Right Nav  */}
           {authUser ? (
             <div className="flex items-center gap-4">
               <p className="font-semibold text-lg">Hi, {authUser.firstName}</p>
