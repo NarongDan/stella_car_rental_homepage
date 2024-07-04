@@ -94,41 +94,41 @@ export default function SearchCarPage() {
       <div className="grid grid-cols-3 gap-3 mb-4 lg:grid-cols-6">
         <button
           onClick={clearFilteredCars}
-          className=" text-[1rem]  md:text-[1.5rem] border-2  hover:bg-blue-500 text-gray-600 hover:text-white py-2 px-4 rounded-md"
+          className=" text-[1rem]  md:text-[1.5rem] border-2  hover:bg-blue-500 text-gray-600 dark:text-white hover:text-white py-2 px-4 rounded-md"
         >
           All Car Types
         </button>
         <button
           onClick={() => filterCarsByType("economy")}
-          className="text-[1rem]  md:text-[1.5rem] border-2  hover:bg-green-500 text-gray-600 hover:text-white py-2 px-4 rounded-md flex gap-1 justify-center items-center"
+          className="text-[1rem]  md:text-[1.5rem] border-2  hover:bg-green-500 text-gray-600 dark:text-white hover:text-white py-2 px-4 rounded-md flex gap-1 justify-center items-center"
         >
           <TbCar />
           Economy
         </button>
         <button
           onClick={() => filterCarsByType("compact")}
-          className="text-[1rem]  md:text-[1.5rem] border-2  hover:bg-red-500 text-gray-600 hover:text-white py-2 px-4 rounded-md flex gap-1 justify-center items-center"
+          className="text-[1rem]  md:text-[1.5rem] border-2  hover:bg-red-500 text-gray-600 dark:text-white hover:text-white py-2 px-4 rounded-md flex gap-1 justify-center items-center"
         >
           <PiCarProfileFill />
           Compact
         </button>
         <button
           onClick={() => filterCarsByType("standard")}
-          className="text-[1rem]  md:text-[1.5rem] border-2  hover:bg-indigo-500 text-gray-600 hover:text-white py-2 px-4 rounded-md flex gap-1 justify-center items-center"
+          className="text-[1rem]  md:text-[1.5rem] border-2  hover:bg-indigo-500 text-gray-600 dark:text-white hover:text-white py-2 px-4 rounded-md flex gap-1 justify-center items-center"
         >
           <BsCarFront />
           Standard
         </button>
         <button
           onClick={() => filterCarsByType("premium")}
-          className="text-[1rem]  md:text-[1.5rem] border-2  hover:bg-purple-500 text-gray-600 hover:text-white py-2 px-4 rounded-md flex gap-1 justify-center items-center"
+          className="text-[1rem]  md:text-[1.5rem] border-2  hover:bg-purple-500 text-gray-600 dark:text-white hover:text-white py-2 px-4 rounded-md flex gap-1 justify-center items-center"
         >
           <RiPoliceCarFill />
           Premium
         </button>
         <button
           onClick={() => filterCarsByType("electric")}
-          className="text-[1rem]  md:text-[1.5rem] border-2  hover:bg-yellow-500 text-gray-600 hover:text-white py-2 px-4 rounded-md flex gap-1 justify-center items-center"
+          className="text-[1rem]  md:text-[1.5rem] border-2  hover:bg-yellow-500 text-gray-600 dark:text-white hover:text-white py-2 px-4 rounded-md flex gap-1 justify-center items-center"
         >
           <MdElectricCar />
           Electric
@@ -137,7 +137,7 @@ export default function SearchCarPage() {
       {/* แสดงรายการรถที่ได้กรองหรือทั้งหมด */}
       {filteredCars === null ? (
         cars.length === 0 ? (
-          <div className="text-center text-gray-600">
+          <div className="text-center text-gray-600 dark:text-white">
             No cars available for the selected dates and location.
           </div>
         ) : (
@@ -152,7 +152,7 @@ export default function SearchCarPage() {
           </ul>
         )
       ) : filteredCars.length === 0 ? (
-        <div className="text-center text-gray-600">
+        <div className="text-center text-gray-600 dark:text-white">
           No cars available for the selected car type.
         </div>
       ) : (

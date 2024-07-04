@@ -3,29 +3,29 @@ import carabout from "../asset/image/pexels-dariuskrs-2470657.jpg";
 const AboutUs = () => {
   return (
     <div className="min-h-screen bg-white flex items-center justify-center p-5">
-      <div className="bg-white rounded-lg shadow-xl lg:max-w-7xl  mx-auto p-8 flex flex-col md:flex-row ">
+      <div className="bg-white rounded-lg shadow-xl lg:max-w-7xl  mx-auto p-8 flex flex-col md:flex-row dark:bg-black">
         {/* About Us  */}
-        <div className="md:w-1/2 p-4">
-          <h1 className="text-5xl font-bold text-center text-black mb-8">
+        <div className="md:w-1/2 p-4 ">
+          <h1 className="text-5xl font-bold text-center text-black mb-8 dark:text-white">
             About Us
           </h1>
-          <p className="text-lg text-gray-600 leading-relaxed mb-6">
+          <p className="text-lg text-gray-600 leading-relaxed mb-6 dark:text-white dark:text-white">
             Welcome to Stella Car Rental, your number one source for all your
             car rental needs. We're dedicated to giving you the very best of car
             rental services, with a focus on reliability, customer service, and
             uniqueness.
           </p>
-          <p className="text-lg text-gray-600 leading-relaxed mb-6">
+          <p className="text-lg text-gray-600 leading-relaxed mb-6 dark:text-white">
             Founded in 2023, Stella Car Rental has come a long way from its
             beginnings. When we first started out, our passion for providing the
             best rental experience drove us to start our own business.
           </p>
-          <p className="text-lg text-gray-600 leading-relaxed mb-6">
+          <p className="text-lg text-gray-600 leading-relaxed mb-6 dark:text-white">
             We now serve customers all over the city, and are thrilled to be a
             part of the rental industry. We hope you enjoy our services as much
             as we enjoy offering them to you.
           </p>
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <p className="text-lg text-gray-600 leading-relaxed dark:text-white">
             If you have any questions or comments, please don't hesitate to
             contact us.
           </p>

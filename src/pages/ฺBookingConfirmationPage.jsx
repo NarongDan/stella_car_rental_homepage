@@ -121,7 +121,7 @@ export default function BookingConfirmationPage() {
               Pickup Location:
             </label>
             <select
-              className="border border-gray-300 p-2 rounded w-full"
+              className="border border-gray-300 p-2 rounded w-full dark:text-black "
               value={pickupLocationn}
               disabled
             >
@@ -135,7 +135,7 @@ export default function BookingConfirmationPage() {
               Drop-off Location:
             </label>
             <select
-              className="border border-gray-300 p-2 rounded w-full"
+              className="border border-gray-300 p-2 rounded w-full dark:text-black"
               value={dropOffLocation}
               onChange={handleDropOffLocationChange}
             >
@@ -155,7 +155,7 @@ export default function BookingConfirmationPage() {
             </label>
             <input
               type="date"
-              className="border border-gray-300 p-2 rounded w-full"
+              className="border border-gray-300 p-2 rounded w-full dark:text-black"
               value={startDate}
               disabled
             />
@@ -167,7 +167,7 @@ export default function BookingConfirmationPage() {
             </label>
             <input
               type="date"
-              className="border border-gray-300 p-2 rounded w-full"
+              className="border border-gray-300 p-2 rounded w-full dark:text-black"
               value={endDate}
               disabled
             />
@@ -178,7 +178,7 @@ export default function BookingConfirmationPage() {
               Pick-up and Drop-off Time
             </label>
             <select
-              className="border border-gray-300 p-2 rounded w-full"
+              className="border border-gray-300 p-2 rounded w-full dark:text-black"
               value={pickupTime}
               onChange={handlePickupTimeChange}
             >

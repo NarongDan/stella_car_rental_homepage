@@ -1,8 +1,8 @@
 export default function CarSearchCard({ car, handleBookClick }) {
   return (
     <li className="border border-gray-300 p-6 mb-4 flex flex-col md:flex-row justify-between items-center shadow-xl shadow-gary-500 rounded-3xl ">
-      <div className=" w-96 md:w-2/6">
-        <img src={car.CarModel.CarImages[0].imageUrl} alt="" className="   " />
+      <div className=" md:w-2/6 dark:bg-white dark:rounded-lg">
+        <img src={car.CarModel.CarImages[0].imageUrl} alt="" className="" />
       </div>
 
       <div className="flex flex-col gap-4 mt-4 md:border-l-4 border-black pl-4">
@@ -15,9 +15,9 @@ export default function CarSearchCard({ car, handleBookClick }) {
         <div>Status: {car.status}</div>
       </div>
       <div className="flex flex-col gap-4 mt-4 items-center md:items-end ">
-        <div className="text-sm md:text-xl animate-pulse text-orange-500">
+        <p className="text-sm md:text-xl animate-pulse text-orange-500 dark:text-yellow-300 ">
           Book Now!
-        </div>
+        </p>
         <div className="font-medium text-xl md:text-3xl  tracking-wide">
           {car.CarModel.CarType.pricePerDay}.00/Day{" "}
         </div>

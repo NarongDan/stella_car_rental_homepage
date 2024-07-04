@@ -4,24 +4,13 @@ import Logo from "../asset/image/Logo.png";
 import { useAuth } from "../context/AuthContext";
 import { FaRegUser } from "react-icons/fa6";
 import DropDown from "./DropDown";
-// import { useState } from "react";
-// import { useRef } from "react";
+import Toggle from "../components/Toggle";
 
 export default function Navbar({ openDropDown, setOpenDropDown, Dropdown }) {
   const { authUser } = useAuth();
 
-  // const Dropdown = useRef(null);
-  // const [openDropDown, setOpenDropDown] = useState(false);
-
-  // const closeDropDown = (e) => {
-  //   if (openDropDown && !DropDown) {
-  //     setOpenDropDown(false);
-  //   }
-  // };
-  // document.addEventListener("mousedown", closeDropDown);
-
   return (
-    <nav className="flex justify-center z-20 ">
+    <nav className="flex justify-center z-20 dark:bg-black dark:text-white">
       <div className="w-full px-3 ">
         <div className="flex justify-between items-center w-auto h-20  shadow-zinc-700 border-b">
           {/* Logo */}
@@ -34,10 +23,11 @@ export default function Navbar({ openDropDown, setOpenDropDown, Dropdown }) {
             </Link>
           </div>
           {/* Mid-Nav */}
+
           <div className="hidden lg:flex gap-6 font-semibold text-lg lg:text-2xl">
             <Link
               to={"/"}
-              className="text-gray-700 hover:text-secondary-color transition duration-300 relative group"
+              className="text-gray-700 hover:text-secondary-color transition duration-300 relative group dark:text-white"
             >
               <div className="relative">
                 <span>Home</span>
@@ -47,7 +37,7 @@ export default function Navbar({ openDropDown, setOpenDropDown, Dropdown }) {
 
             <Link
               to={"/cars"}
-              className="text-gray-700 hover:text-secondary-color transition duration-300 relative group"
+              className="text-gray-700 hover:text-secondary-color transition duration-300 relative group dark:text-white"
             >
               <span>Cars</span>
               <span className="absolute left-0 right-0 h-0.5 bg-orange-400 bottom-0 transform scale-x-0 origin-left transition duration-500 group-hover:scale-x-100"></span>
@@ -55,7 +45,7 @@ export default function Navbar({ openDropDown, setOpenDropDown, Dropdown }) {
 
             <Link
               to={"/about"}
-              className="text-gray-700 hover:text-secondary-color transition duration-300 relative group"
+              className="text-gray-700 hover:text-secondary-color transition duration-300 relative group dark:text-white"
             >
               <span>About</span>
               <span className="absolute left-0 right-0 h-0.5 bg-orange-400 bottom-0 transform scale-x-0 origin-left transition duration-500 group-hover:scale-x-100"></span>
@@ -63,7 +53,7 @@ export default function Navbar({ openDropDown, setOpenDropDown, Dropdown }) {
 
             <Link
               to={"/contact"}
-              className="text-gray-700 hover:text-secondary-color transition duration-300 relative group"
+              className="text-gray-700 hover:text-secondary-color transition duration-300 relative group dark:text-white"
             >
               <span>Contact</span>
               <span className="absolute left-0 right-0 h-0.5 bg-orange-400 bottom-0 transform scale-x-0 origin-left transition duration-500 group-hover:scale-x-100"></span>
@@ -71,6 +61,7 @@ export default function Navbar({ openDropDown, setOpenDropDown, Dropdown }) {
           </div>
           {/* Right Nav  */}
           <div className="flex justify-center items-center gap-2">
+            <Toggle />
             {authUser ? (
               <div className="flex items-center gap-4">
                 <p className="font-semibold text-lg">
@@ -78,7 +69,7 @@ export default function Navbar({ openDropDown, setOpenDropDown, Dropdown }) {
                 </p>
 
                 <div
-                  className="flex justify-center items-center bg-gray-100 w-10 h-10 rounded-full hover:bg-gray-200 duration-300 cursor-pointer"
+                  className="flex justify-center items-center bg-gray-100 w-10 h-10 rounded-full hover:bg-gray-200 duration-300 cursor-pointer dark:text-black"
                   onClick={(e) => {
                     e.stopPropagation();
                     setOpenDropDown((prev) => !prev);

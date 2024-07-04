@@ -3,7 +3,7 @@ import { FcCheckmark } from "react-icons/fc";
 export default function CarFeatures({ h }) {
   return (
     <div
-      className={`flex flex-col p-4 shadow-md bg-white rounded-2xl gap-2 ${h}`}
+      className={`flex flex-col p-4 shadow-md bg-white rounded-2xl gap-2 dark:text-black ${h}`}
     >
       <div className="font-semibold">Features :</div>
       <div className="flex flex-col sm:flex-row gap-2">

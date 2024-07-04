@@ -77,17 +77,17 @@ export default function HomePageBody() {
         </div>
       </div>
       {/* Testimonial */}
-      <div className=" flex justify-center mt-16">
+      <div className=" flex justify-center mt-16 dark:text-black">
         <div className="container ">
           <div className=" flex flex-col items-center  ">
-            <div className=" p-5 text-5xl font-extrabold md:font-extrabold  md:text-6xl">
+            <div className=" p-5 text-5xl font-extrabold md:font-extrabold  md:text-6xl dark:text-white">
               Testimonials
             </div>
           </div>
 
-          <div className="lg:grid grid-cols-4 mt-2 gap-5 p-7 ">
+          <div className="lg:grid grid-cols-4 mt-2 gap-7 p-7">
             {/* Testimonials Card  1 */}
-            <div className=" border-2 rounded-md p-7 mb-5 bg-white opacity-100  shadow-lg shadow-neutral-500">
+            <div className="border-2 rounded-md p-7 mb-5 bg-white opacity-100 shadow-lg dark:shadow-[0px_0px_30px_0px_#feebc8] shadow-neutral-500 ">
               <div className="flex items-center gap-5 mb-5">
                 <img
                   src={img1}
@@ -115,7 +115,7 @@ export default function HomePageBody() {
             </div>
             {/* Testimonials Card  2 */}
 
-            <div className=" border-2 rounded-md p-7 mb-5 bg-white opacity-100  shadow-lg shadow-neutral-500">
+            <div className=" border-2 rounded-md p-7 mb-5 bg-white opacity-100 shadow-lg dark:shadow-[0px_0px_30px_0px_#feebc8] shadow-neutral-500 ">
               <div className="flex items-center gap-5 mb-5">
                 <img
                   src={img2}
@@ -144,7 +144,7 @@ export default function HomePageBody() {
 
             {/* Testimonials Card  3 */}
 
-            <div className=" border-2 rounded-md p-7 mb-5 bg-white opacity-100  shadow-lg shadow-neutral-500">
+            <div className=" border-2 rounded-md p-7 mb-5 bg-white opacity-100 shadow-lg dark:shadow-[0px_0px_30px_0px_#feebc8] shadow-neutral-500 ">
               <div className="flex items-center gap-5 mb-5">
                 <img
                   src={img3}
@@ -173,7 +173,7 @@ export default function HomePageBody() {
 
             {/* Testimonials Card  4 */}
 
-            <div className=" border-2 rounded-md p-7 mb-5 bg-white opacity-100  shadow-lg shadow-neutral-500">
+            <div className=" border-2 rounded-md p-7 mb-5 bg-white opacity-100 shadow-lg dark:shadow-[0px_0px_30px_0px_#feebc8] shadow-neutral-500 ">
               <div className="flex items-center gap-5 mb-5">
                 <img
                   src={img4}

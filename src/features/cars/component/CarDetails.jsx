@@ -1,6 +1,8 @@
 export default function CarDetails({ car, h }) {
   return (
-    <div className={` gap-2 p-4 shadow-md bg-white rounded-2xl ${h}`}>
+    <div
+      className={` gap-2 p-4 shadow-md bg-white rounded-2xl dark:text-black ${h}`}
+    >
       <p>
         <span className="font-semibold">Brand: </span>
         {car.brand}
