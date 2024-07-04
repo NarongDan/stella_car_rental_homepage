@@ -6,7 +6,7 @@ const AboutUs = () => {
       <div className="bg-white rounded-lg shadow-xl lg:max-w-7xl  mx-auto p-8 flex flex-col md:flex-row ">
         {/* About Us  */}
         <div className="md:w-1/2 p-4">
-          <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
+          <h1 className="text-5xl font-bold text-center text-black mb-8">
             About Us
           </h1>
           <p className="text-lg text-gray-600 leading-relaxed mb-6">

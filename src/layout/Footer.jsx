@@ -119,14 +119,20 @@ export default function Footer() {
 
             {/* Service  */}
             <div>
-              <p className="font-medium">Services</p>
-              <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-300"></nav>
+              <p className="font-medium">Branches</p>
+              <div className="flex flex-col mt-4 space-y-2 text-sm text-gray-300">
+                <p>Suvarnabhumi Airport</p>
+                <p>Phuket International Airport </p>
+                <p>Chiang Mai International Airport </p>
+                <p>Mae Sot Airport </p>
+                <p>Udon Thani International Airport </p>
+              </div>
             </div>
 
             {/* Support  */}
             <div>
               <p className="font-medium">Support</p>
-              <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-300">
+              <div className="flex flex-col mt-4 space-y-2 text-sm text-gray-300">
                 <a className="hover:opacity-75" href>
                   Contact
                 </a>
@@ -139,13 +145,13 @@ export default function Footer() {
                 <a className="hover:opacity-75" href>
                   Help center
                 </a>
-              </nav>
+              </div>
             </div>
 
             {/* Contact Us */}
             <div>
               <p className="font-medium">Contacts us</p>
-              <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-300">
+              <div className="flex flex-col mt-4 space-y-2 text-sm text-gray-300">
                 <a className="hover:opacity-75" href>
                   <MdOutlineEmail />
                   contact@company.com
@@ -162,7 +168,7 @@ export default function Footer() {
                   <IoIosPin />
                   794 Mcallister St San Francisco, 94102
                 </a>
-              </nav>
+              </div>
             </div>
           </div>
         </div>

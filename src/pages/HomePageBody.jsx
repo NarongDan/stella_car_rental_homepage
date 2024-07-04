@@ -52,7 +52,7 @@ export default function HomePageBody() {
                 <h1 className=" font-extrabold text-3xl sm:font-extrabold sm:text-5xl">
                   Looking for cars to rent in Thailand? Look no further!
                 </h1>
-                <p className="text-semibold">
+                <p className="text-semibold text-xl ">
                   Explore Thailand with ease and comfort by renting a car from
                   us, whether you're planning to visit the bustling streets of
                   Bangkok, the serene beaches of Phuket, or the cultural
@@ -71,11 +71,11 @@ export default function HomePageBody() {
         </div>
       </div>
       {/* Testimonial */}
-      <div className=" flex justify-center">
+      <div className=" flex justify-center mt-16">
         <div className="container ">
           <div className=" flex flex-col items-center  ">
-            <div className=" p-5 text-3xl font-extrabold md:font-extrabold  md:text-5xl">
-              Testimonials from our clients
+            <div className=" p-5 text-5xl font-extrabold md:font-extrabold  md:text-6xl">
+              Testimonials
             </div>
           </div>
 
@@ -152,7 +152,7 @@ export default function HomePageBody() {
       <div className="flex justify-center p-5">
         <div className="container">
           <div className="flex justify-center">
-            <div className="text-3xl font-extrabold">
+            <div className="text-center text-3xl font-extrabold">
               How our Service Works?
             </div>
           </div>

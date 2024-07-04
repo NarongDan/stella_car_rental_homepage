@@ -4,11 +4,11 @@ import GoogleMap from "../components/GoogleMap";
 
 export default function ContactPage() {
   return (
-    <div className="max-w-7xl mx-auto mt-10 bg-white rounded-lg shadow-lg overflow-hidden">
+    <div className="max-w-7xl mx-auto  bg-gray-800 rounded-lg shadow-lg overflow-hidden">
       {/* Banner  */}
       <div className="relative">
         <img src={Img} alt="Contact Us" className="w-full h-64 object-cover" />
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div className="absolute inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
           <h1 className="text-4xl font-bold text-white">Stella Car Rental</h1>
         </div>
       </div>

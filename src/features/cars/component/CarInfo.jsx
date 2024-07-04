@@ -28,7 +28,7 @@ export default function CarInfo({ car }) {
             </div>
             <div className="w-full">
               {/* Features  */}
-              <CarFeatures h={"h-[200px]"} />
+              <CarFeatures h={"min-h-[200px]"} />
             </div>
           </div>
         </div>

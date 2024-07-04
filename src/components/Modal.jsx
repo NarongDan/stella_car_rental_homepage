@@ -31,7 +31,7 @@ export default function Modal({
             onMouseDown={onClose}
           >
             <div
-              className="bg-[#f0f2f5] rounded-lg shadow-lg max-w-xl sm:min-w-sm md:max-w-2xl  lg:max-w-4xl pb-4 mx-4 sm:mx-auto transition-transform transform scale-100 sm:scale-105 hover:scale-110"
+              className="bg-[#f0f2f5] rounded-lg shadow-lg max-w-xl sm:min-w-sm md:max-w-2xl  lg:max-w-4xl pb-4 mx-4 sm:mx-auto "
               style={{ width: `${width}rem` }}
               onMouseDown={(e) => e.stopPropagation()}
             >
@@ -45,7 +45,7 @@ export default function Modal({
                   &times;
                 </button>
               </div>
-              <div className="p-4">{children}</div>
+              <div className="p-6">{children}</div>
             </div>
           </div>
         </>

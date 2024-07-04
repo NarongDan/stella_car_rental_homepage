@@ -28,40 +28,45 @@ export default function Navbar({ openDropDown, setOpenDropDown, Dropdown }) {
           <div className="navbar-logo ">
             <Link className="flex  items-center " to={"/"}>
               <img src={Logo} className="  w-32 " alt="logo" />
-              <h1 className="text-xl font-bold font-serif hidden md:block md:text-sm ">
+              <h1 className="font-bold font-serif hidden sm:block sm:text-2xl">
                 Stella Car Rental
               </h1>
             </Link>
           </div>
           {/* Mid-Nav */}
-          <div className="hidden md:flex gap-4 ">
+          <div className="hidden lg:flex gap-6 font-semibold text-lg lg:text-2xl">
             <Link
               to={"/"}
-              className="text-gray-700 hover:text-secondary-color transition duration-300 relative"
+              className="text-gray-700 hover:text-secondary-color transition duration-300 relative group"
             >
-              <span>Home</span>
-              <span className="absolute left-0 right-0 h-0.5 bg-secondary-color bottom-0 transform scale-x-0 origin-left transition duration-300 group-hover:scale-x-100"></span>
+              <div className="relative">
+                <span>Home</span>
+                <span className="absolute left-0 right-0 h-0.5 bg-orange-400 bottom-0 transform scale-x-0 origin-left transition duration-500 group-hover:scale-x-100"></span>
+              </div>
             </Link>
+
             <Link
               to={"/cars"}
-              className="text-gray-700 hover:text-secondary-color transition duration-300 relative"
+              className="text-gray-700 hover:text-secondary-color transition duration-300 relative group"
             >
               <span>Cars</span>
-              <span className="absolute left-0 right-0 h-0.5 bg-secondary-color bottom-0 transform scale-x-0 origin-left transition duration-300 group-hover:scale-x-100"></span>
+              <span className="absolute left-0 right-0 h-0.5 bg-orange-400 bottom-0 transform scale-x-0 origin-left transition duration-500 group-hover:scale-x-100"></span>
             </Link>
+
             <Link
               to={"/about"}
-              className="text-gray-700 hover:text-secondary-color transition duration-300 relative"
+              className="text-gray-700 hover:text-secondary-color transition duration-300 relative group"
             >
               <span>About</span>
-              <span className="absolute left-0 right-0 h-0.5 bg-secondary-color bottom-0 transform scale-x-0 origin-left transition duration-300 group-hover:scale-x-100"></span>
+              <span className="absolute left-0 right-0 h-0.5 bg-orange-400 bottom-0 transform scale-x-0 origin-left transition duration-500 group-hover:scale-x-100"></span>
             </Link>
+
             <Link
               to={"/contact"}
-              className="text-gray-700 hover:text-secondary-color transition duration-300 relative"
+              className="text-gray-700 hover:text-secondary-color transition duration-300 relative group"
             >
               <span>Contact</span>
-              <span className="absolute left-0 right-0 h-0.5 bg-secondary-color bottom-0 transform scale-x-0 origin-left transition duration-300 group-hover:scale-x-100"></span>
+              <span className="absolute left-0 right-0 h-0.5 bg-orange-400 bottom-0 transform scale-x-0 origin-left transition duration-500 group-hover:scale-x-100"></span>
             </Link>
           </div>
           {/* Right Nav  */}
@@ -93,7 +98,7 @@ export default function Navbar({ openDropDown, setOpenDropDown, Dropdown }) {
             )}
 
             {openDropDown && (
-              <div ref={Dropdown}>
+              <div ref={Dropdown} className="">
                 <DropDown />
               </div>
             )}
