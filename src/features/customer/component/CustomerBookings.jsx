@@ -1,23 +1,12 @@
 import LoadingSpinner from "../../../components/LoadingSpinner";
 import { useBooking } from "../../../context/BookingContext";
 import { useState, useEffect } from "react";
+import dayjs from "dayjs";
 
 export default function CustomerBookings() {
   const { getBookingHistory } = useBooking();
-  const [booking, setBooking] = useState(null);
+  const [booking, setBooking] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  // Pagination
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentBooking = booking
-    .sort((a, b) => b.bookingId - a.bookingId)
-    .slice(indexOfFirstItem, indexOfLastItem);
-
-  const totalPages = Math.ceil(booking.length / itemsPerPage);
-  //
 
   const getMyBooking = async () => {
     try {
@@ -33,6 +22,18 @@ export default function CustomerBookings() {
   useEffect(() => {
     getMyBooking();
   }, []);
+
+  // Pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentBooking = booking
+    .sort((a, b) => b.bookingId - a.bookingId)
+    .slice(indexOfFirstItem, indexOfLastItem);
+
+  const totalPages = Math.ceil(booking.length / itemsPerPage);
+  //
 
   if (loading) {
     return <LoadingSpinner />;
@@ -72,10 +73,10 @@ export default function CustomerBookings() {
                     {items.Car.CarModel.color}
                   </td>
                   <td className="p-2 whitespace-nowrap">
-                    {new Date(items.startDate).toLocaleDateString()}
+                    {dayjs(items.startDate).format("DD/MM/YYYY")}
                   </td>
                   <td className="p-2 whitespace-nowrap">
-                    {new Date(items.endDate).toLocaleDateString()}
+                    {dayjs(items.endDate).format("DD/MM/YYYY")}
                   </td>
                   <td className="p-2 whitespace-nowrap">
                     {items.PickupLocation.branchName}
