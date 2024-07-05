@@ -1,25 +1,32 @@
+import { lazy } from "react";
 import { RouterProvider } from "react-router-dom";
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import HomePageLayout from "../layout/HomePageLayout";
-import { Navigate } from "react-router-dom";
-import HomePageBody from "../pages/HomePageBody";
-import LoginPage from "../pages/LoginPage";
-import RegistrationPage from "../pages/RegistrationPage";
-import AboutPage from "../pages/AboutPage";
-import ContactPage from "../pages/ContactPage";
 
-import CarPage from "../pages/CarPage";
-
-import SearchCarPage from "../pages/SearchCarPage";
-import BookingConfirmationPage from "../pages/ฺBookingConfirmationPage";
-import CustomerDetail from "../features/customer/component/CustomerDetail";
-
-import DetailCarPage from "../pages/DetailCarPage";
-import CustomerPage from "../pages/CustomerPage";
-import ProtectProfileRoute from "../features/customer/component/ProtectCustomerRoute";
-import CustomerBookings from "../features/customer/component/CustomerBookings";
-import PaymentSuccess from "../pages/PaymentSuccess";
-import PaymentCancelled from "../pages/PaymentCancelled";
+// Lazy loading components
+const HomePageBody = lazy(() => import("../pages/HomePageBody"));
+const LoginPage = lazy(() => import("../pages/LoginPage"));
+const RegistrationPage = lazy(() => import("../pages/RegistrationPage"));
+const AboutPage = lazy(() => import("../pages/AboutPage"));
+const ContactPage = lazy(() => import("../pages/ContactPage"));
+const CarPage = lazy(() => import("../pages/CarPage"));
+const SearchCarPage = lazy(() => import("../pages/SearchCarPage"));
+const BookingConfirmationPage = lazy(() =>
+  import("../pages/ฺBookingConfirmationPage")
+);
+const CustomerDetail = lazy(() =>
+  import("../features/customer/component/CustomerDetail")
+);
+const DetailCarPage = lazy(() => import("../pages/DetailCarPage"));
+const CustomerPage = lazy(() => import("../pages/CustomerPage"));
+const ProtectProfileRoute = lazy(() =>
+  import("../features/customer/component/ProtectCustomerRoute")
+);
+const CustomerBookings = lazy(() =>
+  import("../features/customer/component/CustomerBookings")
+);
+const PaymentSuccess = lazy(() => import("../pages/PaymentSuccess"));
+const PaymentCancelled = lazy(() => import("../pages/PaymentCancelled"));
 
 const router = createBrowserRouter([
   {

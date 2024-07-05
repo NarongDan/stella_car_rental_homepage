@@ -4,9 +4,9 @@ export default function CustomerPage() {
   const location = useLocation();
 
   return (
-    <div className="relative w-full mt-20 px-10 dark:bg-white dark:text-black">
+    <div className="relative w-full mt-20 px-10 dark:bg-black dark:text-black">
       {/* Profile Bar  */}
-      <div className="container dark:bg-white flex absolute -top-[65px]">
+      <div className="container dark:bg-black flex absolute -top-[65px] ">
         <Link to="/customer">
           <div
             className={`px-10 py-5 bg-gray-50 border  border-b-0 border-gray-200 rounded-t-xl font-semibold hover:bg-orange-300 ${
