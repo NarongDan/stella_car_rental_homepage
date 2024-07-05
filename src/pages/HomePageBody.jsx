@@ -61,10 +61,10 @@ export default function HomePageBody() {
             <div className="lg:grid grid-cols-2 p-7 mt-10">
               {/* Information */}
               <div className="flex flex-col gap-10 p-7">
-                <h1 className="font-extrabold text-3xl sm:font-extrabold sm:text-5xl an">
+                <h1 className="font-extrabold text-3xl sm:font-extrabold sm:text-5xl animate-fadeinleft">
                   Looking for cars to rent in Thailand? Look no further!
                 </h1>
-                <p className="text-semibold text-xl">
+                <p className="text-semibold text-xl animate-fadeinleft">
                   Explore Thailand with ease and comfort by renting a car from
                   us, whether you're planning to visit the bustling streets of
                   Bangkok, the serene beaches of Phuket, or the cultural
@@ -78,7 +78,9 @@ export default function HomePageBody() {
                 <img src={CarHero} alt="Car" />
               </div>
             </div>
-            <SearchCarInput />
+            <div className=" animate-fadeinup">
+              <SearchCarInput />
+            </div>
           </div>
         </div>
       </div>
