@@ -188,7 +188,7 @@ export default function BookingConfirmationPage() {
           </div>
           {/* Total Amount */}
           <div className="w-full flex justify-center mb-10">
-            <p className="font-bold text-2xl">Total: {totalAmount} </p>
+            <p className="font-bold text-2xl">Total: &#3647; {totalAmount} </p>
           </div>
 
           {/* Button  */}
