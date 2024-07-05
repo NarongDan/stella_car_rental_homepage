@@ -34,6 +34,7 @@ export default function CustomerDetail() {
     setInputError(initialInputError);
     setIsEditing(false);
   };
+
   const handleSubmitUpdate = async (e) => {
     try {
       e.preventDefault();

@@ -7,6 +7,18 @@ export default function CustomerBookings() {
   const [booking, setBooking] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // Pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentBooking = booking
+    .sort((a, b) => b.bookingId - a.bookingId)
+    .slice(indexOfFirstItem, indexOfLastItem);
+
+  const totalPages = Math.ceil(booking.length / itemsPerPage);
+  //
+
   const getMyBooking = async () => {
     try {
       const res = await getBookingHistory();
@@ -44,7 +56,7 @@ export default function CustomerBookings() {
               </tr>
             </thead>
             <tbody>
-              {booking?.map((items) => (
+              {currentBooking?.map((items) => (
                 <tr
                   key={items.id}
                   className="bg-gray-100 border-b border-gray-300"
@@ -76,6 +88,37 @@ export default function CustomerBookings() {
               ))}
             </tbody>
           </table>
+        </div>
+        <div className="flex justify-center gap-2 mt-4 flex-wrap">
+          <button
+            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+            className="px-4 py-2 bg-secondary-color text-white hover:bg-thirdly-color rounded-lg"
+            disabled={currentPage === 1}
+          >
+            Previous
+          </button>
+          {[...Array(totalPages).keys()].map((number) => (
+            <button
+              key={number}
+              onClick={() => setCurrentPage(number + 1)}
+              className={`px-4 py-2 rounded ${
+                currentPage === number + 1
+                  ? "bg-secondary-color text-white hover:bg-thirdly-color rounded-lg"
+                  : "bg-gray-300 hover:bg-gray-400"
+              }`}
+            >
+              {number + 1}
+            </button>
+          ))}
+          <button
+            onClick={() =>
+              setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+            }
+            className="px-4 py-2 bg-secondary-color text-white hover:bg-thirdly-color rounded-lg"
+            disabled={currentPage === totalPages}
+          >
+            Next
+          </button>
         </div>
       </div>
     </div>
