@@ -23,6 +23,7 @@ export default function BookingConfirmationPage() {
   const [dropOffLocation, setDropOffLocation] = useState("");
   const [pickupTime, setPickupTime] = useState("09:00");
 
+  console.log("Dropoff", dropOffLocation);
   //เอาbranchId มาแสดงเป็น branch name
   useEffect(() => {
     if (pickupLocation && branches) {

@@ -48,8 +48,11 @@ export default function RegistrationForm() {
     }
   }, [location.state]);
 
-  const handleChangeInput = (e) =>
-    setInput({ ...input, [e.target.name]: e.target.value });
+  const handleChangeInput = (e) => {
+    const { name, value } = e.target;
+    setInput({ ...input, [name]: value });
+    setInputError((prevError) => ({ ...prevError, [name]: "" }));
+  };
 
   const handleSubmitForm = async (e) => {
     try {
@@ -58,7 +61,7 @@ export default function RegistrationForm() {
       if (error) {
         return setInputError(error);
       }
-      setInputError({ ...initialInput });
+      setInputError({ ...initialInputError });
 
       await authApi.register(input);
 
@@ -77,7 +80,7 @@ export default function RegistrationForm() {
 
   return (
     <form onSubmit={handleSubmitForm}>
-      <p className="mb-10  text-center font-semibold text-2xl text-black">
+      <p className="mb-10 text-center font-semibold text-2xl text-black">
         REGISTRATION
       </p>
       <div className="grid grid-cols-2 gap-4 text-center">
@@ -157,7 +160,7 @@ export default function RegistrationForm() {
           />
         </div>
         <div className="col-span-2 text-center">
-          <button className="w-full bg-secondary-color text-white px-3 py-1.5 mt-4 font-bold rounded-md hover:bg-blue-700 transition-colors duration-300">
+          <button className="w-full bg-secondary-color text-white px-3 py-1.5 mt-4 font-bold rounded-md hover:bg-thirdly-color transition-colors duration-300">
             Sign Up
           </button>
         </div>

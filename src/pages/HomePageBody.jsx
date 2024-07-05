@@ -13,13 +13,13 @@ import img2 from "../asset/image/300_2.jpg";
 import img3 from "../asset/image/300_3.jpg";
 import img4 from "../asset/image/300_4.jpg";
 import Img from "../asset/image/pexels-dariuskrs-2470657.jpg";
-import useOnScreen from "../components/OnScreen";
+import OnScreen from "../components/OnScreen";
 
 export default function HomePageBody() {
   const testimonialRef = useRef();
   const howRef = useRef();
-  const isVisibleTestimonial = useOnScreen(testimonialRef);
-  const isVisibleHow = useOnScreen(howRef);
+  const isVisibleTestimonial = OnScreen(testimonialRef);
+  const isVisibleHow = OnScreen(howRef);
 
   return (
     <>
@@ -61,7 +61,7 @@ export default function HomePageBody() {
             <div className="lg:grid grid-cols-2 p-7 mt-10">
               {/* Information */}
               <div className="flex flex-col gap-10 p-7">
-                <h1 className="font-extrabold text-3xl sm:font-extrabold sm:text-5xl">
+                <h1 className="font-extrabold text-3xl sm:font-extrabold sm:text-5xl an">
                   Looking for cars to rent in Thailand? Look no further!
                 </h1>
                 <p className="text-semibold text-xl">
@@ -108,11 +108,11 @@ export default function HomePageBody() {
                 <div className="flex flex-col">
                   <h3 className="font-bold text-xl">Ben T.</h3>
                   <div className="flex rounded-md">
-                    <IoIosStar className="text-yellow-400" />
-                    <IoIosStar className="text-yellow-400" />
-                    <IoIosStar className="text-yellow-400" />
-                    <IoIosStar className="text-yellow-400" />
-                    <IoIosStar className="text-yellow-400" />
+                    <IoIosStar className="text-yellow-400 " />
+                    <IoIosStar className="text-yellow-400 " />
+                    <IoIosStar className="text-yellow-400 " />
+                    <IoIosStar className="text-yellow-400 " />
+                    <IoIosStar className="text-yellow-400 " />
                   </div>
                 </div>
               </div>
