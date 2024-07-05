@@ -28,8 +28,8 @@ export default function CustomerBookings() {
   return (
     <div>
       <div className="container mx-auto px-4 py-8">
-        <div className="overflow-x-auto   ">
-          <table className="min-w-full border-collapse ">
+        <div className="overflow-x-auto">
+          <table className="min-w-full border-collapse  ">
             <thead>
               <tr className="bg-orange-500 text-white">
                 <th className="p-2 text-left">Booking ID</th>
@@ -49,19 +49,29 @@ export default function CustomerBookings() {
                   key={items.id}
                   className="bg-gray-100 border-b border-gray-300"
                 >
-                  <td className="p-2">{items.bookingId}</td>
-                  <td className="p-2">{items.Car.CarModel.brand}</td>
-                  <td className="p-2">{items.Car.CarModel.model}</td>
-                  <td className="p-2">{items.Car.CarModel.color}</td>
-                  <td className="p-2">
+                  <td className="p-2 whitespace-nowrap">{items.bookingId}</td>
+                  <td className="p-2 whitespace-nowrap">
+                    {items.Car.CarModel.brand}
+                  </td>
+                  <td className="p-2 whitespace-nowrap">
+                    {items.Car.CarModel.model}
+                  </td>
+                  <td className="p-2 whitespace-nowrap">
+                    {items.Car.CarModel.color}
+                  </td>
+                  <td className="p-2 whitespace-nowrap">
                     {new Date(items.startDate).toLocaleDateString()}
                   </td>
-                  <td className="p-2">
+                  <td className="p-2 whitespace-nowrap">
                     {new Date(items.endDate).toLocaleDateString()}
                   </td>
-                  <td className="p-2">{items.PickupLocation.branchName}</td>
-                  <td className="p-2">{items.DropoffLocation.branchName}</td>
-                  <td className="p-2">{items.status}</td>
+                  <td className="p-2 whitespace-nowrap">
+                    {items.PickupLocation.branchName}
+                  </td>
+                  <td className="p-2 whitespace-nowrap">
+                    {items.DropoffLocation.branchName}
+                  </td>
+                  <td className="p-2 whitespace-nowrap">{items.status}</td>
                 </tr>
               ))}
             </tbody>

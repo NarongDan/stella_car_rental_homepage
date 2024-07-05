@@ -112,7 +112,7 @@ export default function CustomerDetail() {
         </div>
         <div className="xl:flex xl:space-x-4 space-y-4 xl:space-y-0">
           {/* Email  */}
-          <div className="md:w-1/2 w-full">
+          <div className=" w-full">
             <label className="block text-black font-semibold">Email</label>
             {isEditing ? (
               <Input
@@ -126,7 +126,7 @@ export default function CustomerDetail() {
             )}
           </div>
           {/* Phone  */}
-          <div className="md:w-1/2 w-full">
+          <div className=" w-full">
             <label className="block text-black font-semibold">Phone</label>
             {isEditing ? (
               <Input
@@ -146,7 +146,7 @@ export default function CustomerDetail() {
 
         <div className="xl:flex xl:space-x-4 space-y-4 xl:space-y-0">
           {/* Address  */}
-          <div className="lg:w-1/2 w-full">
+          <div className="w-full">
             <label className="block text-black font-semibold">Address</label>
             {isEditing ? (
               <Textarea
@@ -164,7 +164,7 @@ export default function CustomerDetail() {
           </div>
 
           {/* Driver License  */}
-          <div className="md:w-1/2 w-full">
+          <div className=" w-full">
             <label className="block text-black font-semibold">
               Driver License
             </label>
@@ -186,7 +186,7 @@ export default function CustomerDetail() {
           {/* Password  */}
           {isEditing && (
             <>
-              <div className="xl:w-1/2 w-full">
+              <div className="w-full">
                 <label className="block text-black font-semibold">
                   Password
                 </label>
@@ -204,7 +204,7 @@ export default function CustomerDetail() {
           {/* Confirm Password  */}
           {isEditing && (
             <>
-              <div className="md:w-1/2 w-full">
+              <div className=" w-full">
                 <label className="block text-black font-semibold">
                   Confirm Password
                 </label>
@@ -240,7 +240,7 @@ export default function CustomerDetail() {
 
         {/* Save Button  */}
         {isEditing && (
-          <div className="space-x-5">
+          <div className="space-x-4">
             <button
               type="button"
               className="mt-4 px-6 py-2 bg-secondary-color text-white rounded-lg hover:bg-thirdly-color transition ease-in-out duration-300"
