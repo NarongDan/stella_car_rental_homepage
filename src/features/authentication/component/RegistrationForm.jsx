@@ -49,9 +49,8 @@ export default function RegistrationForm() {
   }, [location.state]);
 
   const handleChangeInput = (e) => {
-    const { name, value } = e.target;
-    setInput({ ...input, [name]: value });
-    setInputError((prevError) => ({ ...prevError, [name]: "" }));
+    setInput({ ...input, [e.target.name]: e.target.value });
+    setInputError((prevError) => ({ ...prevError, [e.target.name]: "" }));
   };
 
   const handleSubmitForm = async (e) => {
@@ -80,7 +79,7 @@ export default function RegistrationForm() {
 
   return (
     <form onSubmit={handleSubmitForm}>
-      <p className="mb-10 text-center font-semibold text-2xl text-black">
+      <p className="text-center font-semibold text-2xl text-black my-6 min-w-[300px]">
         REGISTRATION
       </p>
       <div className="grid grid-cols-2 gap-4 text-center">
