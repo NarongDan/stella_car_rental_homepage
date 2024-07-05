@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import { lazy } from "react";
 import { RouterProvider } from "react-router-dom";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import HomePageLayout from "../layout/HomePageLayout";
