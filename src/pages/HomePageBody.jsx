@@ -18,6 +18,7 @@ import OnScreen from "../components/OnScreen";
 export default function HomePageBody() {
   const testimonialRef = useRef();
   const howRef = useRef();
+
   const isVisibleTestimonial = OnScreen(testimonialRef);
   const isVisibleHow = OnScreen(howRef);
 
@@ -60,11 +61,11 @@ export default function HomePageBody() {
           <div className="container z-10">
             <div className="lg:grid grid-cols-2 p-7 mt-10">
               {/* Information */}
-              <div className="flex flex-col gap-10 p-7">
-                <h1 className="font-extrabold text-3xl sm:font-extrabold sm:text-5xl animate-fadeinleft">
+              <div className="flex flex-col gap-10 p-7 animate-fadeinleft ">
+                <h1 className="font-extrabold text-3xl sm:font-extrabold sm:text-5xl ">
                   Looking for cars to rent in Thailand? Look no further!
                 </h1>
-                <p className="text-semibold text-xl animate-fadeinleft">
+                <p className="text-semibold text-xl ">
                   Explore Thailand with ease and comfort by renting a car from
                   us, whether you're planning to visit the bustling streets of
                   Bangkok, the serene beaches of Phuket, or the cultural

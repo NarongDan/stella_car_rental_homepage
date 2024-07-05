@@ -33,16 +33,16 @@ export default function CustomerBookings() {
     .slice(indexOfFirstItem, indexOfLastItem);
 
   const totalPages = Math.ceil(booking.length / itemsPerPage);
-  //
 
   if (loading) {
     return <LoadingSpinner />;
   }
+
   return (
     <div>
       <div className="container mx-auto px-4 py-8">
-        <div className="overflow-x-auto">
-          <table className="min-w-full border-collapse  ">
+        <div className="overflow-auto">
+          <table className="min-w-full border-collapse">
             <thead>
               <tr className="bg-orange-500 text-white">
                 <th className="p-2 text-left">Booking ID</th>

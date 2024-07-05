@@ -214,6 +214,7 @@ export default function CustomerDetail() {
             Reward Points: <span>{authUser.totalPoints}</span>
           </p>
         </div>
+
         {!isEditing ? (
           <button
             type="button"
@@ -223,16 +224,16 @@ export default function CustomerDetail() {
             Edit Information
           </button>
         ) : (
-          <div className="space-x-4">
+          <div className="flex flex-col sm:flex-row gap-2 ">
             <button
               type="submit"
-              className="mt-4 px-6 py-2 bg-secondary-color text-white rounded-lg hover:bg-thirdly-color transition ease-in-out duration-300"
+              className="sm:min-w-[150px] px-6 py-2 bg-secondary-color text-white rounded-lg hover:bg-thirdly-color transition ease-in-out duration-300"
             >
               Save
             </button>
             <button
               type="button"
-              className="mt-4 px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-400 transition ease-in-out duration-300"
+              className="sm:min-w-[150px] px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-400 transition ease-in-out duration-300"
               onClick={handleCancelEdit}
             >
               Cancel
