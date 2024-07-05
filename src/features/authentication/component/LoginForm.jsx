@@ -77,7 +77,7 @@ export default function LoginForm() {
         />
         <button
           type="submit"
-          className="w-full bg-secondary-color text-white px-3 py-1.5 font-bold rounded-md hover:bg-blue-700 transition-colors duration-300"
+          className="w-full bg-secondary-color text-white px-3 py-1.5 font-bold rounded-md hover:bg-thirdly-color transition-colors duration-300"
         >
           Log in
         </button>
@@ -95,7 +95,7 @@ export default function LoginForm() {
         </div>
 
         <Link to="/register">
-          <button className="w-full bg-secondary-color text-white px-3 py-1.5 font-bold rounded-md hover:bg-blue-700 transition-colors duration-300">
+          <button className="w-full bg-secondary-color text-white px-3 py-1.5 font-bold rounded-md hover:bg-thirdly-color transition-colors duration-300">
             Sign Up
           </button>
         </Link>
