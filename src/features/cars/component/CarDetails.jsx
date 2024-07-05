@@ -30,7 +30,7 @@ export default function CarDetails({ car, h }) {
 
       <p>
         <span className="font-semibold">Price/Day: </span>
-        {car.CarType.pricePerDay} THB
+        &#3647; {car.CarType.pricePerDay}
       </p>
     </div>
   );

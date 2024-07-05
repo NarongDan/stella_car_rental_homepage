@@ -23,6 +23,7 @@ export default function BookingConfirmationPage() {
   const [dropOffLocation, setDropOffLocation] = useState("");
   const [pickupTime, setPickupTime] = useState("09:00");
 
+  console.log("Dropoff", dropOffLocation);
   //เอาbranchId มาแสดงเป็น branch name
   useEffect(() => {
     if (pickupLocation && branches) {
@@ -187,7 +188,7 @@ export default function BookingConfirmationPage() {
           </div>
           {/* Total Amount */}
           <div className="w-full flex justify-center mb-10">
-            <p className="font-bold text-2xl">Total: {totalAmount} </p>
+            <p className="font-bold text-2xl">Total: &#3647; {totalAmount} </p>
           </div>
 
           {/* Button  */}

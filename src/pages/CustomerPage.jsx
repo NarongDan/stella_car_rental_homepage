@@ -9,7 +9,7 @@ export default function CustomerPage() {
       <div className="container dark:bg-black flex absolute -top-[65px] ">
         <Link to="/customer">
           <div
-            className={`px-10 py-5 bg-gray-50 border  border-b-0 border-gray-200 rounded-t-xl font-semibold hover:bg-orange-300 ${
+            className={`px-2 sm:px-10 py-5 bg-gray-50 border border-b-0 border-gray-100 rounded-t-xl font-semibold hover:bg-orange-300 ${
               location.pathname === "/customer" ? "bg-orange-200" : ""
             }`}
           >
@@ -19,7 +19,7 @@ export default function CustomerPage() {
 
         <Link to="/customer/bookings">
           <div
-            className={`px-10 py-5 bg-gray-50 border  border-b-0 border-gray-200 rounded-t-xl font-semibold hover:bg-orange-300 ${
+            className={`px-2 sm:px-10 py-5 bg-gray-50 border border-b-0 border-gray-100 rounded-t-xl font-semibold hover:bg-orange-300 ${
               location.pathname === "/customer/bookings" ? "bg-orange-200 " : ""
             }`}
           >
@@ -30,7 +30,7 @@ export default function CustomerPage() {
 
       {/*  content body  */}
       <div
-        className={`w-full border border-gray-200 pb-20 mb-20 px-6 
+        className={`w-full border border-gray-200  pb-20 mb-20 px-6 
           
           rounded-lg rounded-tl-none
           

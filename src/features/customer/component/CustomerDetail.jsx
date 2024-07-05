@@ -25,11 +25,15 @@ export default function CustomerDetail() {
   const [loading, setLoading] = useState(false);
 
   const handleChangeInput = (e) => {
-    if (e.target.value !== "" && e.target.value.trim())
-      setInput({ ...input, [e.target.name]: e.target.value });
+    setInput({ ...input, [e.target.name]: e.target.value });
+    setInputError((prevError) => ({ ...prevError, [e.target.name]: "" }));
   };
 
-  // อัพเดทข้อมูลหากร้องขอ
+  const handleCancelEdit = () => {
+    setInput({});
+    setInputError(initialInputError);
+    setIsEditing(false);
+  };
 
   const handleSubmitUpdate = async (e) => {
     try {
@@ -46,14 +50,14 @@ export default function CustomerDetail() {
       await authApi.updateUserInfo(input);
       setInput({});
       fetchUser();
-      toast.success("updated successfully");
-      setIsEditing(false); // ปิดโหมดการแก้ไขเมื่อกด Save
+      toast.success("Updated successfully");
+      setIsEditing(false);
     } catch (error) {
       if (error instanceof AxiosError) {
         if (error.response.data.field === "password") {
           setInputError((prev) => ({
             ...prev,
-            password: "invalid password",
+            password: "Invalid password",
           }));
         }
       }
@@ -75,7 +79,6 @@ export default function CustomerDetail() {
       <h2 className="text-3xl text-black font-bold mb-6">My Details</h2>
       <form className="space-y-4" onSubmit={handleSubmitUpdate}>
         <div className="xl:flex xl:space-x-4 space-y-4 xl:space-y-0">
-          {/* First Name  */}
           <div className="xl:w-1/2 w-full">
             <label className="block text-black font-semibold">First Name</label>
             {isEditing ? (
@@ -83,7 +86,7 @@ export default function CustomerDetail() {
                 type="text"
                 name="firstName"
                 className="w-full mt-1 px-4 py-2 border rounded-lg"
-                value={input.firstName}
+                value={input.firstName || ""}
                 onChange={handleChangeInput}
                 placeholder={authUser?.firstName}
                 error={inputError.firstName}
@@ -92,7 +95,6 @@ export default function CustomerDetail() {
               <p>{authUser?.firstName}</p>
             )}
           </div>
-          {/* Last Name  */}
           <div className="xl:w-1/2 w-full">
             <label className="block text-black font-semibold">Last Name</label>
             {isEditing ? (
@@ -100,7 +102,7 @@ export default function CustomerDetail() {
                 type="text"
                 name="lastName"
                 className="w-full mt-1 px-4 py-2 border rounded-lg "
-                value={input.lastName}
+                value={input.lastName || ""}
                 onChange={handleChangeInput}
                 placeholder={authUser.lastName}
                 error={inputError.lastName}
@@ -111,8 +113,7 @@ export default function CustomerDetail() {
           </div>
         </div>
         <div className="xl:flex xl:space-x-4 space-y-4 xl:space-y-0">
-          {/* Email  */}
-          <div className=" w-full">
+          <div className="w-full">
             <label className="block text-black font-semibold">Email</label>
             {isEditing ? (
               <Input
@@ -125,15 +126,14 @@ export default function CustomerDetail() {
               <p>{authUser?.email}</p>
             )}
           </div>
-          {/* Phone  */}
-          <div className=" w-full">
+          <div className="w-full">
             <label className="block text-black font-semibold">Phone</label>
             {isEditing ? (
               <Input
                 type="text"
                 name="phone"
                 className="w-full mt-1 px-4 py-2 border rounded-lg"
-                value={input.phone}
+                value={input.phone || ""}
                 onChange={handleChangeInput}
                 placeholder={authUser?.phone}
                 error={inputError.phone}
@@ -143,9 +143,7 @@ export default function CustomerDetail() {
             )}
           </div>
         </div>
-
         <div className="xl:flex xl:space-x-4 space-y-4 xl:space-y-0">
-          {/* Address  */}
           <div className="w-full">
             <label className="block text-black font-semibold">Address</label>
             {isEditing ? (
@@ -153,7 +151,7 @@ export default function CustomerDetail() {
                 name="address"
                 className="w-full mt-1 px-4 py-2 border rounded-lg"
                 rows="3"
-                value={input.address}
+                value={input.address || ""}
                 onChange={handleChangeInput}
                 placeholder={authUser?.address}
                 error={inputError.address}
@@ -162,9 +160,7 @@ export default function CustomerDetail() {
               <p>{authUser?.address}</p>
             )}
           </div>
-
-          {/* Driver License  */}
-          <div className=" w-full">
+          <div className="w-full">
             <label className="block text-black font-semibold">
               Driver License
             </label>
@@ -173,7 +169,7 @@ export default function CustomerDetail() {
                 type="text"
                 name="driverLicense"
                 className="w-full mt-1 px-4 py-2 border rounded-lg readonly"
-                value={authUser?.driverLicense}
+                value={authUser?.driverLicense || ""}
                 error={inputError.driverLicense}
               />
             ) : (
@@ -181,9 +177,7 @@ export default function CustomerDetail() {
             )}
           </div>
         </div>
-
         <div className="xl:flex xl:space-x-4 space-y-4 xl:space-y-0">
-          {/* Password  */}
           {isEditing && (
             <>
               <div className="w-full">
@@ -194,17 +188,12 @@ export default function CustomerDetail() {
                   type="password"
                   name="password"
                   className="w-full mt-1 px-4 py-2 border rounded-lg"
-                  value={input?.password}
+                  value={input.password || ""}
                   onChange={handleChangeInput}
                   error={inputError.password}
                 />
               </div>
-            </>
-          )}
-          {/* Confirm Password  */}
-          {isEditing && (
-            <>
-              <div className=" w-full">
+              <div className="w-full">
                 <label className="block text-black font-semibold">
                   Confirm Password
                 </label>
@@ -212,7 +201,7 @@ export default function CustomerDetail() {
                   type="password"
                   name="confirmPassword"
                   className="w-full mt-1 px-4 py-2 border rounded-lg"
-                  value={input?.confirmPassword}
+                  value={input.confirmPassword || ""}
                   onChange={handleChangeInput}
                   error={inputError.confirmPassword}
                 />
@@ -220,15 +209,13 @@ export default function CustomerDetail() {
             </>
           )}
         </div>
-
-        {/* Reward Points  */}
         <div className="block text-black font-semibold">
           <p>
-            Reward Points: <span>{`${authUser.totalPoints}`}</span>
+            Reward Points: <span>{authUser.totalPoints}</span>
           </p>
         </div>
-        {/* Edit Button  */}
-        {!isEditing && (
+
+        {!isEditing ? (
           <button
             type="button"
             className="mt-4 px-6 py-2 bg-secondary-color text-white rounded-lg hover:bg-thirdly-color transition ease-in-out duration-300"
@@ -236,22 +223,18 @@ export default function CustomerDetail() {
           >
             Edit Information
           </button>
-        )}
-
-        {/* Save Button  */}
-        {isEditing && (
-          <div className="space-x-4">
+        ) : (
+          <div className="flex flex-col sm:flex-row gap-2 ">
             <button
-              type="button"
-              className="mt-4 px-6 py-2 bg-secondary-color text-white rounded-lg hover:bg-thirdly-color transition ease-in-out duration-300"
-              onClick={handleSubmitUpdate}
+              type="submit"
+              className="sm:min-w-[150px] px-6 py-2 bg-secondary-color text-white rounded-lg hover:bg-thirdly-color transition ease-in-out duration-300"
             >
               Save
             </button>
             <button
               type="button"
-              className="mt-4 px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-400 transition ease-in-out duration-300"
-              onClick={() => setIsEditing(false)}
+              className="sm:min-w-[150px] px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-400 transition ease-in-out duration-300"
+              onClick={handleCancelEdit}
             >
               Cancel
             </button>

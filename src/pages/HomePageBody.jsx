@@ -13,13 +13,14 @@ import img2 from "../asset/image/300_2.jpg";
 import img3 from "../asset/image/300_3.jpg";
 import img4 from "../asset/image/300_4.jpg";
 import Img from "../asset/image/pexels-dariuskrs-2470657.jpg";
-import useOnScreen from "../components/OnScreen";
+import OnScreen from "../components/OnScreen";
 
 export default function HomePageBody() {
   const testimonialRef = useRef();
   const howRef = useRef();
-  const isVisibleTestimonial = useOnScreen(testimonialRef);
-  const isVisibleHow = useOnScreen(howRef);
+
+  const isVisibleTestimonial = OnScreen(testimonialRef);
+  const isVisibleHow = OnScreen(howRef);
 
   return (
     <>
@@ -60,11 +61,11 @@ export default function HomePageBody() {
           <div className="container z-10">
             <div className="lg:grid grid-cols-2 p-7 mt-10">
               {/* Information */}
-              <div className="flex flex-col gap-10 p-7">
-                <h1 className="font-extrabold text-3xl sm:font-extrabold sm:text-5xl">
+              <div className="flex flex-col gap-10 p-7 animate-fadeinleft ">
+                <h1 className="font-extrabold text-3xl sm:font-extrabold sm:text-5xl ">
                   Looking for cars to rent in Thailand? Look no further!
                 </h1>
-                <p className="text-semibold text-xl">
+                <p className="text-semibold text-xl ">
                   Explore Thailand with ease and comfort by renting a car from
                   us, whether you're planning to visit the bustling streets of
                   Bangkok, the serene beaches of Phuket, or the cultural
@@ -78,7 +79,9 @@ export default function HomePageBody() {
                 <img src={CarHero} alt="Car" />
               </div>
             </div>
-            <SearchCarInput />
+            <div className=" animate-fadeinup">
+              <SearchCarInput />
+            </div>
           </div>
         </div>
       </div>
@@ -108,11 +111,11 @@ export default function HomePageBody() {
                 <div className="flex flex-col">
                   <h3 className="font-bold text-xl">Ben T.</h3>
                   <div className="flex rounded-md">
-                    <IoIosStar className="text-yellow-400" />
-                    <IoIosStar className="text-yellow-400" />
-                    <IoIosStar className="text-yellow-400" />
-                    <IoIosStar className="text-yellow-400" />
-                    <IoIosStar className="text-yellow-400" />
+                    <IoIosStar className="text-yellow-400 " />
+                    <IoIosStar className="text-yellow-400 " />
+                    <IoIosStar className="text-yellow-400 " />
+                    <IoIosStar className="text-yellow-400 " />
+                    <IoIosStar className="text-yellow-400 " />
                   </div>
                 </div>
               </div>

@@ -19,7 +19,7 @@ export default function CarSearchCard({ car, handleBookClick }) {
           Book Now!
         </p>
         <div className="font-medium text-xl md:text-3xl  tracking-wide">
-          {car.CarModel.CarType.pricePerDay}.00/Day{" "}
+          &#3647; {car.CarModel.CarType.pricePerDay}.00/Day{" "}
         </div>
         <button
           onClick={() => handleBookClick(car)}
