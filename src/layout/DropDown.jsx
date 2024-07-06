@@ -5,6 +5,7 @@ import { GrContact } from "react-icons/gr";
 import { CiSettings } from "react-icons/ci";
 import { GoBook } from "react-icons/go";
 import { CiLogout } from "react-icons/ci";
+import { MdOutlineContactPhone } from "react-icons/md";
 import { useAuth } from "../context/AuthContext";
 
 function DropDown() {
@@ -32,8 +33,14 @@ function DropDown() {
         </Link>
         <Link to={"/contact"} className="lg:hidden">
           <li className="dropDownButton ">
-            <GrContact />
+            <MdOutlineContactPhone />
             Contact
+          </li>
+        </Link>
+        <Link to={"/customer/chat"} className={`${authUser ? "" : "hidden"} `}>
+          <li className="dropDownButton">
+            <GrContact />
+            Chat
           </li>
         </Link>
         <Link to={"/customer"} className={`${authUser ? "" : "hidden"} `}>
