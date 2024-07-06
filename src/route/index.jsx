@@ -2,6 +2,7 @@ import { lazy } from "react";
 import { RouterProvider } from "react-router-dom";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import HomePageLayout from "../layout/HomePageLayout";
+import Chat from "../features/customer/component/Chat";
 
 // Lazy loading components
 const HomePageBody = lazy(() => import("../pages/HomePageBody"));
@@ -55,6 +56,7 @@ const router = createBrowserRouter([
         children: [
           { path: "", element: <CustomerDetail /> },
           { path: "bookings", element: <CustomerBookings /> },
+          { path: "chat", element: <Chat /> },
         ],
       },
     ],
