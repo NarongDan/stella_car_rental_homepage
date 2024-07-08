@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import io from "socket.io-client";
-import car from "../../../asset/image/300_1.jpg";
+import admin from "../../../asset/image/admin.png";
+import user from "../../../asset/image/user.png";
 import { useAuth } from "../../../context/AuthContext";
 import chatApi from "../../../apis/chat";
 
@@ -82,7 +83,7 @@ const Chat = () => {
                 <div className="relative">
                   <img
                     className="w-[38px] h-[38px] border-green-500 border-2 max-w-[45px] p-[2px] rounded-full"
-                    src={car}
+                    src={admin}
                     alt=""
                   />
                   <div className="w-[10px] h-[10px] bg-green-500 rounded-full absolute bottom-0 right-0"></div>
@@ -107,7 +108,7 @@ const Chat = () => {
                       {msg.senderType !== "Customer" && (
                         <div>
                           <img
-                            src={car}
+                            src={admin}
                             alt=""
                             className="w-[38px] h-[38px] border-2 border-green-500 rounded-full max-w-[38px] p-[3px]"
                           />
@@ -125,7 +126,7 @@ const Chat = () => {
                       {msg.senderType === "Customer" && (
                         <div>
                           <img
-                            src={car}
+                            src={user}
                             alt=""
                             className="w-[38px] h-[38px] border-2 border-white rounded-full max-w-[38px] p-[3px]"
                           />
