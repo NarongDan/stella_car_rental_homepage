@@ -64,7 +64,7 @@ export default function Navbar({ openDropDown, setOpenDropDown, Dropdown }) {
             <Toggle />
             {authUser ? (
               <div className="flex items-center gap-4">
-                <p className="font-semibold text-lg">
+                <p className="font-semibold text-sm md:text-lg">
                   Hi, {authUser.firstName}
                 </p>
 
