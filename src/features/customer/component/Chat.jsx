@@ -34,6 +34,7 @@ const Chat = () => {
   }, [messages]);
 
   //
+
   // สร้าง ChatRoom และเข้าร่วมห้องแชทเมื่อ component ถูก mount
   useEffect(() => {
     const initiateChatRoom = async () => {

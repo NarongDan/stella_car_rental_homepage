@@ -12,7 +12,7 @@ export default function Navbar({ openDropDown, setOpenDropDown, Dropdown }) {
   return (
     <nav className="flex justify-center z-20 dark:bg-black dark:text-white">
       <div className="w-full px-3 ">
-        <div className="flex justify-between items-center w-auto h-20  shadow-zinc-700 border-b">
+        <div className="flex justify-between items-center w-auto h-20  shadow-zinc-700  ">
           {/* Logo */}
           <div className="navbar-logo ">
             <Link className="flex  items-center " to={"/"}>
