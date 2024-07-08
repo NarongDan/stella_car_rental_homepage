@@ -14,7 +14,7 @@ export default function SearchCarInput() {
   //จำนวนวันที่สามารถเลือกได้
   const getMaxDate = () => {
     const maxDate = new Date();
-    maxDate.setDate(maxDate.getDate() + 3);
+    maxDate.setDate(maxDate.getDate() + 7);
     return maxDate.toISOString().split("T")[0];
   };
 

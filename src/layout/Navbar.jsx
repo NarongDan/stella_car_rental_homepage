@@ -12,12 +12,12 @@ export default function Navbar({ openDropDown, setOpenDropDown, Dropdown }) {
   return (
     <nav className="flex justify-center z-20 dark:bg-black dark:text-white">
       <div className="w-full px-3 ">
-        <div className="flex justify-between items-center w-auto h-20  shadow-zinc-700 border-b">
+        <div className="flex justify-between items-center w-auto h-20  shadow-zinc-700  ">
           {/* Logo */}
           <div className="navbar-logo ">
             <Link className="flex  items-center " to={"/"}>
               <img src={Logo} className="  w-32 " alt="logo" />
-              <h1 className="font-bold font-serif hidden sm:block sm:text-2xl">
+              <h1 className="font-bold font-serif  hidden sm:block sm:text-2xl">
                 Stella Car Rental
               </h1>
             </Link>
@@ -64,7 +64,7 @@ export default function Navbar({ openDropDown, setOpenDropDown, Dropdown }) {
             <Toggle />
             {authUser ? (
               <div className="flex items-center gap-4">
-                <p className="font-semibold text-lg">
+                <p className="font-semibold text-sm md:text-lg">
                   Hi, {authUser.firstName}
                 </p>
 

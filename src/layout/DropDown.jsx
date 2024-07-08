@@ -37,7 +37,7 @@ function DropDown() {
             Contact
           </li>
         </Link>
-        <Link to={"/customer/chat"} className={`${authUser ? "" : "hidden"} `}>
+        <Link to={"/chat"} className={`${authUser ? "" : "hidden"} `}>
           <li className="dropDownButton">
             <GrContact />
             Chat

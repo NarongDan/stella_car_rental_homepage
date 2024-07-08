@@ -201,9 +201,9 @@ export default function BookingConfirmationPage() {
               Book
             </button>
 
-            <button className="w-full bg-secondary-color hover:bg-thirdly-color text-white font-bold py-2 px-4 rounded">
+            {/* <button className="w-full bg-secondary-color hover:bg-thirdly-color text-white font-bold py-2 px-4 rounded">
               Redeem
-            </button>
+            </button> */}
           </div>
           <p className={error ? "block text-red-600 mt-2" : "hidden"}>
             Please <span> </span>

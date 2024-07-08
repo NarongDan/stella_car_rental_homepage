@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import io from "socket.io-client";
-import car from "../../../asset/image/300_1.jpg";
+import admin from "../../../asset/image/admin.png";
+import user from "../../../asset/image/user.png";
 import { useAuth } from "../../../context/AuthContext";
 import chatApi from "../../../apis/chat";
 
@@ -14,6 +15,25 @@ const Chat = () => {
   const [messages, setMessages] = useState([]);
   const [chatRoomId, setChatRoomId] = useState(null); // ID ของ ChatRoom ที่ Customer กำลังสนทนาอยู่
   const customerId = authUser?.customerId; // ID ของ Customer
+
+  // เมื่อกด send ให้เลื่อนลงมาล่างสุด
+  const chatContainerRef = useRef(null);
+  const scrollToBottom = () => {
+    if (chatContainerRef.current) {
+      console.dir(chatContainerRef.current);
+      const { scrollHeight, clientHeight } = chatContainerRef.current;
+      chatContainerRef.current.scrollTo({
+        top: scrollHeight - clientHeight,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
+
+  //
 
   // สร้าง ChatRoom และเข้าร่วมห้องแชทเมื่อ component ถูก mount
   useEffect(() => {
@@ -82,7 +102,7 @@ const Chat = () => {
                 <div className="relative">
                   <img
                     className="w-[38px] h-[38px] border-green-500 border-2 max-w-[45px] p-[2px] rounded-full"
-                    src={car}
+                    src={admin}
                     alt=""
                   />
                   <div className="w-[10px] h-[10px] bg-green-500 rounded-full absolute bottom-0 right-0"></div>
@@ -93,7 +113,10 @@ const Chat = () => {
 
             {/* Conversation Board  */}
             <div className="py-4">
-              <div className="bg-[#475569] h-[calc(100vh-290px)] rounded-md p-3 overflow-y-auto">
+              <div
+                className="bg-[#475569] h-[calc(100vh-290px)] rounded-md p-3 overflow-y-auto"
+                ref={chatContainerRef}
+              >
                 {messages.map((msg, index) => (
                   <div
                     key={index}
@@ -107,7 +130,7 @@ const Chat = () => {
                       {msg.senderType !== "Customer" && (
                         <div>
                           <img
-                            src={car}
+                            src={admin}
                             alt=""
                             className="w-[38px] h-[38px] border-2 border-green-500 rounded-full max-w-[38px] p-[3px]"
                           />
@@ -125,7 +148,7 @@ const Chat = () => {
                       {msg.senderType === "Customer" && (
                         <div>
                           <img
-                            src={car}
+                            src={user}
                             alt=""
                             className="w-[38px] h-[38px] border-2 border-white rounded-full max-w-[38px] p-[3px]"
                           />

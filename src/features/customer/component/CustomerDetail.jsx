@@ -209,11 +209,11 @@ export default function CustomerDetail() {
             </>
           )}
         </div>
-        <div className="block text-black font-semibold">
+        {/* <div className="block text-black font-semibold">
           <p>
             Reward Points: <span>{authUser.totalPoints}</span>
           </p>
-        </div>
+        </div> */}
 
         {!isEditing ? (
           <button

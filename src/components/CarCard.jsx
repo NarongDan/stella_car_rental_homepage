@@ -11,10 +11,10 @@ export default function CarCard({ car }) {
 
   return (
     <>
-      <div className="min-w-[320px] border-2 p-2 border-gray-200 shadow-md flex flex-col rounded dark:bg-white dark:text-black">
+      <div className="w-full md:min-w-[320px] border-2 p-2 border-gray-200 shadow-md flex flex-col rounded dark:bg-white dark:text-black">
         <div className="grid gap-4 justify-items-center mb-5">
           <h1 className="text-3xl font-semibold pt-2">{`${car.brand} : ${car.model}`}</h1>
-          <div className="w-[300px] h-[200px] grid justify-center">
+          <div className="grid justify-center">
             <img
               src={car.CarImages[0].imageUrl}
               className="w-full h-[200px] object-contain"

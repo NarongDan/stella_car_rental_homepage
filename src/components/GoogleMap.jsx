@@ -6,12 +6,12 @@ const containerStyle = {
   height: "400px",
 };
 
-const center = {
+const origin = {
   lat: 13.6924127259907, // ละติจูดของตำแหน่งที่ต้องการ
   lng: 100.75059081404096, // ลองจิจูดของตำแหน่งที่ต้องการ
 };
 
-function MapComponent() {
+function MapComponent({ center = origin }) {
   const [map, setMap] = useState(null);
   const [marker, setMarker] = useState(null);
 
@@ -33,6 +33,14 @@ function MapComponent() {
       map.setZoom(15); // ซูมเข้าไปใกล้มากขึ้น (ตัวอย่าง)
     }
   }, [map, marker]);
+
+  // อัพเดตตำแหน่งของ Marker เมื่อ center เปลี่ยนแปลง
+  useEffect(() => {
+    if (marker) {
+      marker.setPosition(center);
+      map.panTo(center); // Optional: Move the map to the new center
+    }
+  }, [center, marker, map]);
 
   return (
     <LoadScript googleMapsApiKey={import.meta.env.VITE_API_GOOGLEMAPAPIKEY}>
