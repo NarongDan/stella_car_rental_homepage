@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import io from "socket.io-client";
 import admin from "../../../asset/image/admin.png";
 import user from "../../../asset/image/user.png";
@@ -16,6 +16,24 @@ const Chat = () => {
   const [chatRoomId, setChatRoomId] = useState(null); // ID ของ ChatRoom ที่ Customer กำลังสนทนาอยู่
   const customerId = authUser?.customerId; // ID ของ Customer
 
+  // เมื่อกด send ให้เลื่อนลงมาล่างสุด
+  const chatContainerRef = useRef(null);
+  const scrollToBottom = () => {
+    if (chatContainerRef.current) {
+      console.dir(chatContainerRef.current);
+      const { scrollHeight, clientHeight } = chatContainerRef.current;
+      chatContainerRef.current.scrollTo({
+        top: scrollHeight - clientHeight,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
+
+  //
   // สร้าง ChatRoom และเข้าร่วมห้องแชทเมื่อ component ถูก mount
   useEffect(() => {
     const initiateChatRoom = async () => {
@@ -94,7 +112,10 @@ const Chat = () => {
 
             {/* Conversation Board  */}
             <div className="py-4">
-              <div className="bg-[#475569] h-[calc(100vh-290px)] rounded-md p-3 overflow-y-auto">
+              <div
+                className="bg-[#475569] h-[calc(100vh-290px)] rounded-md p-3 overflow-y-auto"
+                ref={chatContainerRef}
+              >
                 {messages.map((msg, index) => (
                   <div
                     key={index}
