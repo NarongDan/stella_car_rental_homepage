@@ -31,13 +31,13 @@ export default function Modal({
             onMouseDown={onClose}
           >
             <div
-              className="bg-[#f0f2f5] rounded-lg shadow-lg max-w-xl sm:min-w-sm md:max-w-2xl  lg:max-w-4xl pb-4 mx-4 sm:mx-auto "
+              className="bg-[#f0f2f5] rounded-lg shadow-lg max-w-xl sm:min-w-sm md:max-w-2xl lg:max-w-4xl pb-4 mx-4 sm:mx-auto"
               style={{ width: `${width}rem` }}
               onMouseDown={(e) => e.stopPropagation()}
             >
               <div className="flex justify-between items-center p-4 border-b border-gray-400 bg-secondary-color shadow-md rounded-t-lg">
                 <span className="invisible"></span>
-                <h5 className="text-2xl font-medium text-white ">{title}</h5>
+                <h5 className="text-2xl font-medium text-white">{title}</h5>
                 <button
                   onClick={onClose}
                   className="text-white hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-400 rounded"
@@ -45,7 +45,20 @@ export default function Modal({
                   &times;
                 </button>
               </div>
-              <div className="p-6">{children}</div>
+              <div
+                className="p-6 overflow-y-auto max-h-"
+                style={{ maxHeight: "80vh" }}
+              >
+                {children}
+              </div>
+              <div className="w-full flex justify-center">
+                <button
+                  className="p-3 rounded-md text-white font-semibold bg-secondary-color"
+                  onClick={onClose}
+                >
+                  Close
+                </button>
+              </div>
             </div>
           </div>
         </>

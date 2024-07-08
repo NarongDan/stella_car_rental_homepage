@@ -7,8 +7,6 @@ import { useEffect } from "react";
 export default function CarPage() {
   const [cars, setGetCarImg] = useState();
 
-  console.log(cars);
-
   const getCarImg = async () => {
     try {
       const res = await carApi.getAllCarModels();

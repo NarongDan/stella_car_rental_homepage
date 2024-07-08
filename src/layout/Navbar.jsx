@@ -17,7 +17,7 @@ export default function Navbar({ openDropDown, setOpenDropDown, Dropdown }) {
           <div className="navbar-logo ">
             <Link className="flex  items-center " to={"/"}>
               <img src={Logo} className="  w-32 " alt="logo" />
-              <h1 className="font-bold font-serif hidden sm:block sm:text-2xl">
+              <h1 className="font-bold font-serif  hidden sm:block sm:text-2xl">
                 Stella Car Rental
               </h1>
             </Link>

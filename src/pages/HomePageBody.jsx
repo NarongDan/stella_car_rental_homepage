@@ -33,7 +33,7 @@ export default function HomePageBody() {
             className="w-full h-64 object-cover"
           />
           <div className="absolute inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
-            <h1 className="text-5xl font-extrabold text-white">
+            <h1 className="text-5xl font-extrabold text-white text-center">
               Stella Car Rental
             </h1>
           </div>

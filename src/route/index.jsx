@@ -46,6 +46,15 @@ const router = createBrowserRouter([
       { path: "/detail", element: <DetailCarPage /> },
       { path: "/paymentSuccessful", element: <PaymentSuccess /> },
       { path: "/paymentCancelled", element: <PaymentCancelled /> },
+
+      {
+        path: "/chat",
+        element: (
+          <ProtectProfileRoute>
+            <Chat />
+          </ProtectProfileRoute>
+        ),
+      },
       {
         path: "/customer",
         element: (
@@ -56,7 +65,6 @@ const router = createBrowserRouter([
         children: [
           { path: "", element: <CustomerDetail /> },
           { path: "bookings", element: <CustomerBookings /> },
-          { path: "chat", element: <Chat /> },
         ],
       },
     ],
