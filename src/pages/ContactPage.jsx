@@ -1,8 +1,21 @@
+import { useState } from "react";
 import Img from "../asset/image/pexels-dariuskrs-2470657.jpg";
 import ContactForm from "../components/ContactForm";
 import GoogleMap from "../components/GoogleMap";
+import { useCar } from "../context/CarContext";
 
 export default function ContactPage() {
+  const [location, setLocation] = useState();
+  const { branches } = useCar();
+
+  const handleLocation = (lat, lng) => {
+    setLocation((prev) => ({
+      ...prev,
+      lat: lat,
+      lng: lng,
+    }));
+  };
+
   return (
     <div className=" mx-auto bg-gray-100 rounded-lg shadow-lg overflow-hidden">
       <div className="relative">
@@ -24,10 +37,16 @@ export default function ContactPage() {
               <h3 className="font-semibold">Head Office</h3>
               <p>Suvarnabhumi Airport</p>
               <h3 className="font-semibold mt-4">Branch Office</h3>
-              <p>Phuket International Airport </p>
-              <p>Chiang Mai International Airport </p>
-              <p>Mae Sot Airport </p>
-              <p>Udon Thani International Airport </p>
+              {branches?.map((branch) => (
+                <p
+                  key={branch.id}
+                  onClick={() => handleLocation(branch.lat, branch.lng)}
+                  className="cursor-pointer hover:underline hover:text-orange-500"
+                >
+                  {branch.branchName}
+                </p>
+              ))}
+
               <h3 className="font-semibold mt-4">Phone (Thailand)</h3>
               <p>+66 888 888 888</p>
               <h3 className="font-semibold mt-4">Email</h3>
@@ -38,7 +57,7 @@ export default function ContactPage() {
         </div>
       </div>
       <div className=" h-full w-full rounded-lg overflow-hidden shadow-md mb-10 max-w-7xl mx-auto ">
-        <GoogleMap />
+        <GoogleMap center={location} />
       </div>
     </div>
   );
