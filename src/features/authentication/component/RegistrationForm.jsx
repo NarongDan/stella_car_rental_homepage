@@ -127,6 +127,7 @@ export default function RegistrationForm() {
             value={input.driverLicense}
             onChange={handleChangeInput}
             error={inputError.driverLicense}
+            maxLength={13}
           />
         </div>
         <div className="col-span-2 flex flex-col">

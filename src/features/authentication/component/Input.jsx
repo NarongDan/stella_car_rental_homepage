@@ -5,6 +5,7 @@ export default function Input({
   value,
   onChange,
   name,
+  maxLength = null,
 }) {
   return (
     <>
@@ -19,6 +20,7 @@ export default function Input({
         value={value}
         onChange={onChange}
         name={name}
+        maxLength={maxLength}
       />
       {error ? <small className="text-red-500 text-left">{error}</small> : null}
     </>
