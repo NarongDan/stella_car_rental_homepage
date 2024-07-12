@@ -11,7 +11,7 @@ import { useAuth } from "../context/AuthContext";
 function DropDown() {
   const { logout, authUser } = useAuth();
   return (
-    <div className="flex flex-col dropDown z-30 dark:text-black">
+    <div className=" flex flex-col dropDown dark:text-black">
       <ul className="flex flex-col gap-4">
         <Link to={"/"} className="lg:hidden">
           <li className="dropDownButton ">

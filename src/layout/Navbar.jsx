@@ -93,7 +93,7 @@ export default function Navbar({ openDropDown, setOpenDropDown, Dropdown }) {
             )}
 
             {openDropDown && (
-              <div ref={Dropdown} className="">
+              <div ref={Dropdown} className="fixed z-40">
                 <DropDown />
               </div>
             )}
