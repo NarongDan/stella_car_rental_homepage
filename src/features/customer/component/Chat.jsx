@@ -6,7 +6,7 @@ import { useAuth } from "../../../context/AuthContext";
 import chatApi from "../../../apis/chat";
 
 // เชื่อมต่อกับเซิร์ฟเวอร์ Socket.IO
-const socket = io("http://localhost:8888");
+const socket = io(import.meta.env.VITE_API_URL);
 
 const Chat = () => {
   const { authUser } = useAuth();
