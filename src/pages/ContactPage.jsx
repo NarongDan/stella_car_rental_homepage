@@ -1,52 +1,64 @@
-// eslint-disable-next-line no-unused-vars
-import React from 'react';
-import Img from "../img/carcontact.jpg";
+import { useState } from "react";
+import Img from "../asset/image/pexels-dariuskrs-2470657.jpg";
+import ContactForm from "../components/ContactForm";
+import GoogleMap from "../components/GoogleMap";
+import { useCar } from "../context/CarContext";
 
-function ContactPage() {
-    return (
-        <div className="max-w-7xl mx-auto mt-10 bg-white rounded-lg overflow-hidden">
-        <div className="flex flex-col md:flex-row">
-          <div className="flex-1 p-10 bg-gray-50">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card 
-                icon="address-icon.png" 
-                label="Address" 
-                text="Suite 721 New York NY 10016" 
-              />
-              <Card 
-                icon="phone-icon.png" 
-                label="Phone" 
-                text="+668741954xx" 
-              />
-              <Card 
-                icon="email-icon.png" 
-                label="Email" 
-                text="Stella@yourmail.com" 
-              />
+export default function ContactPage() {
+  const [location, setLocation] = useState();
+  const { branches } = useCar();
+
+  const handleLocation = (lat, lng) => {
+    setLocation((prev) => ({
+      ...prev,
+      lat: lat,
+      lng: lng,
+    }));
+  };
+
+  return (
+    <div className=" mx-auto bg-gray-100 rounded-lg shadow-lg overflow-hidden">
+      <div className="relative">
+        <img src={Img} alt="Contact Us" className="w-full h-64 object-cover" />
+        <div className="absolute inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
+          <h1 className="text-5xl font-extrabold text-white">
+            Stella Car Rental
+          </h1>
+        </div>
+      </div>
+
+      <div className="p-10 bg-gray-100">
+        <div className="flex flex-col space-y-10 md:flex-row md:space-x-6 md:space-y-0 max-w-7xl mx-auto">
+          <div className=" bg-white shadow-md rounded-lg p-6 space-y-4 flex-1 ">
+            <h2 className="text-2xl font-bold text-gray-800">
+              Contact Information
+            </h2>
+            <div className="text-gray-800">
+              <h3 className="font-semibold">Head Office</h3>
+              <p>Suvarnabhumi Airport</p>
+              <h3 className="font-semibold mt-4">Branch Office</h3>
+              {branches?.map((branch) => (
+                <p
+                  key={branch.id}
+                  onClick={() => handleLocation(branch.lat, branch.lng)}
+                  className="cursor-pointer hover:underline hover:text-orange-500"
+                >
+                  {branch.branchName}
+                </p>
+              ))}
+
+              <h3 className="font-semibold mt-4">Phone (Thailand)</h3>
+              <p>+66 888 888 888</p>
+              <h3 className="font-semibold mt-4">Email</h3>
+              <p>info@stellacarrental.com</p>
             </div>
           </div>
-          <div className="flex-1 bg-cover bg-center">
-            <img src={Img} alt=''></img>
-          </div>
-        </div>
-        <div className="p-6 flex justify-center items-center bg-white">
-          <a href="#" className="px-8 py-3 bg-blue-600 hover:bg-blue-400 text-white rounded text-lg">Book Now</a>
+          <ContactForm />
         </div>
       </div>
-    );
-  }
-  
-  function Card({ icon, label, text }) {
-    return (
-      <div className="p-8 bg-white shadow-md rounded-lg flex items-center">
-        <div className="w-15 h-20 bg-cover" style={{ backgroundImage: `url(${icon})` }}></div>
-        <div>
-          <div className="text-lg font-semibold">{label}</div>
-          <div className="text-gray-700">{text}</div>
-        </div>
+      <div className=" h-full w-full rounded-lg overflow-hidden shadow-md mb-10 max-w-7xl mx-auto ">
+        <GoogleMap center={location} />
       </div>
-    );
-  }
-  
-
-export default ContactPage
+    </div>
+  );
+}

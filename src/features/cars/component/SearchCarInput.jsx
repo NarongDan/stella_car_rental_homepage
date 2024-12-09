@@ -11,6 +11,13 @@ export default function SearchCarInput() {
   const navigate = useNavigate();
   const today = new Date().toISOString().split("T")[0]; // วันที่ปัจจุบัน
 
+  //จำนวนวันที่สามารถเลือกได้
+  const getMaxDate = () => {
+    const maxDate = new Date();
+    maxDate.setDate(maxDate.getDate() + 7);
+    return maxDate.toISOString().split("T")[0];
+  };
+
   const handlePickupLocationChange = (e) => {
     const selectedPickupLocation = e.target.value;
     if (selectedPickupLocation === "") {
@@ -54,12 +61,12 @@ export default function SearchCarInput() {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <div className="grid grid-cols-1 gap-4">
-        <div>
+    <div className="container mx-auto mb-10 p-4 border-2 rounded-xl bg-white opacity-100  shadow-lg shadow-neutral-500 w-5/6 dark:text-black dark:bg-gray-50">
+      <div className=" md:flex gap-4 p-2  justify-around  w-full ">
+        <div className="w-full">
           <label>Pickup Location:</label>
           <select
-            className="border p-2 w-full"
+            className="border p-2.5 w-full rounded-md"
             value={pickupLocation}
             onChange={handlePickupLocationChange}
           >
@@ -72,24 +79,24 @@ export default function SearchCarInput() {
           </select>
         </div>
 
-        <div>
+        <div className="w-full">
           <label>Start Date:</label>
           <input
             type="date"
-            className="border p-2 w-full"
+            className="border p-2 w-full rounded-md "
             value={startDate}
             onChange={handleStartDateChange}
-            max={endDate} // Set max attribute to restrict dates
+            max={getMaxDate()} // Set max attribute to restrict dates
             min={today}
             disabled={!pickupLocationSelected} // ใช้งานเมื่อเลือก pickupLocation แล้วเท่านั้น
           />
         </div>
 
-        <div>
+        <div className="w-full">
           <label>End Date:</label>
           <input
             type="date"
-            className="border p-2 w-full"
+            className="border p-2 w-full rounded-md"
             value={endDate}
             onChange={handleEndDateChange}
             min={startDate} // Set min attribute to restrict dates
@@ -98,7 +105,7 @@ export default function SearchCarInput() {
         </div>
 
         <button
-          className="bg-blue-500 text-white p-2 mt-4"
+          className="bg-secondary-color hover:bg-thirdly-color text-white p-2 mt-4 w-full md:w-96 rounded-lg cursor-pointer font-semibold"
           onClick={handleSearch}
           disabled={!pickupLocationSelected || !startDate || !endDate} // ปุ่ม Search ใช้งานเมื่อเลือก pickupLocation, startDate และ endDate แล้วเท่านั้น
         >

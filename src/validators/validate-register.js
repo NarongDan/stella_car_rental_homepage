@@ -22,11 +22,14 @@ const registerSchema = Joi.object({
       "string.empty": "phone number is required",
       "string.pattern.base": "invalid phone number",
     }),
-
-  address: Joi.string(),
-  driverLicense: Joi.string().required().messages({
-    "string.empty": "driver license is required",
-  }),
+  address: Joi.string().optional().allow(""), // address can be empty
+  driverLicense: Joi.string()
+    .required()
+    .pattern(/^[0-9]{13}$/)
+    .messages({
+      "string.empty": "driver license is required",
+      "string.pattern.base": "Driver License must be 13 numbers",
+    }),
   password: Joi.string()
     .required()
     .pattern(/^[0-9a-zA-Z]{6,}$/) //อย่างต่ำ6ตัว ไม่จำกัดจำนวน

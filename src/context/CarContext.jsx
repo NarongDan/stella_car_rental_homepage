@@ -6,7 +6,6 @@ import { useEffect } from "react";
 
 const CarContext = createContext();
 export default function CarContextProvider({ children }) {
-  const [car, setCar] = useState(null);
   const [branches, setBranches] = useState(null);
 
   const fetchBranches = async () => {
